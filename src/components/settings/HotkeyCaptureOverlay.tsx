@@ -55,7 +55,7 @@ export function HotkeyCaptureOverlay({
       tabIndex={0}
       ref={(el) => el?.focus()}
     >
-      <div style={{ fontSize: '20px', marginBottom: '10px' }}>请按下新的热键</div>
+      <div style={{ fontSize: '20px', marginBottom: '10px' }}>Press the new hotkey</div>
       <div style={{ fontSize: '14px', color: '#aaa' }}>{description}</div>
       <button
         style={{ marginTop: '20px', padding: '5px 15px' }}
@@ -64,7 +64,7 @@ export function HotkeyCaptureOverlay({
           onCancel();
         }}
       >
-        取消
+        Cancel
       </button>
     </div>
   );

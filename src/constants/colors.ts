@@ -1,42 +1,43 @@
 // 常量定义
 export const KEYWORD_COLORS: Record<string, string> = {
-  "弹药": "#ff8e00",
-  "灼烧": "#ff9f45",
-  "充能": "#00ecc3",
-  "冷却": "#00ecc3",
-  "加速": "#00ecc3",
-  "暴击率": "#f5503d",
-  "伤害": "#f5503d",
-  "飞行": "#f4cf20",
-  "冻结": "#00ccff",
-  "金币": "#ffd700",
-  "治疗": "#8eea31",
-  "生命值": "#8eea31",
-  "最大生命值": "#8eea31",
-  "收入": "#ffcd19",
-  "吸血": "#9d4a6f",
-  "剧毒": "#0ebe4f",
-  "生命再生": "#8eea31",
-  "护盾": "#f4cf20",
-  "减速": "#cb9f6e",
-  "价值": "#ffcd19"
+  "Ammo": "#ff8e00",
+  "Burn": "#ff9f45",
+  "Charge": "#00ecc3",
+  "Cooldown": "#00ecc3",
+  "Haste": "#00ecc3",
+  "Crit Chance": "#f5503d",
+  "Damage": "#f5503d",
+  "Flying": "#f4cf20",
+  "Freeze": "#00ccff",
+  "Gold": "#ffd700",
+  "Heal": "#8eea31",
+  "Health": "#8eea31",
+  "Max Health": "#8eea31",
+  "Crit": "#f5503d",
+  "Income": "#ffcd19",
+  "Lifesteal": "#9d4a6f",
+  "Poison": "#0ebe4f",
+  "Regen": "#8eea31",
+  "Shield": "#f4cf20",
+  "Slow": "#cb9f6e",
+  "Value": "#ffcd19"
 };
 
 export const TIER_COLORS = ["#cd7f32", "#c0c0c0", "#ffd700", "#b9f2ff"];
 
 export const ENCHANT_COLORS: Record<string, string> = {
-  "黄金": "var(--c-gold)",
-  "沉重": "var(--c-slow)",
-  "寒冰": "var(--c-freeze)",
-  "疾速": "var(--c-haste)",
-  "护盾": "var(--c-shield)",
-  "回复": "var(--c-heal)",
-  "毒素": "var(--c-poison)",
-  "炽焰": "var(--c-burn)",
-  "闪亮": "#98a8fe",
-  "致命": "var(--c-damage)",
-  "辉耀": "#98a8fe",
-  "黑曜石": "#9d4a6f"
+  "Golden": "var(--c-gold)",
+  "Heavy": "var(--c-slow)",
+  "Icy": "var(--c-freeze)",
+  "Turbo": "var(--c-haste)",
+  "Shielded": "var(--c-shield)",
+  "Restorative": "var(--c-heal)",
+  "Toxic": "var(--c-poison)",
+  "Fiery": "var(--c-burn)",
+  "Shiny": "#98a8fe",
+  "Deadly": "var(--c-damage)",
+  "Radiant": "#98a8fe",
+  "Obsidian": "#9d4a6f"
 };
 
 export const HERO_COLORS: Record<string, string> = {

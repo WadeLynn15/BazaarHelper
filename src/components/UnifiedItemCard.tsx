@@ -41,8 +41,8 @@ const getMulticastLabel = (raw?: string) => {
   if (vals.length === 0) return null;
   const min = Math.floor(Math.min(...vals));
   const max = Math.floor(Math.max(...vals));
-  if (min === max) return `多重触发：${max}`;
-  return `多重触发：${min}-${max}`;
+  if (min === max) return `Multicast: ${max}`;
+  return `Multicast: ${min}-${max}`;
 };
 
 const UnifiedItemCardImpl: React.FC<UnifiedItemCardProps> = ({
@@ -60,11 +60,11 @@ const UnifiedItemCardImpl: React.FC<UnifiedItemCardProps> = ({
 }) => {
   const tierClass = (item.tier || '').split(' / ')[0].toLowerCase();
   const tierNameZh = {
-    bronze: '青铜+',
-    silver: '白银+',
-    gold: '黄金+',
-    diamond: '钻石+',
-    legendary: '传说'
+    bronze: 'Bronze+',
+    silver: 'Silver+',
+    gold: 'Gold+',
+    diamond: 'Diamond+',
+    legendary: 'Legendary'
   }[tierClass as 'bronze' | 'silver' | 'gold' | 'diamond' | 'legendary'] || tierClass;
 
   const sizeClass = item.size?.split(' / ')[0].toLowerCase() || 'medium';
@@ -77,8 +77,8 @@ const UnifiedItemCardImpl: React.FC<UnifiedItemCardProps> = ({
   }
 
   const heroKey = rawHero.split(' / ')[0];
-  const heroZhRaw = rawHero.split(' / ')[1] || rawHero;
-  const heroZh = heroZhRaw === 'Common' ? '通用' : heroZhRaw;
+  const heroZhRaw = rawHero.split(' / ')[0] || rawHero;
+  const heroZh = heroZhRaw === 'Common' ? 'Neutral' : heroZhRaw;
   const heroColor = HERO_COLORS[heroKey] || undefined;
   const avatar = HERO_AVATAR_MAP[heroKey] || (heroKey.length === 1 ? HERO_AVATAR_MAP[heroKey.toUpperCase()] : undefined);
 
@@ -109,7 +109,7 @@ const UnifiedItemCardImpl: React.FC<UnifiedItemCardProps> = ({
 
         <div className="card-center">
           <div className="name-line">
-            <span className="name-cn">{item.name_cn}</span>
+            <span className="name-cn">{item.name || item.name_cn}</span>
             {isRecognized && (
               <span className="id-badge" style={{ marginLeft: '4px', backgroundColor: isTopMatch ? '#238636' : '#8b949e' }}>
                 {isTopMatch ? 'MATCH' : 'MAYBE'}
@@ -183,7 +183,7 @@ const UnifiedItemCardImpl: React.FC<UnifiedItemCardProps> = ({
                             </React.Fragment>
                           );
                         })}
-                        <div className="cd-unit">秒</div>
+                        <div className="cd-unit">sec</div>
                       </div>
                     </div>
                   );
@@ -196,7 +196,7 @@ const UnifiedItemCardImpl: React.FC<UnifiedItemCardProps> = ({
                 <div className="details-left">
                   <div className="cd-display">
                     <div className="cd-value">{(item.cooldown > 100 ? item.cooldown / 1000 : item.cooldown).toFixed(1)}</div>
-                    <div className="cd-unit">秒</div>
+                    <div className="cd-unit">sec</div>
                   </div>
                 </div>
               );
@@ -219,7 +219,7 @@ const UnifiedItemCardImpl: React.FC<UnifiedItemCardProps> = ({
                 ))
               )}
               {!hasAnyDetail && (
-                <div className="skill-item skill-empty">暂无详情，稍后可重试。</div>
+                <div className="skill-item skill-empty">No details yet. Try again later.</div>
               )}
             </div>
           </div>
@@ -228,9 +228,9 @@ const UnifiedItemCardImpl: React.FC<UnifiedItemCardProps> = ({
             <div className="quests-section">
               {(Array.isArray((item as any).quests) ? (item as any).quests : [(item as any).quests]).map((quest: any, index: number) => (
                 <div key={index} className="quest-item">
-                  <div className="quest-header">📜 任务 {index + 1}:</div>
-                  {quest.cn_target && <div className="quest-target">→ {renderTextLocal(quest.cn_target || quest.en_target)}</div>}
-                  {quest.cn_reward && <div className="quest-reward">✨ {renderTextLocal(quest.cn_reward || quest.en_reward)}</div>}
+                  <div className="quest-header">📜 Quest {index + 1}:</div>
+                  {(quest.en_target || quest.cn_target) && <div className="quest-target">→ {renderTextLocal(quest.en_target || quest.cn_target)}</div>}
+                  {(quest.en_reward || quest.cn_reward) && <div className="quest-reward">✨ {renderTextLocal(quest.en_reward || quest.cn_reward)}</div>}
                 </div>
               ))}
             </div>

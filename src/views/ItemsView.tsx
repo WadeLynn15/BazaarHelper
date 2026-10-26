@@ -28,7 +28,7 @@ export const ItemsView: React.FC<ItemsViewProps> = ({
   return (
     <div className="items-container">
       <div className="section">
-        <h3 className="section-title">手牌 ({sortedHand.length})</h3>
+        <h3 className="section-title">Board ({sortedHand.length})</h3>
         <div className="items-grid">
           {sortedHand.map((item, idx) => {
             const itemId = item.instance_id || item.uuid;
@@ -44,7 +44,7 @@ export const ItemsView: React.FC<ItemsViewProps> = ({
       </div>
 
       <div className="section">
-        <h3 className="section-title">仓库 ({sortedStash.length})</h3>
+        <h3 className="section-title">Stash ({sortedStash.length})</h3>
         <div className="items-grid">
           {sortedStash.map((item, idx) => {
             const itemId = item.instance_id || item.uuid;

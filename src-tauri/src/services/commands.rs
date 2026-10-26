@@ -17,7 +17,7 @@ pub fn clear_yolo_cache() -> Result<String, String> {
     if crate::services::yolo_state::clear_cache() {
         crate::log_to_file("YOLO cache cleared to free memory");
     }
-    Ok("YOLO缓存已清理".to_string())
+    Ok("YOLO cache cleared".to_string())
 }
 
 #[tauri::command]
@@ -201,7 +201,7 @@ pub async fn trigger_yolo_scan(
                 log::warn!("[YOLO] GPU inference failed, retrying with CPU. cause={}", e);
                 crate::log_to_file(&format!("[YOLO] GPU fallback to CPU: {}", e));
                 crate::monster_recognition::run_yolo_inference(&img, &model_path, false)
-                    .map_err(|cpu_err| format!("GPU推理失败且CPU回退失败: {}; {}", e, cpu_err))?
+                    .map_err(|cpu_err| format!("GPU inference failed and the CPU fallback also failed: {}; {}", e, cpu_err))?
             }
             Err(e) => return Err(e),
         };

@@ -42,7 +42,7 @@ export function ProfilePanel({ visible, inline = false, onClose, showToast }: Pr
       setIdentity(data);
     } catch (error) {
       const message = typeof error === 'string' ? error : String(error);
-      showToast(`读取账号信息失败：${message}`, 'error');
+      showToast(`Could not read account info: ${message}`, 'error');
     } finally {
       setLoading(false);
     }
@@ -63,10 +63,10 @@ export function ProfilePanel({ visible, inline = false, onClose, showToast }: Pr
     try {
       const result = await invoke<GeneratedLoginKey>('generate_game_login_key');
       setLoginKey(result.key);
-      showToast('密钥已生成', 'success');
+      showToast('Key generated', 'success');
     } catch (error) {
       const message = typeof error === 'string' ? error : String(error);
-      showToast(`生成密钥失败：${message}`, 'error');
+      showToast(`Could not generate key: ${message}`, 'error');
     } finally {
       setKeyLoading(false);
     }
@@ -74,14 +74,14 @@ export function ProfilePanel({ visible, inline = false, onClose, showToast }: Pr
 
   const handleCopy = useCallback(async (value: string, label: string) => {
     if (!value) {
-      showToast(`${label}为空`, 'warning');
+      showToast(`${label} is empty`, 'warning');
       return;
     }
     try {
       await navigator.clipboard.writeText(value);
-      showToast(`${label}已复制`, 'success');
+      showToast(`${label} copied`, 'success');
     } catch {
-      showToast(`复制${label}失败`, 'error');
+      showToast(`Could not copy ${label}`, 'error');
     }
   }, [showToast]);
 
@@ -89,10 +89,10 @@ export function ProfilePanel({ visible, inline = false, onClose, showToast }: Pr
     setOpenCommunityLoading(true);
     try {
       await openCommunityWithAutoLogin();
-      showToast('已打开网页并自动登录', 'success');
+      showToast('Opened the website and signed you in', 'success');
     } catch (error) {
       const message = typeof error === 'string' ? error : String(error);
-      showToast(`打开网页失败：${message}`, 'error');
+      showToast(`Could not open the website: ${message}`, 'error');
     } finally {
       setOpenCommunityLoading(false);
     }
@@ -103,20 +103,20 @@ export function ProfilePanel({ visible, inline = false, onClose, showToast }: Pr
   return (
     <div className={`settings-panel ${inline ? 'inline' : ''}`} onClick={(e) => e.stopPropagation()}>
       <div className="settings-header">
-        <h3>个人页面</h3>
+        <h3>Profile</h3>
         {!inline ? <button className="close-panel-btn" onClick={onClose}>×</button> : null}
       </div>
 
       <div className="settings-content" data-no-drag>
         <div className="setting-item">
           <div className="profile-row-header">
-            <label>游戏账户名 Username</label>
+            <label>Game username</label>
             <button className="bulk-btn" style={{ padding: '4px 10px' }} onClick={() => void loadIdentity()}>
-              {loading ? '读取中...' : '刷新'}
+              {loading ? 'Loading...' : 'Refresh'}
             </button>
           </div>
           <div className="profile-identity-card">
-            <div className="profile-identity-title">当前账户</div>
+            <div className="profile-identity-title">Current account</div>
             <div className="profile-identity-name">{identity?.username || '--'}</div>
             <div className="profile-identity-meta">
               AccountId: {accountText}
@@ -132,7 +132,7 @@ export function ProfilePanel({ visible, inline = false, onClose, showToast }: Pr
                 className="bulk-btn"
                 style={{ padding: '4px 10px' }}
                 onClick={() => setShowAccountId((prev) => !prev)}
-                title={showAccountId ? '隐藏' : '显示'}
+                title={showAccountId ? 'Hide' : 'Show'}
               >
                 {showAccountId ? '🙈' : '👁️'}
               </button>
@@ -141,42 +141,42 @@ export function ProfilePanel({ visible, inline = false, onClose, showToast }: Pr
                 style={{ padding: '4px 10px' }}
                 onClick={() => void handleCopy(identity?.account_id || '', 'AccountId')}
               >
-                复制
+                Copy
               </button>
             </div>
           </div>
           <div className="profile-account-value">
             {accountText}
           </div>
-          <div className="setting-tip">默认掩码显示，点击眼睛图标可查看真实值。</div>
+          <div className="setting-tip">Hidden by default. Click the eye icon to show the full ID.</div>
         </div>
 
         <div className="setting-item">
           <div className="profile-row-header">
-            <label>登录密钥</label>
+            <label>Login key</label>
             <div className="profile-btn-row">
               <button className="bulk-btn" style={{ padding: '4px 10px' }} onClick={() => void handleGenerateKey()}>
-                {keyLoading ? '生成中...' : '生成密钥'}
+                {keyLoading ? 'Generating...' : 'Generate key'}
               </button>
-              <button className="bulk-btn" style={{ padding: '4px 10px' }} onClick={() => void handleCopy(loginKey, '密钥')}>
-                复制
+              <button className="bulk-btn" style={{ padding: '4px 10px' }} onClick={() => void handleCopy(loginKey, 'Key')}>
+                Copy
               </button>
             </div>
           </div>
           <div className="profile-login-key-box">
-            {loginKey || '点击“生成密钥”后在这里显示'}
+            {loginKey || 'Your key appears here after you click "Generate key"'}
           </div>
-          <div className="setting-tip">该密钥为插件侧可逆编码，不是强安全认证凭证；建议服务端再叠加时效和签名校验。</div>
+          <div className="setting-tip">Note from the developer: this key is a reversible encoding made by the app, not a strong security credential. Keep it private.</div>
         </div>
 
         <div className="setting-item">
           <div className="profile-row-header">
-            <label>社区联动</label>
+            <label>Community site</label>
             <button className="bulk-btn" style={{ padding: '4px 12px' }} onClick={() => void handleOpenCommunity()}>
-              {openCommunityLoading ? '打开中...' : '打开社区并登录'}
+              {openCommunityLoading ? 'Opening...' : 'Open site and sign in'}
             </button>
           </div>
-          <div className="setting-tip">会使用当前游戏账号生成一次性登录链接并打开 duang.work。</div>
+          <div className="setting-tip">Creates a one-time sign-in link from your game account and opens duang.work.</div>
         </div>
       </div>
     </div>

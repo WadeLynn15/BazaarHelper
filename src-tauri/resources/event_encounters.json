@@ -324,7 +324,7 @@
         "name_zh": "强化",
         "url": "https://bazaardb.gg/card/245yt9s8oct0ehn9mmcyuiwbx/Reinforce",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/aee71e72ad420b00ab5838faaae0773524025ba8@256.webp?v=2",
-        "description": "YourShielditems gain+30Shield.",
+        "description": "YourShielditems gain+30 Shield.",
         "description_zh": "护盾物品获得+30护盾。",
         "icon_path": "EncEvent_Icons/aee71e72ad420b00ab5838faaae0773524025ba8@256.webp"
       },
@@ -350,7 +350,8 @@
     "name": "德弗莱克",
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_Dflek_Char.webp"
-    }
+    },
+    "name_en": "D'flek"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -584,7 +585,7 @@
         "name_zh": "高级通行证",
         "url": "https://bazaardb.gg/card/9d88r7yadri7j8oprxa5ieord/Premium-Pass",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/2d22ef1e78cb1df8c15f62779ee76cb9ff01d4a7@256.webp?v=2",
-        "description": "Get2Economic items or skills",
+        "description": "Get 2 Economic items or skills",
         "description_zh": "获得2经济物品或技能",
         "icon_path": "EncEvent_Icons/2d22ef1e78cb1df8c15f62779ee76cb9ff01d4a7@256.webp"
       },
@@ -593,7 +594,7 @@
         "name_zh": "收集收益",
         "url": "https://bazaardb.gg/card/6x0820fhy8h7fdhyqw71v7rnl/Collect-Earnings",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/f1244602cc24b3a9ff98601ee725d1350afe2066@256.webp?v=2",
-        "description": "(if you have Vending Machine)\nGain10Gold.",
+        "description": "(if you have Vending Machine)\nGain 10 Gold.",
         "description_zh": "（如果您有自动售货机）\n获得 10 金币。",
         "icon_path": "EncEvent_Icons/f1244602cc24b3a9ff98601ee725d1350afe2066@256.webp"
       }
@@ -601,7 +602,8 @@
     "name": "经济研讨会",
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_Seminar_Char.webp"
-    }
+    },
+    "name_en": "Seminar"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -838,7 +840,7 @@
         "name_zh": "净化",
         "url": "https://bazaardb.gg/card/e1oj6qhctegbd5tcsvlhwt5d1/Purify",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/4c06ba9d665cd1f78b983635b24dd98b9cb3d66a@256.webp?v=2",
-        "description": "YourHealitems gain+30Heal.\nYourRegenitems gain+3Regen.",
+        "description": "YourHealitems gain+30 Heal.\nYourRegenitems gain+3 Regen.",
         "description_zh": "治疗物品获得+30治疗。\n再生物品获得+3再生。",
         "icon_path": "EncEvent_Icons/4c06ba9d665cd1f78b983635b24dd98b9cb3d66a@256.webp"
       },
@@ -865,7 +867,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_Aldric_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_Aldric_Bg.webp"
-    }
+    },
+    "name_en": "Aldric"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -1801,7 +1804,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_TheCult_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_TheCult_Bg.webp"
-    }
+    },
+    "name_en": "The Cult"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -3468,7 +3472,7 @@
         "name_zh": "糖果信件",
         "url": "https://bazaardb.gg/card/96ymrav737zxuuueofg721x7e/Candy-Mail",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/item/1e57b01458c7fc4d3475a3a28ed712056fef3625@256.webp?v=2",
-        "description": "每场战斗结束时，如果此物品没有弹药，就将其永久摧毁。",
+        "description": "At the end of each fight, if this has no Ammo, destroy it permanently.",
         "description_zh": "每场战斗结束时，如果此物品没有弹药，就会将其永久摧毁。",
         "icon_path": "EncEvent_Icons/1e57b01458c7fc4d3475a3a28ed712056fef3625@256.webp"
       },
@@ -3477,7 +3481,7 @@
         "name_zh": "美食家巧克力",
         "url": "https://bazaardb.gg/card/bz3kr0tn9944e9qhogk1qkln7/Epicurean-Chocolate",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/item/34c187c99d208e945c035e555cd258bb3e735e55@256.webp?v=2",
-        "description": "相邻物品的暴击率永久提升1%»2%»3%»4%此物品的最大弹药量永久减少1。Ammo:10",
+        "description": "Adjacent items permanently gain 1%»2%»3%»4% Crit Chance. This permanently loses 1 Max Ammo. Ammo: 10",
         "description_zh": "相邻物品的暴击率永久提升1%»2%»3%»4%该物品的最大奖励量永久减少1。弹药:10",
         "icon_path": "EncEvent_Icons/34c187c99d208e945c035e555cd258bb3e735e55@256.webp"
       },
@@ -3486,7 +3490,7 @@
         "name_zh": "超级糖浆",
         "url": "https://bazaardb.gg/card/82onpq1v47ckzqs1yqv2j7c89/Super-Syrup",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/item/2ac38a56e2b9af92f5f32f5b84925a13c36457f4@256.webp?v=2",
-        "description": "每场战斗结束时，如果此物品没有弹药，就将其永久摧毁。",
+        "description": "At the end of each fight, if this has no Ammo, destroy it permanently.",
         "description_zh": "每场战斗结束时，如果此物品没有弹药，就会将其永久摧毁。",
         "icon_path": "EncEvent_Icons/2ac38a56e2b9af92f5f32f5b84925a13c36457f4@256.webp"
       },
@@ -3495,7 +3499,7 @@
         "name_zh": "与糖果蛇丽基特一起玩弹珠",
         "url": "https://bazaardb.gg/card/8ubawmc1r4umqpwizpboip1gs/Play-Marbles-with-Likit",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/26fa93d9a94968f17e4fe9b7ef01bf5a98465d27@256.webp?v=2",
-        "description": "(if you have Marbles)\nGain2XP.",
+        "description": "(if you have Marbles)\nGain 2 XP.",
         "description_zh": "（如果你有弹珠）\n获得 2XP。",
         "icon_path": "EncEvent_Icons/26fa93d9a94968f17e4fe9b7ef01bf5a98465d27@256.webp"
       },
@@ -3504,7 +3508,7 @@
         "name_zh": "吃货丽基特",
         "url": "https://bazaardb.gg/card/1miga1u5y31wycrwfqazbdxri/Let-Likit-Lick-It",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/fa035946411ecb5412bb78fd3c7b0dc4ecd9910b@256.webp?v=2",
-        "description": "(if you have a Giant Lollipop) Progress the quests on your Giant Lollipop by20.",
+        "description": "(if you have a Giant Lollipop) Progress the quests on your Giant Lollipop by 20.",
         "description_zh": "（如果你有巨型棒棒糖）巨型棒棒糖任务推进20。",
         "icon_path": "EncEvent_Icons/fa035946411ecb5412bb78fd3c7b0dc4ecd9910b@256.webp"
       }
@@ -3513,7 +3517,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_Likit_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_Likit_Bg.webp"
-    }
+    },
+    "name_en": "Likit"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -3974,7 +3979,8 @@
     "Auras": {},
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_Cymon_Char.webp"
-    }
+    },
+    "name_en": "Cymon"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -4149,7 +4155,7 @@
         "name_zh": "灵光密酿",
         "url": "https://bazaardb.gg/card/6szssyaopvuv2fdnw409di1gg/Inspired-Brew",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/d55cb24da01341d8f7c26e3974b3a455e65d120f@256.webp?v=2",
-        "description": "Get3EnchantedPotions.",
+        "description": "Get 3 EnchantedPotions.",
         "description_zh": "获取 3 个附魔药水。",
         "icon_path": "EncEvent_Icons/d55cb24da01341d8f7c26e3974b3a455e65d120f@256.webp"
       },
@@ -4158,7 +4164,7 @@
         "name_zh": "内省",
         "url": "https://bazaardb.gg/card/bhczv1u02v0tabs4iaondikse/Introspection",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/afa39dddba33d1fa93a5a49f395fac9e55cfa2b4@256.webp?v=2",
-        "description": "Gain2XP and 2 Catalyst",
+        "description": "Gain 2 XP and 2 Catalyst",
         "description_zh": "获得2xp和2个催化剂",
         "icon_path": "EncEvent_Icons/afa39dddba33d1fa93a5a49f395fac9e55cfa2b4@256.webp"
       }
@@ -4166,7 +4172,8 @@
     "name": "倒影池",
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_ReflectingPool_Char.webp"
-    }
+    },
+    "name_en": "Reflecting Pool"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -5295,7 +5302,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_ThievesGuild_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_ThievesGuild_Bg.webp"
-    }
+    },
+    "name_en": "Thieves Guild"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -6126,7 +6134,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_C4_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_C4_Bg.webp"
-    }
+    },
+    "name_en": "C4"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -6246,7 +6255,7 @@
         "name_zh": "磨砺武器",
         "url": "https://bazaardb.gg/card/8z9vu6gxm6vo4og3vvg3h5tvg/Sharpen-Weapon",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/8c8fcba6b7e089124fa89f1c244a5675acdeed21@256.webp?v=2",
-        "description": "YourWeaponsgain10Damage.",
+        "description": "YourWeaponsgain 10 Damage.",
         "description_zh": "武器伤害 +10 。",
         "icon_path": "EncEvent_Icons/8c8fcba6b7e089124fa89f1c244a5675acdeed21@256.webp"
       },
@@ -6273,7 +6282,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_Form_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_Form_Bg.webp"
-    }
+    },
+    "name_en": "Form"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -7090,7 +7100,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_AdvancedTraining_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_AdvancedTraining_Bg.webp"
-    }
+    },
+    "name_en": "Advanced Training"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -7728,7 +7739,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_Mandala_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_Mandala_Bg.webp"
-    }
+    },
+    "name_en": "Mandala"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -8577,7 +8589,7 @@
         "name_zh": "焕活饮料",
         "url": "https://bazaardb.gg/card/96cyck0g08c28lrb2g8m3bzda/Rejuvenating-Blend",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/4c06ba9d665cd1f78b983635b24dd98b9cb3d66a@256.webp?v=2",
-        "description": "YourHealitems gain50Healfor the rest of the day.",
+        "description": "YourHealitems gain 50 Healfor the rest of the day.",
         "description_zh": "治疗物品的治疗提高+50，持续至本日结束。",
         "icon_path": "EncEvent_Icons/4c06ba9d665cd1f78b983635b24dd98b9cb3d66a@256.webp"
       },
@@ -8586,7 +8598,7 @@
         "name_zh": "烈酿",
         "url": "https://bazaardb.gg/card/dbpuqdajgktk7ai5f882jscc3/Strong-Brew",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/fb710df7e103b0339dca3664d09cae523da76372@256.webp?v=2",
-        "description": "YourWeaponsgain25Damagefor the rest of the day.",
+        "description": "YourWeaponsgain 25 Damagefor the rest of the day.",
         "description_zh": "武器伤害提高25，持续至本日结束。",
         "icon_path": "EncEvent_Icons/fb710df7e103b0339dca3664d09cae523da76372@256.webp"
       },
@@ -8613,7 +8625,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_JulesCafe_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_JulesCafe_Bg.webp"
-    }
+    },
+    "name_en": "Jules' Cafe"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -9990,7 +10003,7 @@
         "name_zh": "午夜餐点",
         "url": "https://bazaardb.gg/card/86lep0b5hp4wh3xy1guvnoeyw/Have-a-Late-Night-Treat",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/encounter/245f04c9e421c45a7638d4ebc6f9ed0ad55afee7@256.webp?v=2",
-        "description": "Get2Diamond-tierFooditems",
+        "description": "Get 2 Diamond-tierFooditems",
         "description_zh": "获得2件钻石级食品",
         "icon_path": "EncEvent_Icons/245f04c9e421c45a7638d4ebc6f9ed0ad55afee7@256.webp"
       },
@@ -9999,7 +10012,7 @@
         "name_zh": "讲个睡前故事",
         "url": "https://bazaardb.gg/card/khzgl0shr1p1mw5iy4h3ucvp/Tell-a-Bed-time-Story",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/skill/938ddbf63b1c31c875ef03c1a46501822851b880@256.webp?v=2",
-        "description": "Gain2XP and +10%Max Health.",
+        "description": "Gain 2 XP and +10%Max Health.",
         "description_zh": "获得 2XP 和 +10% 最大生命值。",
         "icon_path": "EncEvent_Icons/938ddbf63b1c31c875ef03c1a46501822851b880@256.webp"
       },
@@ -10017,7 +10030,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_LaurelsNightTerrors_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_LaurelsNightTerrors_Bg.webp"
-    }
+    },
+    "name_en": "Laurel's Night Terrors"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -10094,7 +10108,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_ChefBrolin_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_ChefBrolin_Bg.webp"
-    }
+    },
+    "name_en": "Chef Brolin"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -11423,7 +11438,7 @@
         "name_zh": "阿莱帕·坦提乌斯",
         "url": "https://bazaardb.gg/card/azfcpn2rs9gxthrr7cddxnyve/Aleppa-Tantius",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/encounter/a2d4c9037be058fd250302c9276a8c79678ff755@256.webp?v=2",
-        "description": "Get10Gold and aVehicle.",
+        "description": "Get 10 Gold and aVehicle.",
         "description_zh": "获得 10 金币和一辆载具。",
         "icon_path": "EncEvent_Icons/a2d4c9037be058fd250302c9276a8c79678ff755@256.webp"
       }
@@ -11432,7 +11447,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_FamilyReunion_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_FamilyReunion_Bg.webp"
-    }
+    },
+    "name_en": "Family Reunion"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -11491,7 +11507,7 @@
         "name_zh": "爱抚",
         "url": "https://bazaardb.gg/card/62jkbxrxjtkp2cwjmb57d1ynb/Pet-It",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/b88eb62b25f76bac94e5a6bd94366445cbb5ed26@256.webp?v=2",
-        "description": "Gain25Max Health.",
+        "description": "Gain 25 Max Health.",
         "description_zh": "最大生命值提高25。",
         "icon_path": "EncEvent_Icons/b88eb62b25f76bac94e5a6bd94366445cbb5ed26@256.webp"
       },
@@ -11535,7 +11551,8 @@
     "name": "茸茸小怪兽",
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_TinyFurryMonster_Char.webp"
-    }
+    },
+    "name_en": "Tiny Furry Monster"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -12859,7 +12876,7 @@
         "name_zh": "武器匠学徒",
         "url": "https://bazaardb.gg/card/7h77c2glvigokmofiiey0wizx/Apprentice-Weaponsmith",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/9499f2042ebd596690b416c1adffc91134abd305@256.webp?v=2",
-        "description": "YourWeaponsgain+5Damage.",
+        "description": "YourWeaponsgain+5 Damage.",
         "description_zh": "武器伤害提高+5 。",
         "icon_path": "EncEvent_Icons/9499f2042ebd596690b416c1adffc91134abd305@256.webp"
       },
@@ -12868,7 +12885,7 @@
         "name_zh": "烈焰工匠学徒",
         "url": "https://bazaardb.gg/card/3u3iea4oue48ch5trzl2g094n/Apprentice-Flamewright",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/dc425d9c9ecba3ebeaaa834d8b3e230c0301518d@256.webp?v=2",
-        "description": "YourBurnitems gain+1Burn.",
+        "description": "YourBurnitems gain+1 Burn.",
         "description_zh": "灼烧物品的灼烧提高+1。",
         "icon_path": "EncEvent_Icons/dc425d9c9ecba3ebeaaa834d8b3e230c0301518d@256.webp"
       },
@@ -12877,7 +12894,7 @@
         "name_zh": "咒握学徒",
         "url": "https://bazaardb.gg/card/3or1obk8iz836nu93uj2p579g/Apprentice-Banehand",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/c4df20f8fb67032f5f24461efc1611fa1bdc81e5@256.webp?v=2",
-        "description": "YourPoisonitems gain+1Poison.",
+        "description": "YourPoisonitems gain+1 Poison.",
         "description_zh": "剧毒物品+1剧毒。",
         "icon_path": "EncEvent_Icons/c4df20f8fb67032f5f24461efc1611fa1bdc81e5@256.webp"
       },
@@ -12895,7 +12912,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_ArtisanDunes_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_ArtisanDunes_Bg.webp"
-    }
+    },
+    "name_en": "Artisan Dunes"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -15156,7 +15174,8 @@
     "name": "杜利的小屋",
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_DooleysCrib_Char.webp"
-    }
+    },
+    "name_en": "Dooley's Crib"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -16069,7 +16088,7 @@
         "name_zh": "回火",
         "url": "https://bazaardb.gg/card/53e2lscvcgw3fb7ul8orio7ko/Temper",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/90eec9737206b8bdb023510ab68db7da9d81c9cc@256.webp?v=2",
-        "description": "YourBurnitems gain+3Burn.",
+        "description": "YourBurnitems gain+3 Burn.",
         "description_zh": "灼烧物品+3灼烧。",
         "icon_path": "EncEvent_Icons/90eec9737206b8bdb023510ab68db7da9d81c9cc@256.webp"
       },
@@ -16095,7 +16114,8 @@
     "name": "烈焰料理",
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_Flambe_Char.webp"
-    }
+    },
+    "name_en": "Flambe"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -16781,7 +16801,7 @@
         "name_zh": "导师指引",
         "url": "https://bazaardb.gg/card/474ithd3chqgkw7p8xt2j60cq/Mentor's-Guidance",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/45f68127386ca874bbecb1ecd7161a9d4595a918@256.webp?v=2",
-        "description": "Gain2XP and +10%Max Health.",
+        "description": "Gain 2 XP and +10%Max Health.",
         "description_zh": "获得 2XP 和 +10% 最大生命值。",
         "icon_path": "EncEvent_Icons/45f68127386ca874bbecb1ecd7161a9d4595a918@256.webp"
       },
@@ -16817,7 +16837,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_InvestmentPitch_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_InvestmentPitch_Bg.webp"
-    }
+    },
+    "name_en": "Investment Pitch"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -17634,7 +17655,7 @@
         "name_zh": "基础巧克力棒",
         "url": "https://bazaardb.gg/card/c0zu8gihykcbtrz8w88y941vq/Basic-Chocolate-Bars",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/9e87fdd32a907ac84295b085e542ccb9a6ed5950@256.webp?v=2",
-        "description": "Get5Bronze Chocolate Bars.",
+        "description": "Get 5 Bronze Chocolate Bars.",
         "description_zh": "获得 5 块青铜级巧克力棒。",
         "icon_path": "EncEvent_Icons/9e87fdd32a907ac84295b085e542ccb9a6ed5950@256.webp"
       },
@@ -17643,7 +17664,7 @@
         "name_zh": "豪华巧克力棒",
         "url": "https://bazaardb.gg/card/cc24zcuf78x3djiti5ugt7rrs/Deluxe-Chocolate-Bars",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/9e87fdd32a907ac84295b085e542ccb9a6ed5950@256.webp?v=2",
-        "description": "Get5Silver-tier Chocolate Bars.",
+        "description": "Get 5 Silver-tier Chocolate Bars.",
         "description_zh": "获得 5 块白银级巧克力棒。",
         "icon_path": "EncEvent_Icons/9e87fdd32a907ac84295b085e542ccb9a6ed5950@256.webp"
       },
@@ -17652,7 +17673,7 @@
         "name_zh": "高级巧克力棒",
         "url": "https://bazaardb.gg/card/41zkwmu8kyv0cpw8gow0z3nju/Premium-Chocolate-Bars",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/9e87fdd32a907ac84295b085e542ccb9a6ed5950@256.webp?v=2",
-        "description": "Get5Gold-tier Chocolate Bars.",
+        "description": "Get 5 Gold-tier Chocolate Bars.",
         "description_zh": "获得 5 块黄金级巧克力棒。",
         "icon_path": "EncEvent_Icons/9e87fdd32a907ac84295b085e542ccb9a6ed5950@256.webp"
       }
@@ -17661,7 +17682,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_EatingContest_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_EatingContest_Bg.webp"
-    }
+    },
+    "name_en": "Eating Contest"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -17720,7 +17742,7 @@
         "name_zh": "金币袋",
         "url": "https://bazaardb.gg/card/xkbpk09zlssso0toiavkw2vb/Bag-of-Gold",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/2d22ef1e78cb1df8c15f62779ee76cb9ff01d4a7@256.webp?v=2",
-        "description": "Gain20Gold.",
+        "description": "Gain 20 Gold.",
         "description_zh": "获得20金币。",
         "icon_path": "EncEvent_Icons/2d22ef1e78cb1df8c15f62779ee76cb9ff01d4a7@256.webp"
       },
@@ -17774,7 +17796,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_Haddy_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_Haddy_Bg.webp"
-    }
+    },
+    "name_en": "Haddy"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -17842,7 +17865,7 @@
         "name_zh": "",
         "url": "https://bazaardb.gg/card/a76wekdxhny7c5d3fgfdpflkc/Escape-to-the-Sea",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/0c54ef171dc5cbeec22d1446ff723f0288e9fb91@256.webp?v=2",
-        "description": "(if you have Flagship or Submarine) Gain5XP.",
+        "description": "(if you have Flagship or Submarine) Gain 5 XP.",
         "description_zh": "（如果您有旗舰或潜艇）Gain5XP。",
         "icon_path": "EncEvent_Icons/0c54ef171dc5cbeec22d1446ff723f0288e9fb91@256.webp"
       }
@@ -17851,7 +17874,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_BountyHunters_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_BountyHunters_Bg.webp"
-    }
+    },
+    "name_en": "Bounty Hunters"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -17919,7 +17943,7 @@
         "name_zh": "获得5颗口香糖球",
         "url": "https://bazaardb.gg/card/4ibcbcvhcw0vqr5zxp7lna7de/Get-5-Gumballs",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/9e87fdd32a907ac84295b085e542ccb9a6ed5950@256.webp?v=2",
-        "description": "Get5Gumballs.",
+        "description": "Get 5 Gumballs.",
         "description_zh": "获得5颗口香糖。",
         "icon_path": "EncEvent_Icons/9e87fdd32a907ac84295b085e542ccb9a6ed5950@256.webp"
       }
@@ -17928,7 +17952,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_GumballMachine_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_GumballMachine_Bg.webp"
-    }
+    },
+    "name_en": "Gumball Machine"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -18303,7 +18328,7 @@
         "name_zh": "选择学识",
         "url": "https://bazaardb.gg/card/1uzunvszzbty3aw35r2rlwq7t/Choose-Knowledge",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/afa39dddba33d1fa93a5a49f395fac9e55cfa2b4@256.webp?v=2",
-        "description": "Pick a Chest containing up to3XP",
+        "description": "Pick a Chest containing up to 3 XP",
         "description_zh": "选择一个最多包含 3XP 的宝箱",
         "icon_path": "EncEvent_Icons/afa39dddba33d1fa93a5a49f395fac9e55cfa2b4@256.webp"
       },
@@ -18312,7 +18337,7 @@
         "name_zh": "选择财富",
         "url": "https://bazaardb.gg/card/d6zljxf0sp93gj8vfzggupu1i/Choose-Wealth",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/2d22ef1e78cb1df8c15f62779ee76cb9ff01d4a7@256.webp?v=2",
-        "description": "Pick a Chest containing up to30Gold",
+        "description": "Pick a Chest containing up to 30 Gold",
         "description_zh": "选择一个最多含有 30 金币的宝箱",
         "icon_path": "EncEvent_Icons/2d22ef1e78cb1df8c15f62779ee76cb9ff01d4a7@256.webp"
       },
@@ -18339,7 +18364,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_ShroudedFigure_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_ShroudedFigure_Bg.webp"
-    }
+    },
+    "name_en": "Shrouded Figure"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -21303,7 +21329,7 @@
         "name_zh": "提供 BazNet 访问权限",
         "url": "https://bazaardb.gg/card/3bdwl657lpw12yjy5hhjzt3zr/Provide-BazNet-Access",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/81b1971030a8b8d64d80e409976f84ace4f0f597@256.webp?v=2",
-        "description": "(if you have a Sat-Comm)\nGain2Income and2XP.",
+        "description": "(if you have a Sat-Comm)\nGain 2 Income and 2 XP.",
         "description_zh": "（如果您有卫星通讯）\n获得 2 收入和 2 XP。",
         "icon_path": "EncEvent_Icons/81b1971030a8b8d64d80e409976f84ace4f0f597@256.webp"
       }
@@ -21312,7 +21338,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_StreetFestival_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_StreetFestival_Bg.webp"
-    }
+    },
+    "name_en": "Street Festival"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -22143,7 +22170,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_Wink_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_Wink_Bg.webp"
-    }
+    },
+    "name_en": "Wink"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -23848,7 +23876,7 @@
         "name_zh": "全新涂层",
         "url": "https://bazaardb.gg/card/70600k89rualfpeus6pfjpner/New-Coating",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/9f4d37ab3b8cd356e415601aaef55cb151f68bd1@256.webp?v=2",
-        "description": "YourPoisonitems gain+3Poison.",
+        "description": "YourPoisonitems gain+3 Poison.",
         "description_zh": "剧毒物品+3剧毒。",
         "icon_path": "EncEvent_Icons/9f4d37ab3b8cd356e415601aaef55cb151f68bd1@256.webp"
       },
@@ -23874,7 +23902,8 @@
     "name": "波图",
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_Botul_Char.webp"
-    }
+    },
+    "name_en": "Botul"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -24519,7 +24548,7 @@
         "name_zh": "拓展人脉",
         "url": "https://bazaardb.gg/card/espdfd5yiwem33vq4z4dtfsst/Networking",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/86e6518ae0c6815cf9809eee7962008e352e9a4c@256.webp?v=2",
-        "description": "Gain2Income and1XP.",
+        "description": "Gain 2 Income and 1 XP.",
         "description_zh": "获得 2 收入和 1 XP。",
         "icon_path": "EncEvent_Icons/86e6518ae0c6815cf9809eee7962008e352e9a4c@256.webp"
       },
@@ -24546,7 +24575,7 @@
         "name_zh": "自我推销",
         "url": "https://bazaardb.gg/card/58n5bxythbzop51zb835ezgn1/Self-Promotion",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/b59fab22a8c21a8738b9c5434f1ae200c5b64ad2@256.webp?v=2",
-        "description": "(if you have a Business Card)\nGain3XP.",
+        "description": "(if you have a Business Card)\nGain 3 XP.",
         "description_zh": "（如果您有名片）\n获得 3XP。",
         "icon_path": "EncEvent_Icons/b59fab22a8c21a8738b9c5434f1ae200c5b64ad2@256.webp"
       },
@@ -24555,7 +24584,7 @@
         "name_zh": "保安之职",
         "url": "https://bazaardb.gg/card/8a6grbfkf0uf5r43bx0ul65kr/Work-as-Security",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/87ca4a60018eb427c7e804156e095fe96122f7d8@256.webp?v=2",
-        "description": "(if you have SecurityDrone)\nGain10Gold and1XP.",
+        "description": "(if you have SecurityDrone)\nGain 10 Gold and 1 XP.",
         "description_zh": "（如果您有 安保无人机）\n获得 10 金币和 1 XP。",
         "icon_path": "EncEvent_Icons/87ca4a60018eb427c7e804156e095fe96122f7d8@256.webp"
       }
@@ -24564,7 +24593,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_BazaarCON_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_BazaarCON_Bg.webp"
-    }
+    },
+    "name_en": "BazaarCON"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -24779,7 +24809,7 @@
         "name_zh": "守护者肉汁盘",
         "url": "https://bazaardb.gg/card/3t0f68hzpwhzbssrimdihc4py/Guardian's-Gravy-Plate",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/aee71e72ad420b00ab5838faaae0773524025ba8@256.webp?v=2",
-        "description": "You gain 5%Max Healthand yourShielditems gain10Shield.",
+        "description": "You gain 5%Max Healthand yourShielditems gain 10 Shield.",
         "description_zh": "最大生命值提高5%，护盾物品的护盾提高 10。",
         "icon_path": "EncEvent_Icons/aee71e72ad420b00ab5838faaae0773524025ba8@256.webp"
       },
@@ -24788,7 +24818,7 @@
         "name_zh": "回复烩饭",
         "url": "https://bazaardb.gg/card/a6iosk7h8ii1s2jgb40eynp66/Restorative-Risotto",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/4c06ba9d665cd1f78b983635b24dd98b9cb3d66a@256.webp?v=2",
-        "description": "You gain 5%Max Healthand yourHealitems gain15Heal.",
+        "description": "You gain 5%Max Healthand yourHealitems gain 15 Heal.",
         "description_zh": "最大生命值提高5%，治疗物品的Heal提高 10 。",
         "icon_path": "EncEvent_Icons/4c06ba9d665cd1f78b983635b24dd98b9cb3d66a@256.webp"
       },
@@ -24797,7 +24827,7 @@
         "name_zh": "活力炖汤",
         "url": "https://bazaardb.gg/card/dmdsvwh2n1zyqhkf54eygre91/Vitality-Stew",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/c4df20f8fb67032f5f24461efc1611fa1bdc81e5@256.webp?v=2",
-        "description": "You gain 5%Max Healthand5Regen.",
+        "description": "You gain 5%Max Healthand 5 Regen.",
         "description_zh": "最大生命值提高5%，生命再生量提高5。",
         "icon_path": "EncEvent_Icons/c4df20f8fb67032f5f24461efc1611fa1bdc81e5@256.webp"
       },
@@ -24806,7 +24836,7 @@
         "name_zh": "大口对决",
         "url": "https://bazaardb.gg/card/67gc316wmmh88tcvfwvh27ejq/Compare-Big-Bites",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/ce66fba0c3c4830397db9ef768bebb01a7593123@256.webp?v=2",
-        "description": "(if you have Darkwater Angler)\nYou gain 5%Max Healthand gain1XP.",
+        "description": "(if you have Darkwater Angler)\nYou gain 5%Max Healthand gain 1 XP.",
         "description_zh": "（如果你有幽渊鮟鱇）\n获得 5% 最大生命值并获得 1 XP。",
         "icon_path": "EncEvent_Icons/ce66fba0c3c4830397db9ef768bebb01a7593123@256.webp"
       },
@@ -24815,7 +24845,7 @@
         "name_zh": "掷飞出局",
         "url": "https://bazaardb.gg/card/eokawk0r3nhcunhkebsl135w8/Get-Thrown-Out",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/5399249f84f63459088d412a1d4c835f9f4d6f6c@256.webp?v=2",
-        "description": "(if you have a Riceballer)\nGain2Cinders and1XP.",
+        "description": "(if you have a Riceballer)\nGain 2 Cinders and 1 XP.",
         "description_zh": "（如果你有饭团机）\n获得 2 余烬 和 1 XP。",
         "icon_path": "EncEvent_Icons/5399249f84f63459088d412a1d4c835f9f4d6f6c@256.webp"
       },
@@ -24824,7 +24854,7 @@
         "name_zh": "新鲜食材",
         "url": "https://bazaardb.gg/card/3ujqwhb56sbyltynd2sh12s26/Farm-Fresh-Ingredients",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/5361b48a9ad9d02b97d29a31c71b02cdba76f5d9@256.webp?v=2",
-        "description": "(if you have Farmer's Market)\nYou gain 5%Max Healthand gain10Gold.",
+        "description": "(if you have Farmer's Market)\nYou gain 5%Max Healthand gain 10 Gold.",
         "description_zh": "（如果你有农贸市场）\n获得 5% 最大生命值并获得 10 金币。",
         "icon_path": "EncEvent_Icons/5361b48a9ad9d02b97d29a31c71b02cdba76f5d9@256.webp"
       }
@@ -24833,7 +24863,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_FinnsBigBite_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_FinnsBigBite_Bg.webp"
-    }
+    },
+    "name_en": "Finn's Big Bite"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -26565,7 +26596,7 @@
         "name_zh": "扩容弹匣",
         "url": "https://bazaardb.gg/card/8q43ocgr0ol8cuamwh85656co/Extended-Magazine",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/dc425d9c9ecba3ebeaaa834d8b3e230c0301518d@256.webp?v=2",
-        "description": "YourAmmoitems gain+1MaxAmmo.",
+        "description": "YourAmmoitems gain+1 MaxAmmo.",
         "description_zh": "弹药物品最大弹药+1。",
         "icon_path": "EncEvent_Icons/dc425d9c9ecba3ebeaaa834d8b3e230c0301518d@256.webp"
       },
@@ -26592,7 +26623,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_MadMaddie_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_MadMaddie_Bg.webp"
-    }
+    },
+    "name_en": "Mad Maddie"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -26768,7 +26800,7 @@
         "name_zh": "出售",
         "url": "https://bazaardb.gg/card/9wjoaijkmyu06xvu4uauo8pma/Sell-It",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/2d22ef1e78cb1df8c15f62779ee76cb9ff01d4a7@256.webp?v=2",
-        "description": "Gain4Gold.",
+        "description": "Gain 4 Gold.",
         "description_zh": "获得4金币。",
         "icon_path": "EncEvent_Icons/2d22ef1e78cb1df8c15f62779ee76cb9ff01d4a7@256.webp"
       },
@@ -26777,7 +26809,7 @@
         "name_zh": "加至你的果篮",
         "url": "https://bazaardb.gg/card/c6sjiabqoyrbp0wxcgbogzwzl/Add-It-to-Your-Bushel",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/56bc09bc21d5f4699392c39964be441982a269cb@256.webp?v=2",
-        "description": "(if you have a Bushel) Your Bushel gains+20Heal.",
+        "description": "(if you have a Bushel) Your Bushel gains+20 Heal.",
         "description_zh": "（如果你有果篮）你的果篮获得+20治疗。",
         "icon_path": "EncEvent_Icons/56bc09bc21d5f4699392c39964be441982a269cb@256.webp"
       },
@@ -26804,7 +26836,7 @@
         "name_zh": "加至你的提篮",
         "url": "https://bazaardb.gg/card/74aeo5sgsp7ciwz22j0rrohwh/Add-It-to-Your-Basket",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/item/f1934a6dd57ba2aee28dae823220f0f9eba0c83a@256.webp?v=2",
-        "description": "(if you have a Basket) Your Basket gains+10Shieldand progresses2on its Quests.",
+        "description": "(if you have a Basket) Your Basket gains+10 Shieldand progresses 2on its Quests.",
         "description_zh": "（如果您有一个提篮）您的提篮获得+10护盾，其任务取得2个进展。",
         "icon_path": "EncEvent_Icons/f1934a6dd57ba2aee28dae823220f0f9eba0c83a@256.webp"
       }
@@ -26812,7 +26844,8 @@
     "name": "奇异蘑菇",
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_AStrangeMushroom_Char.webp"
-    }
+    },
+    "name_en": "A Strange Mushroom"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -27377,7 +27410,8 @@
     "name": "失落宝箱",
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_TheLostCrate_Char.webp"
-    }
+    },
+    "name_en": "The Lost Crate"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -28351,7 +28385,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_Bex_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_Bex_Bg.webp"
-    }
+    },
+    "name_en": "Bex"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -28412,7 +28447,7 @@
         "name_zh": "一把捞走",
         "url": "https://bazaardb.gg/card/douiabwzdhrl475rpqunp955d/Grab-the-Loot",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/cd5e5aac1f0fa2565f07e0bb907afed5545396e0@256.webp?v=2",
-        "description": "Get 3Lootitems",
+        "description": "Get 3 Lootitems",
         "description_zh": "获得 3 件战利品",
         "icon_path": "EncEvent_Icons/cd5e5aac1f0fa2565f07e0bb907afed5545396e0@256.webp"
       },
@@ -28421,7 +28456,7 @@
         "name_zh": "欣赏美景",
         "url": "https://bazaardb.gg/card/dv1sgnyjmau9rkl9kotyu6dpn/Enjoy-the-Scenery",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/afa39dddba33d1fa93a5a49f395fac9e55cfa2b4@256.webp?v=2",
-        "description": "Gain3Regen",
+        "description": "Gain 3 Regen",
         "description_zh": "生命再生量提高3",
         "icon_path": "EncEvent_Icons/afa39dddba33d1fa93a5a49f395fac9e55cfa2b4@256.webp"
       },
@@ -28439,7 +28474,7 @@
         "name_zh": "布置旅游景点",
         "url": "https://bazaardb.gg/card/4q9cp7ku6ljwehemo9gyjh3az/Setup-Tourist-Attraction",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/f804ce00dc371d9ec5fc98998dc7f0a61c32d087@256.webp?v=2",
-        "description": "(if you are Pygmalien) Gain2Income.",
+        "description": "(if you are Pygmalien) Gain 2 Income.",
         "description_zh": "（如果您是皮格马利翁）获得+2收入。",
         "icon_path": "EncEvent_Icons/f804ce00dc371d9ec5fc98998dc7f0a61c32d087@256.webp"
       },
@@ -28475,7 +28510,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_JungleRuins_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_JungleRuins_Bg.webp"
-    }
+    },
+    "name_en": "Jungle Ruins"
   },
   {
     "$type": "TCardEncounterEvent",
@@ -30125,7 +30161,7 @@
         "name_zh": "保安之职",
         "url": "https://bazaardb.gg/card/3beaoxrvhjje1qekfqt70hu8x/Work-as-Security",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/9499f2042ebd596690b416c1adffc91134abd305@256.webp?v=2",
-        "description": "Gain2Gold and aWeaponfrom any Hero",
+        "description": "Gain 2 Gold and aWeaponfrom any Hero",
         "description_zh": "获得2枚金币和任意英雄的一件武器",
         "icon_path": "EncEvent_Icons/9499f2042ebd596690b416c1adffc91134abd305@256.webp"
       },
@@ -30134,7 +30170,7 @@
         "name_zh": "维护工之职",
         "url": "https://bazaardb.gg/card/51q7t7t5azlamtigc8v29dotu/Work-as-Maintenance",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/b8b4d196bd6da5018337b87e8f613dc129ba3e34@256.webp?v=2",
-        "description": "Gain2Gold and aShielditem from any Hero",
+        "description": "Gain 2 Gold and aShielditem from any Hero",
         "description_zh": "获得2枚金币和任意英雄的一件护盾",
         "icon_path": "EncEvent_Icons/b8b4d196bd6da5018337b87e8f613dc129ba3e34@256.webp"
       },
@@ -30143,7 +30179,7 @@
         "name_zh": "码头工之职",
         "url": "https://bazaardb.gg/card/7ny089pxhs543rvekori20hf/Work-as-Dockhand",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/ca2a0af3dccea935511ace991afec7321f9c06f6@256.webp?v=2",
-        "description": "Gain2Gold and aToolfrom any Hero",
+        "description": "Gain 2 Gold and aToolfrom any Hero",
         "description_zh": "获得2枚金币和任意英雄的一件工具",
         "icon_path": "EncEvent_Icons/ca2a0af3dccea935511ace991afec7321f9c06f6@256.webp"
       },
@@ -30152,7 +30188,7 @@
         "name_zh": "领航员之职",
         "url": "https://bazaardb.gg/card/7a9wzlo7x0l2vwf7itdpkhdyg/Work-as-Navigator",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/4a514cff8f4434c2e97dfe4772ca9c00abd1b681@256.webp?v=2",
-        "description": "(if you have an Astrolabe)\nGain5Gold and1XP.",
+        "description": "(if you have an Astrolabe)\nGain 5 Gold and 1 XP.",
         "description_zh": "（如果你有星盘）\n获得 5 金币和 1 XP。",
         "icon_path": "EncEvent_Icons/4a514cff8f4434c2e97dfe4772ca9c00abd1b681@256.webp"
       },
@@ -30161,7 +30197,7 @@
         "name_zh": "领航员之职",
         "url": "https://bazaardb.gg/card/4v733mnxnp6avkzaoduf69ejt/Work-as-Navigator",
         "icon_url": "https://s.bazaardb.gg/v0/z10.0/reward/07c3bd24b525bf17d1fa274025e5773d6db13ef2@256.webp?v=2",
-        "description": "(if you have Star Chart)\nGain4Gold and1XP.",
+        "description": "(if you have Star Chart)\nGain 4 Gold and 1 XP.",
         "description_zh": "（如果你有星图）\n获得 4 金币和 1 XP。",
         "icon_path": "EncEvent_Icons/07c3bd24b525bf17d1fa274025e5773d6db13ef2@256.webp"
       }
@@ -30170,7 +30206,8 @@
     "image_paths": {
       "char": "EncEvent_CHAR/ENC_Merchant_TheDocks_Char.webp",
       "bg": "EncEvent_BG/ENC_Merchant_TheDocks_Bg.webp"
-    }
+    },
+    "name_en": "The Docks"
   },
   {
     "$type": "TCardEncounterEvent",

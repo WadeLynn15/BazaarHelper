@@ -152,13 +152,13 @@ fn checksum16(input: &str) -> String {
 
 #[tauri::command]
 pub fn get_game_identity() -> Result<GameIdentityInfo, String> {
-    latest_game_identity_from_logs().ok_or_else(|| "无法在日志中读取到账号信息，请先进入游戏主界面再试".to_string())
+    latest_game_identity_from_logs().ok_or_else(|| "Could not read your account info from the game logs. Open the game's main screen and try again.".to_string())
 }
 
 #[tauri::command]
 pub fn generate_game_login_key() -> Result<GeneratedLoginKey, String> {
     let identity = latest_game_identity_from_logs()
-        .ok_or_else(|| "无法在日志中读取到账号信息，请先进入游戏主界面再试".to_string())?;
+        .ok_or_else(|| "Could not read your account info from the game logs. Open the game's main screen and try again.".to_string())?;
 
     let ts = std::time::SystemTime::now()
         .duration_since(std::time::UNIX_EPOCH)
@@ -1072,14 +1072,14 @@ fn read_process_rss_bytes() -> Option<u64> {
 
 fn memory_module_label(key: &str) -> &'static str {
     match key {
-        "cache:monster_templates" => "怪物模板缓存",
-        "cache:card_templates" => "卡牌模板缓存(总)",
-        "cache:card_templates_small" => "卡牌模板缓存(小)",
-        "cache:card_templates_medium" => "卡牌模板缓存(中)",
-        "cache:card_templates_large" => "卡牌模板缓存(大)",
-        "cache:event_templates" => "事件模板缓存",
-        "cache:yolo_session" => "YOLO 会话",
-        _ => "模块",
+        "cache:monster_templates" => "Monster template cache",
+        "cache:card_templates" => "Card template cache (total)",
+        "cache:card_templates_small" => "Card template cache (small)",
+        "cache:card_templates_medium" => "Card template cache (medium)",
+        "cache:card_templates_large" => "Card template cache (large)",
+        "cache:event_templates" => "Event template cache",
+        "cache:yolo_session" => "YOLO session",
+        _ => "Module",
     }
 }
 
@@ -1188,7 +1188,7 @@ fn collect_real_process_memory(process_rss_bytes: Option<u64>) -> RealProcessMem
 
     let engine_extra_rss = engine_global_rss.saturating_sub(engine_tree_rss);
     let note = Some(
-        "app_tree 是当前进程及其子进程；engine(global) 是系统级 WebView 引擎进程，可能包含其他应用。".to_string(),
+        "app_tree is this process and its child processes; engine(global) is the system-wide WebView engine process, which may include other apps.".to_string(),
     );
 
     RealProcessMemorySnapshot {
@@ -1225,7 +1225,7 @@ pub fn get_memory_breakdown(state: State<'_, DbState>) -> Result<MemoryBreakdown
                 .sum::<u64>();
         modules.push(MemoryModuleStat {
             key: "db:items".to_string(),
-            label: "物品数据库".to_string(),
+            label: "Item database".to_string(),
             estimated_bytes: list_bytes + id_map_bytes + tags_bytes,
             items: items_db.list.len(),
             note: None,
@@ -1244,7 +1244,7 @@ pub fn get_memory_breakdown(state: State<'_, DbState>) -> Result<MemoryBreakdown
                 .sum::<u64>();
         modules.push(MemoryModuleStat {
             key: "db:skills".to_string(),
-            label: "技能数据库".to_string(),
+            label: "Skill database".to_string(),
             estimated_bytes: list_bytes + id_map_bytes,
             items: skills_db.list.len(),
             note: None,
@@ -1261,7 +1261,7 @@ pub fn get_memory_breakdown(state: State<'_, DbState>) -> Result<MemoryBreakdown
                 .sum::<u64>();
         modules.push(MemoryModuleStat {
             key: "db:monsters".to_string(),
-            label: "野怪数据库".to_string(),
+            label: "Monster database".to_string(),
             estimated_bytes: monsters_bytes,
             items: monsters_db.len(),
             note: None,
@@ -1271,7 +1271,7 @@ pub fn get_memory_breakdown(state: State<'_, DbState>) -> Result<MemoryBreakdown
     let p_state = crate::load_state();
     modules.push(MemoryModuleStat {
         key: "state:inst_to_temp".to_string(),
-        label: "日志实例映射".to_string(),
+        label: "Log instance map".to_string(),
         estimated_bytes: estimate_string_map_bytes(&p_state.inst_to_temp),
         items: p_state.inst_to_temp.len(),
         note: None,
@@ -1280,7 +1280,7 @@ pub fn get_memory_breakdown(state: State<'_, DbState>) -> Result<MemoryBreakdown
     let stash_bytes = estimate_string_set_bytes(&p_state.current_stash);
     modules.push(MemoryModuleStat {
         key: "state:inventory_sets".to_string(),
-        label: "手牌/仓库集合".to_string(),
+        label: "Board/stash items".to_string(),
         estimated_bytes: hand_bytes + stash_bytes,
         items: p_state.current_hand.len() + p_state.current_stash.len(),
         note: None,
@@ -1292,7 +1292,7 @@ pub fn get_memory_breakdown(state: State<'_, DbState>) -> Result<MemoryBreakdown
                 * std::mem::size_of::<crate::monster_recognition::YoloDetection>() as u64);
         modules.push(MemoryModuleStat {
             key: "yolo:detections".to_string(),
-            label: "YOLO检测结果缓存".to_string(),
+            label: "YOLO detection cache".to_string(),
             estimated_bytes: bytes,
             items: detections.len(),
             note: None,
@@ -1313,7 +1313,7 @@ pub fn get_memory_breakdown(state: State<'_, DbState>) -> Result<MemoryBreakdown
         };
         modules.push(MemoryModuleStat {
             key: "yolo:image".to_string(),
-            label: "YOLO截图缓存".to_string(),
+            label: "YOLO screenshot cache".to_string(),
             estimated_bytes: bytes,
             items: if image_opt.is_some() { 1 } else { 0 },
             note,
@@ -3061,7 +3061,7 @@ pub async fn capture_battle_screenshot_manual(
     .map_err(|e| e.to_string())??;
 
     let Some(path) = captured else {
-        return Err("未检测到游戏窗口，无法执行仅游戏窗口截图。请先切回《The Bazaar》后重试。".to_string());
+        return Err("The game window was not found, so the game-only screenshot could not be taken. Switch back to The Bazaar and try again.".to_string());
     };
 
     let screenshot_path = path.to_string_lossy().to_string();

@@ -842,9 +842,9 @@ pub fn spawn_log_monitor(
                                         );
 
                                         let status_text = if let Some(dur) = duration {
-                                            format!("本回合战斗时长约 {:.1}s，正在截图保存...", dur)
+                                            format!("Fight lasted about {:.1}s, saving screenshot...", dur)
                                         } else {
-                                            "本回合战斗结束，正在截图保存...".to_string()
+                                            "Fight over, saving screenshot...".to_string()
                                         };
                                         log::info!("[RoundCapture] Island status emit: {}", status_text);
                                         let _ = handle.emit(

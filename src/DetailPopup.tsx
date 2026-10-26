@@ -20,26 +20,26 @@ const debounce = (func: Function, wait: number) => {
 
 // 常量定义
 const KEYWORD_COLORS: Record<string, string> = {
-  "弹药": "#ff8e00",
-  "灼烧": "#ff9f45",
-  "充能": "#00ecc3",
-  "冷却": "#00ecc3",
-  "加速": "#00ecc3",
-  "暴击率": "#f5503d",
-  "伤害": "#f5503d",
-  "飞行": "#f4cf20",
-  "冻结": "#00ccff",
-  "金币": "#ffd700",
-  "治疗": "#8eea31",
-  "生命值": "#8eea31",
-  "最大生命值": "#8eea31",
-  "收入": "#ffcd19",
-  "吸血": "#9d4a6f",
-  "剧毒": "#0ebe4f",
-  "生命再生": "#8eea31",
-  "护盾": "#f4cf20",
-  "减速": "#cb9f6e",
-  "价值": "#ffcd19"
+  "Ammo": "#ff8e00",
+  "Burn": "#ff9f45",
+  "Charge": "#00ecc3",
+  "Cooldown": "#00ecc3",
+  "Haste": "#00ecc3",
+  "Crit Chance": "#f5503d",
+  "Damage": "#f5503d",
+  "Flying": "#f4cf20",
+  "Freeze": "#00ccff",
+  "Gold": "#ffd700",
+  "Heal": "#8eea31",
+  "Health": "#8eea31",
+  "Max Health": "#8eea31",
+  "Income": "#ffcd19",
+  "Lifesteal": "#9d4a6f",
+  "Poison": "#0ebe4f",
+  "Regen": "#8eea31",
+  "Shield": "#f4cf20",
+  "Slow": "#cb9f6e",
+  "Value": "#ffcd19"
 };
 
 const TIER_COLORS = ["#cd7f32", "#c0c0c0", "#ffd700", "#b9f2ff"];
@@ -324,7 +324,7 @@ const getTierStatValue = (item: any, tier: string) => {
     // 如果没有找到数值，从 tiers.description 中提取
     if (item.tiers && item.tiers[tier]) {
         const tierInfo = item.tiers[tier];
-        const allDesc = [...(tierInfo.description || []), ...(tierInfo.extra_description || [])];
+        const allDesc = [...(tierInfo.description_zh || tierInfo.description || []), ...(tierInfo.extra_description_zh || tierInfo.extra_description || [])];
         
         if (!damage) damage = extractStatFromDescription(allDesc, '伤害');
         if (!heal) heal = extractStatFromDescription(allDesc, '治疗') || extractStatFromDescription(allDesc, '生命值');
@@ -605,10 +605,10 @@ export default function DetailPopup() {
         let content = "";
         if (typeof text === 'string') {
           content = text;
-        } else if (text.cn) {
-          content = text.cn;
         } else if (text.en) {
           content = text.en;
+        } else if (text.cn) {
+          content = text.cn;
         } else {
           return null;
         }
@@ -641,7 +641,7 @@ export default function DetailPopup() {
           
           if (allMatches.length === 0) return part;
           
-          const regex = new RegExp(`(${allMatches.join('|')})`, 'g');
+          const regex = new RegExp(`(${allMatches.sort((a, b) => b.length - a.length).map((k) => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'g');
           const subParts = part.split(regex);
           
           return subParts.map((sub, j) => {
@@ -770,7 +770,7 @@ export default function DetailPopup() {
                                     mergedSkill = {
                                         ...s,
                                         skills: (fullSkillInfo.skills as any) || s.skills || [],
-                                        name: fullSkillInfo.name_cn || fullSkillInfo.name || s.name,
+                                        name: fullSkillInfo.name || s.name_en || fullSkillInfo.name_cn || s.name,
                                         name_cn: fullSkillInfo.name_cn,
                                         name_en: fullSkillInfo.name,
                                         size: fullSkillInfo.size || s.size,
@@ -1085,7 +1085,7 @@ export default function DetailPopup() {
                     </div>
                     <div className="monster-info-v2">
                         <div className="monster-name-zh">
-                            {m.name_zh}
+                            {m.name || m.name_zh}
                         </div>
                         <div className="monster-health">❤️ {m.health?.toString() || m.health}</div>
                     </div>
@@ -1096,7 +1096,7 @@ export default function DetailPopup() {
                 <div className="monster-assets-grid" style={{ gridTemplateColumns: '1fr', padding: 0, background: 'transparent' }}>
                     {m.skills && m.skills.length > 0 && (
                         <div className="assets-section">
-                            <div className="section-title">技能 (Skills)</div>
+                            <div className="section-title">Skills</div>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                                 {m.skills.map((s, idx) => {
                                     const isExpanded = expandedMonsterItem === s;
@@ -1118,7 +1118,7 @@ export default function DetailPopup() {
                     )}
                     {m.items && m.items.length > 0 && (
                         <div className="assets-section">
-                            <div className="section-title" style={{ marginBottom: '8px' }}>物品 (Items)</div>
+                            <div className="section-title" style={{ marginBottom: '8px' }}>Items</div>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                                 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', flexWrap: 'wrap', gap: '8px' }}>
                                     {m.items.map((it, idx) => {
@@ -1312,9 +1312,9 @@ export default function DetailPopup() {
                                         border: '1px solid rgba(255, 205, 25, 0.3)'
                                     }}>
                                        <div className="section-title" style={{ padding: '8px 8px 0 8px', fontSize: '14px', color: '#ffd700' }}>
-                                           {hoveredMonsterItem.name_cn || hoveredMonsterItem.name} 
+                                           {hoveredMonsterItem.name_en || hoveredMonsterItem.name || hoveredMonsterItem.name_cn} 
                                            <span style={{ fontSize: '12px', color: '#888', marginLeft: '8px' }}>
-                                               (点击查看所有等级 / Click for all tiers)
+                                               (Click for all tiers)
                                            </span>
                                        </div>
                                        {/* Only show the current tier info on hover */}
@@ -1333,9 +1333,9 @@ export default function DetailPopup() {
                                         padding: '5px'
                                     }}>
                                        <div className="section-title" style={{ padding: '8px 8px 8px 8px', fontSize: '14px', color: '#ffd700', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
-                                           {expandedMonsterItem.name_cn || expandedMonsterItem.name}
+                                           {expandedMonsterItem.name_en || expandedMonsterItem.name || expandedMonsterItem.name_cn}
                                            <span style={{ fontSize: '12px', color: '#aaa', marginLeft: '8px' }}>
-                                               (所有等级详情 / All Tiers)
+                                               (All tiers)
                                            </span>
                                        </div>
                                        
@@ -1385,7 +1385,7 @@ export default function DetailPopup() {
     };
 
     const renderEventContent = (e: EventData) => {
-        const eventTitle = e.name || e.name_en || e.InternalName || '';
+        const eventTitle = e.name_en || e.InternalName || e.name || '';
         const eventDesc = e.desc || '';
         
         return (
@@ -1474,15 +1474,15 @@ export default function DetailPopup() {
                                         color: '#ffd700',
                                         marginBottom: '4px'
                                     }}>
-                                        {choice.name_zh || choice.name || ''}
+                                        {choice.name || choice.name_zh || ''}
                                     </div>
-                                    {choice.description_zh && (
+                                    {(choice.description || choice.description_zh) && (
                                         <div style={{ 
                                             fontSize: '12px', 
                                             color: 'rgba(255,255,255,0.7)',
                                             lineHeight: '1.4'
                                         }}>
-                                            {choice.description_zh}
+                                            {choice.description || choice.description_zh}
                                         </div>
                                     )}
                                 </div>

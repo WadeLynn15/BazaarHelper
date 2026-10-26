@@ -61,7 +61,6 @@
                                                 "installerHooks":  "./installer.nsh",
                                                 "installMode":  "currentUser",
                                                 "languages":  [
-                                                                  "SimpChinese",
                                                                   "English"
                                                               ]
                                             }

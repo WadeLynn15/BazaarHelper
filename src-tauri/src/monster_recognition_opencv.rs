@@ -117,7 +117,7 @@ fn extract_features_from_dynamic_image(img: &DynamicImage) -> Result<Mat, opencv
     // 将图像保存到临时缓冲区
     let mut bytes = Vec::new();
     img.write_to(&mut std::io::Cursor::new(&mut bytes), image::ImageOutputFormat::Png)
-        .map_err(|e| opencv::Error::new(opencv::core::StsError, format!("图像转换失败: {}", e)))?;
+        .map_err(|e| opencv::Error::new(opencv::core::StsError, format!("Image conversion failed: {}", e)))?;
     
     // 使用 OpenCV 解码
     use opencv::imgcodecs::imdecode;
@@ -203,10 +203,10 @@ pub async fn preload_templates_async(resources_dir: PathBuf, cache_dir: PathBuf)
     // 2. 从原始图片加载 (使用 Rayon 并行)
     let db_path = resources_dir.join("monsters_db.json");
     let json_content = std::fs::read_to_string(&db_path)
-        .map_err(|e| format!("读取 monsters_db.json 失败: {}", e))?;
+        .map_err(|e| format!("Failed to read monsters_db.json: {}", e))?;
 
     let monsters: HashMap<String, MonsterEntry> = serde_json::from_str(&json_content)
-        .map_err(|e| format!("解析 monsters_db.json 失败: {}", e))?;
+        .map_err(|e| format!("Failed to parse monsters_db.json: {}", e))?;
 
     let mut image_tasks = Vec::new();
     for (key, entry) in monsters.iter() {

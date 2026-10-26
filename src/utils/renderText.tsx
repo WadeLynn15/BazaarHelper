@@ -7,10 +7,10 @@ export const renderText = (text: any, allTags: string[]) => {
   let content = "";
   if (typeof text === 'string') {
     content = text;
-  } else if (text.cn) {
-    content = text.cn;
   } else if (text.en) {
     content = text.en;
+  } else if (text.cn) {
+    content = text.cn;
   } else {
     return null;
   }
@@ -43,7 +43,7 @@ export const renderText = (text: any, allTags: string[]) => {
     
     if (allMatches.length === 0) return part;
     
-    const regex = new RegExp(`(${allMatches.join('|')})`, 'g');
+    const regex = new RegExp(`(${allMatches.sort((a, b) => b.length - a.length).map((k) => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'g');
     const subParts = part.split(regex);
     
     return subParts.map((sub, j) => {
@@ -98,7 +98,7 @@ export const renderEnchantText = (content: string, allTags: string[]) => {
     
     if (allMatches.length === 0) return processedPart;
     
-    const regex = new RegExp(`(${allMatches.join('|')})`, 'g');
+    const regex = new RegExp(`(${allMatches.sort((a, b) => b.length - a.length).map((k) => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'g');
     const subParts = processedPart.split(regex);
     
     return subParts.map((sub, j) => {

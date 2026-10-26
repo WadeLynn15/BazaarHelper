@@ -218,8 +218,8 @@ impl From<RawItem> for ItemData {
             .split('|')
             .map(|s| {
                 let part = s.trim();
-                // Pick the last part after / if it exists
-                part.split(" / ").last().unwrap_or(part).trim().to_string()
+                // English build: pick the English (first) part before " / "
+                part.split(" / ").next().unwrap_or(part).trim().to_string()
             })
             .filter(|s| !s.is_empty())
             .filter(|s| !s.contains("隐藏") && !s.contains("Hide") && !s.contains("Hidden"))
@@ -261,14 +261,16 @@ impl From<RawItem> for ItemData {
         let mut enchantments = Vec::new();
         if let Some(val) = raw.enchantments {
             if let Some(obj) = val.as_object() {
-                for (_key, details) in obj {
+                for (key, details) in obj {
                     let name_cn = details.get("name_cn").and_then(|v| v.as_str());
                     let effect_cn = details.get("effect_cn").and_then(|v| v.as_str());
-                    let effect_en = details.get("effect_en").and_then(|v| v.as_str());
+                    let effect_en = details.get("effect_en").and_then(|v| v.as_str()).filter(|s| !s.is_empty());
                     
-                    let effect = effect_cn.or(effect_en);
+                    // English build: prefer the English enchantment name (the map key) and effect text
+                    let effect = effect_en.or(effect_cn);
+                    let display_name = if key.is_empty() { name_cn } else { Some(key.as_str()) };
                     if let Some(eff) = effect {
-                        if let Some(n) = name_cn {
+                        if let Some(n) = display_name {
                             // 使用分隔符方便前端拆分名称和描述
                             enchantments.push(format!("{}|{}", n, eff));
                         } else {

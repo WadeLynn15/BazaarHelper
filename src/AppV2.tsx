@@ -44,15 +44,15 @@ import { MAC_SCREEN_PROFILE } from './platforms/macos/screenProfile';
 import type { IslandStatusType, ItemData, MonsterData, SearchItemLite, SyncPayload, TabType, Toast } from './types';
 
 const TAB_LABELS: Record<TabType, string> = {
-  history: '历史战绩',
-  monster: '野怪一览',
-  card: '卡牌识别',
-  items: '手头物品',
-  search: '百科搜索',
+  history: 'Match History',
+  monster: 'Monsters',
+  card: 'Card Scanner',
+  items: 'My Items',
+  search: 'Wiki Search',
 };
 
 const STARTUP_FIXED_NOTICE =
-  '🧠 脑子是用来构筑的，数据交给小抄记。\n\n💡 这只是个免费的记牌小工具，又不是考研资料，谁要是敢收你的费，请反手给他一个大逼兜！👊\n\n🍖 本小抄由 B站@这是李Duang啊 免费发放，付费获取的同学请立刻退款买排骨吃！';
+  '🧠 Your brain is for building. Leave the data to the cheat sheet.\n\n💡 This is a free card-tracking tool, not paid study material. If anyone charges you for it, give them a slap! 👊\n\n🍖 This cheat sheet is given away free by Bilibili creator @这是李Duang啊. If you paid for it, get a refund right away and treat yourself to some ribs!';
 
 const HistoryViewLazy = lazy(async () => ({
   default: (await import('./views/HistoryView')).HistoryView,
@@ -90,7 +90,7 @@ const EDGE_COLLAPSE_DELAY_MS = 120;
 const AUTO_COLLAPSE_TOP_EDGE_THRESHOLD = 36;
 const AUTO_COLLAPSE_TOP_EDGE_THRESHOLD_MAC = 96;
 const NON_DRAG_SELECTOR = 'button, input, textarea, select, a, [data-no-drag], .no-drag';
-const ISLAND_BASE_TEXT = '集市小抄运行中';
+const ISLAND_BASE_TEXT = 'Bazaar Cheat Sheet is running';
 const IS_WINDOWS = typeof navigator !== 'undefined' && /windows/i.test(navigator.userAgent || '');
 const IS_MAC = typeof navigator !== 'undefined' && /macintosh|mac os x|macos/i.test(navigator.userAgent || '');
 
@@ -728,10 +728,10 @@ export default function AppV2() {
   }, []);
 
   const panelTitle = useMemo(() => {
-    if (showSettings) return '系统设置';
+    if (showSettings) return 'Settings';
     return TAB_LABELS[activeTab];
   }, [activeTab, showSettings]);
-  const islandStatusText = islandPinnedName ? `当前识别: ${islandPinnedName}` : islandRuntimeText;
+  const islandStatusText = islandPinnedName ? `Detected: ${islandPinnedName}` : islandRuntimeText;
   const historyEnabled = !showVersionScreen && !isCollapsed && !showSettings && activeTab === 'history';
   const monsterEnabled = !showVersionScreen && !isCollapsed && !showSettings && activeTab === 'monster';
   const cardEnabled = !showVersionScreen && !isCollapsed && !showSettings && activeTab === 'card';
@@ -812,45 +812,45 @@ export default function AppV2() {
       if (!text) return;
 
       // Keep island text stable; YOLO scanning only updates the status dot.
-      if (text.startsWith('YOLO(自动):')) {
+      if (text.startsWith('YOLO (auto):')) {
         if (enableYoloAuto) {
           setIslandStatusType('success');
         }
         return;
       }
-      if (text.startsWith('YOLO(手动):')) {
-        if (text.includes('正在扫描')) {
+      if (text.startsWith('YOLO (manual):')) {
+        if (text.includes('Scanning')) {
           setIslandStatusType('warning');
-        } else if (text.includes('扫描完成')) {
-          setIslandStatusType(text.includes('共 0') ? 'warning' : 'success');
+        } else if (text.includes('Scan complete')) {
+          setIslandStatusType(text.includes('found 0 ') ? 'warning' : 'success');
         }
         return;
       }
 
-      if (text.startsWith('卡牌详情:')) {
-        const raw = text.replace(/^卡牌详情:\s*/, '');
-        const name = raw.split('(')[0]?.trim() || '未知卡牌';
+      if (text.startsWith('Card:')) {
+        const raw = text.replace(/^Card:\s*/, '');
+        const name = raw.split('(')[0]?.trim() || 'Unknown card';
         setIslandPinnedName(name);
         setIslandStatusType('success');
         return;
       }
 
-      if (text.startsWith('本回合战斗时长约') || text.startsWith('本回合战斗结束')) {
+      if (text.startsWith('Fight lasted about') || text.startsWith('Fight over')) {
         const sec = text.match(/([\d.]+)s/);
         if (sec?.[1]) {
-          setIslandRuntimeText(`本次战斗 ${sec[1]}s`);
+          setIslandRuntimeText(`Last fight: ${sec[1]}s`);
         } else {
-          setIslandRuntimeText('本次战斗已结束');
+          setIslandRuntimeText('Fight over');
         }
         setIslandStatusType('success');
         return;
       }
 
-      if (text.includes('详情识别失败')) {
+      if (text.includes('Detail recognition failed')) {
         setIslandStatusType('error');
         return;
       }
-      if (text.includes('未识别到详情目标')) {
+      if (text.includes('No target found for details')) {
         setIslandStatusType(enableYoloAuto ? 'success' : 'info');
         return;
       }
@@ -977,7 +977,7 @@ export default function AppV2() {
     } catch (error) {
       console.error('[AppV2] Manual update check failed:', error);
       setUpdateStatus('none');
-      showToast('检查更新失败', 'error');
+      showToast('Update check failed', 'error');
     }
   }, [showToast]);
 
@@ -1009,7 +1009,7 @@ export default function AppV2() {
     } catch (error) {
       console.error('[AppV2] Update download failed:', error);
       setUpdateStatus('available');
-      showToast('更新下载失败', 'error');
+      showToast('Update download failed', 'error');
     }
   }, [showToast, updateAvailable]);
 
@@ -1044,10 +1044,10 @@ export default function AppV2() {
       localStorage.removeItem('toggle-collapse-hotkey');
       localStorage.removeItem('yolo-hotkey');
       localStorage.removeItem('detail-display-hotkey');
-      showToast('所有快捷键已重置', 'success');
+      showToast('All hotkeys have been reset', 'success');
     } catch (error) {
       console.error('[AppV2] Reset hotkeys failed:', error);
-      showToast('重置快捷键失败', 'error');
+      showToast('Failed to reset hotkeys', 'error');
     }
   }, [showToast]);
 
@@ -1297,7 +1297,7 @@ export default function AppV2() {
       if (!message) return;
       const type = event.payload?.type ?? 'info';
       updateIslandStatus(message, type);
-      if (!isCollapsed && !message.startsWith('YOLO(') && !message.includes('正在识别详情')) {
+      if (!isCollapsed && !message.startsWith('YOLO (') && !message.includes('Identifying details')) {
         showToast(message, type as Toast['type']);
       }
     });
@@ -1468,18 +1468,18 @@ export default function AppV2() {
           }}
         >
           <div className="top-action-bar" data-tauri-drag-region>
-            <div className="top-action-title">窗口操作</div>
+            <div className="top-action-title">Window</div>
             <div className="top-action-buttons">
               <button
                 className={`top-action-toggle ${autoCollapseToIsland ? 'active' : ''}`}
                 aria-pressed={autoCollapseToIsland}
-                title="自动收起为灵动岛"
+                title="Automatically collapse into the island bar"
                 onClick={() => {
                   void handleToggleAutoCollapseToIsland();
                 }}
               >
                 <span className="checkmark" aria-hidden="true">{autoCollapseToIsland ? '✓' : ''}</span>
-                <span>自动收起</span>
+                <span>Auto-collapse</span>
               </button>
               <button
                 className="bulk-btn"
@@ -1487,7 +1487,7 @@ export default function AppV2() {
                   void applyCollapsedState(true);
                 }}
               >
-                收起为灵动岛
+                Collapse to island
               </button>
               <button
                 className="bulk-btn secondary"
@@ -1500,7 +1500,7 @@ export default function AppV2() {
                   }
                 }}
               >
-                最小化到任务栏
+                Minimize to taskbar
               </button>
             </div>
           </div>
@@ -1597,7 +1597,7 @@ export default function AppV2() {
                   showToast={showToast}
                 />
               ) : historyEnabled ? (
-                <Suspense fallback={<div className="empty-tip">加载历史战绩中...</div>}>
+                <Suspense fallback={<div className="empty-tip">Loading match history...</div>}>
                   <HistoryViewLazy
                     records={matchHistory}
                     isLoading={isLoadingHistory}
@@ -1608,7 +1608,7 @@ export default function AppV2() {
                   />
                 </Suspense>
               ) : monsterEnabled ? (
-                <Suspense fallback={<div className="empty-tip">加载野怪一览中...</div>}>
+                <Suspense fallback={<div className="empty-tip">Loading monsters...</div>}>
                   <MonsterTabViewLazy
                     selectedDay={selectedDay}
                     setSelectedDay={setSelectedDay}
@@ -1629,7 +1629,7 @@ export default function AppV2() {
                   />
                 </Suspense>
               ) : cardEnabled ? (
-                <Suspense fallback={<div className="empty-tip">加载卡牌识别中...</div>}>
+                <Suspense fallback={<div className="empty-tip">Loading card scanner...</div>}>
                   <CardRecognitionViewLazy
                     recognizedCards={recognizedCards}
                     isRecognizing={isRecognizingCard}
@@ -1642,7 +1642,7 @@ export default function AppV2() {
                   />
                 </Suspense>
               ) : itemsEnabled ? (
-                <Suspense fallback={<div className="empty-tip">加载手头物品中...</div>}>
+                <Suspense fallback={<div className="empty-tip">Loading your items...</div>}>
                   <ItemsViewLazy
                     handItems={syncData.hand_items}
                     stashItems={syncData.stash_items}
@@ -1657,7 +1657,7 @@ export default function AppV2() {
               ) : searchEnabled ? (
                 <div className="card-list">
                   {searchResults.length > 0 ? (
-                    <Suspense fallback={<div className="empty-tip">加载搜索结果中...</div>}>
+                    <Suspense fallback={<div className="empty-tip">Loading search results...</div>}>
                       <VirtualSearchResultsLazy
                         items={searchResults}
                         scrollTop={searchScrollTop}
@@ -1672,8 +1672,8 @@ export default function AppV2() {
                             : {
                                 ...buildSearchSkeletonItem(item),
                                 description: isLoadingDetail
-                                  ? '正在加载详情...'
-                                  : (isMissingDetail ? '暂无该条目的详细数据' : ''),
+                                  ? 'Loading details...'
+                                  : (isMissingDetail ? 'No detailed data for this entry' : ''),
                               };
                           return renderUnifiedItemCard(
                             renderItemData,
@@ -1685,7 +1685,7 @@ export default function AppV2() {
                     </Suspense>
                   ) : null}
                   {searchResults.length === 0 && (
-                    <div className="empty-tip">{isSearching ? '搜索中...' : '未找到结果'}</div>
+                    <div className="empty-tip">{isSearching ? 'Searching...' : 'No results found'}</div>
                   )}
                 </div>
               ) : (
@@ -1703,18 +1703,18 @@ export default function AppV2() {
                   </div>
                   <div style={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}>
                     {showSettings
-                      ? '设置页暂未迁移，当前保留空壳。'
+                      ? 'The settings page has not been migrated yet.'
                       : activeTab === 'history'
-                        ? '历史战绩加载条件未满足。'
+                        ? 'Match history is not ready to load yet.'
                       : activeTab === 'monster'
-                        ? `野怪页加载条件未满足（currentDay=${currentDay ?? '-'}）`
+                        ? `The monsters page is not ready to load yet (currentDay=${currentDay ?? '-'})`
                       : activeTab === 'card'
-                        ? '卡牌识别页加载条件未满足。'
+                        ? 'The card scanner is not ready to load yet.'
                       : activeTab === 'items'
-                        ? '手头物品页加载条件未满足。'
+                        ? 'Your items are not ready to load yet.'
                       : activeTab === 'search'
-                        ? '百科搜索页加载条件未满足。'
-                        : '该页面当前不加载业务数据，等待逐个迁移。'}
+                        ? 'Wiki search is not ready to load yet.'
+                        : 'This page does not load any data yet.'}
                   </div>
                   <div style={{ marginTop: '14px' }}>
                     <button
@@ -1724,7 +1724,7 @@ export default function AppV2() {
                         void applyCollapsedState(true);
                       }}
                     >
-                      收起为灵动岛
+                      Collapse to island
                     </button>
                   </div>
                 </div>

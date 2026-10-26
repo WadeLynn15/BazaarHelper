@@ -50,11 +50,11 @@ export const getHotkeyLabel = (code: number): string => {
   if (code >= 112 && code <= 123) return `F${code - 111}`;
   
   switch(code) {
-    case 1: return "鼠标左键";
-    case 2: return "鼠标右键";
-    case 4: return "鼠标中键";
-    case 5: return "鼠标侧键1 (后退)";
-    case 6: return "鼠标侧键2 (前进)";
+    case 1: return "Left click";
+    case 2: return "Right click";
+    case 4: return "Middle click";
+    case 5: return "Mouse side button 1 (Back)";
+    case 6: return "Mouse side button 2 (Forward)";
     case 8: return "BackSpace";
     case 9: return "Tab";
     case 13: return "Enter";

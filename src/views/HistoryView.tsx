@@ -110,7 +110,7 @@ const loadImageFromBlob = (blob: Blob): Promise<HTMLImageElement> =>
     };
     img.onerror = () => {
       URL.revokeObjectURL(blobUrl);
-      reject(new Error('图片解码失败'));
+      reject(new Error('Could not decode the image'));
     };
     img.src = blobUrl;
   });
@@ -245,7 +245,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
 
   const checkUploadedMatches = async (authorUserId: string, matchIds: string[]) => {
     const base = normalizeApiBase(uploadApiBase);
-    if (!base) throw new Error('请先配置上传服务地址');
+    if (!base) throw new Error('Set the upload server address first');
     try {
       const response = await fetch(`${base}/api/game-records/check`, {
         method: 'POST',
@@ -254,7 +254,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
       });
       const json = (await parseJsonSafe(response)) as CheckUploadedResponse | null;
       if (!response.ok) {
-        throw new Error((json as any)?.error || `查重失败 (${response.status} ${response.statusText})`);
+        throw new Error((json as any)?.error || `Duplicate check failed (${response.status} ${response.statusText})`);
       }
       return {
         existingMatchIds: new Set((json?.existingMatchIds || []).map((x) => String(x || '').trim()).filter(Boolean)),
@@ -263,7 +263,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
     } catch (err: any) {
       const msg = err?.message || '';
       if (msg.includes('Failed to fetch')) {
-        throw new Error(`无法连接服务器 (${base})，请检查网络或地址配置`);
+        throw new Error(`Could not connect to the server (${base}). Check your network or the server address.`);
       }
       throw err;
     }
@@ -276,7 +276,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
     onProgress?: (progress: MatchUploadProgress) => void,
   ): Promise<{ uploaded: number; skipped: number; failed: number }> => {
     const base = normalizeApiBase(uploadApiBase);
-    if (!base) throw new Error('请先配置上传服务地址');
+    if (!base) throw new Error('Set the upload server address first');
 
     const localBattles = (record.pvp_battles || [])
       .map((battle) => ({
@@ -329,7 +329,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
         let uploadedScreenshotUrl = '';
         if (screenshotPath) {
           const localRes = await fetch(convertFileSrc(screenshotPath));
-          if (!localRes.ok) throw new Error(`读取本地截图失败: ${localRes.status}`);
+          if (!localRes.ok) throw new Error(`Could not read the local screenshot: ${localRes.status}`);
           const sourceBlob = await localRes.blob();
           const blob = await convertImageBlobToWebp(sourceBlob, 0.8);
           const safeStart = String(entry.battle.start_time || 'unknown').replace(/[^\d]/g, '').slice(0, 14) || 'unknown';
@@ -347,7 +347,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
           });
           const presignJson = await parseJsonSafe(presignRes);
           if (!presignRes.ok || !presignJson?.uploadUrl || !presignJson?.publicUrl) {
-            throw new Error((presignJson as any)?.error || `获取上传签名失败 (${presignRes.status})`);
+            throw new Error((presignJson as any)?.error || `Could not get an upload signature (${presignRes.status})`);
           }
 
           const putRes = await fetch(String(presignJson.uploadUrl), {
@@ -358,7 +358,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
             body: blob,
           });
           if (!putRes.ok) {
-            throw new Error(`上传到 R2 失败 (${putRes.status})`);
+            throw new Error(`Upload to R2 failed (${putRes.status})`);
           }
           uploadedScreenshotUrl = String(presignJson.publicUrl || '');
         }
@@ -397,7 +397,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
         });
         const saveJson = await parseJsonSafe(saveRes);
         if (!saveRes.ok) {
-          throw new Error((saveJson as any)?.error || `写入战绩失败 (${saveRes.status})`);
+          throw new Error((saveJson as any)?.error || `Could not save the match record (${saveRes.status})`);
         }
         if ((saveJson as any)?.duplicated) {
           skipped += 1;
@@ -422,7 +422,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
 
   const handleUploadSingleMatch = async (record: MatchHistoryRecord) => {
     if (!record?.match_id) {
-      showToast('缺少 match_id，无法上传该局', 'error');
+      showToast('This match has no match_id, so it cannot be uploaded', 'error');
       return;
     }
     setUploadingMatches((prev) => new Set(prev).add(record.match_id));
@@ -436,22 +436,22 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
       const localKeys = (record.pvp_battles || [])
         .map((battle) => buildBattleKey(record.match_id, Number(battle.day || 0), String(battle.start_time || ''), battle.victory ? 'win' : 'lose'));
       if (localKeys.length > 0 && localKeys.every((k) => check.existingBattleKeys.has(k))) {
-        showToast('该对局已上传，无需重复上传', 'info');
+        showToast('This match was already uploaded', 'info');
         return;
       }
       const result = await uploadMatchBattles(record, author, check.existingBattleKeys, (progress) => {
         setUploadProgressByMatch((prev) => ({ ...prev, [record.match_id]: progress }));
       });
       if (result.uploaded > 0) {
-        showToast(`上传完成：新增 ${result.uploaded}，跳过 ${result.skipped}，失败 ${result.failed}`, result.failed > 0 ? 'warning' : 'success');
+        showToast(`Upload done: ${result.uploaded} new, ${result.skipped} skipped, ${result.failed} failed`, result.failed > 0 ? 'warning' : 'success');
       } else if (result.failed > 0) {
-        showToast(`上传失败：失败 ${result.failed}，请检查服务配置`, 'error');
+        showToast(`Upload failed: ${result.failed} failed. Check the server settings.`, 'error');
       } else {
-        showToast('该对局已上传，无需重复上传', 'info');
+        showToast('This match was already uploaded', 'info');
       }
     } catch (error: any) {
-      const message = typeof error === 'string' ? error : (error?.message || '未知错误');
-      showToast(`上传失败：${message}`, 'error');
+      const message = typeof error === 'string' ? error : (error?.message || 'Unknown error');
+      showToast(`Upload failed: ${message}`, 'error');
     } finally {
       setUploadingMatches((prev) => {
         const next = new Set(prev);
@@ -471,7 +471,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
     const uploadTargets = records.filter((r) => String(r.match_id || '').trim().length > 0);
     const matchIds = uploadTargets.map((r) => String(r.match_id || '').trim());
     if (matchIds.length === 0) {
-      showToast('暂无可上传的对局', 'warning');
+      showToast('No matches to upload', 'warning');
       return;
     }
     setBulkUploading(true);
@@ -512,15 +512,15 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
       }
 
       if (totalUploaded > 0) {
-        showToast(`批量上传完成：新增 ${totalUploaded}，跳过 ${totalSkipped}，失败 ${totalFailed}`, totalFailed > 0 ? 'warning' : 'success');
+        showToast(`Bulk upload done: ${totalUploaded} new, ${totalSkipped} skipped, ${totalFailed} failed`, totalFailed > 0 ? 'warning' : 'success');
       } else if (totalFailed > 0) {
-        showToast(`批量上传失败：失败 ${totalFailed}`, 'error');
+        showToast(`Bulk upload failed: ${totalFailed} failed`, 'error');
       } else {
-        showToast('全部对局均已上传，无需重复上传', 'info');
+        showToast('All matches were already uploaded', 'info');
       }
     } catch (error: any) {
-      const message = typeof error === 'string' ? error : (error?.message || '未知错误');
-      showToast(`批量上传失败：${message}`, 'error');
+      const message = typeof error === 'string' ? error : (error?.message || 'Unknown error');
+      showToast(`Bulk upload failed: ${message}`, 'error');
     } finally {
       setBulkUploading(false);
       setBulkProgress({ done: 0, total: 0 });
@@ -541,7 +541,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
         setUploadNoticeSuppressed(true);
       } catch (error) {
         const message = typeof error === 'string' ? error : String(error);
-        showToast(`保存提醒设置失败：${message}`, 'warning');
+        showToast(`Could not save the reminder setting: ${message}`, 'warning');
       }
     }
     setShowUploadNoticeModal(false);
@@ -553,10 +553,10 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
     setOpeningCommunity(true);
     try {
       await openCommunityWithAutoLogin();
-      showToast('已打开网页并自动登录', 'success');
+      showToast('Opened the website and signed you in', 'success');
     } catch (error) {
       const message = typeof error === 'string' ? error : String(error);
-      showToast(`打开网页失败：${message}`, 'error');
+      showToast(`Could not open the website: ${message}`, 'error');
     } finally {
       setOpeningCommunity(false);
     }
@@ -669,7 +669,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
     );
     const opened = expanded.has(record.match_id);
     const heroAvatar = getHeroAvatar(record.hero);
-    const statusText = record.victory ? '胜利' : record.is_finished ? '失败' : '进行中';
+    const statusText = record.victory ? 'Victory' : record.is_finished ? 'Defeat' : 'In progress';
     const latestBattleDay = sortedBattles.reduce((max, b) => Math.max(max, Number(b.day) || 0), 0);
     const isLatestDateRecord = !!latestGameDate && formatDate(record.game_date) === latestGameDate;
     const uploadProgress = uploadProgressByMatch[record.match_id];
@@ -691,7 +691,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
             </div>
             <div className="history-title-block">
               <div className="history-title">
-                {statusText} ({wins}胜) · #{total - idx}
+                {statusText} ({wins} wins) · #{total - idx}
               </div>
               <div className="history-sub">
                 {record.hero || 'Unknown'} · {formatDate(record.game_date)} {formatTime(record.start_time)} · Day {getDisplayDay(record)}
@@ -699,13 +699,13 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
             </div>
           </div>
           <div className="history-card-right">
-            <span className="history-score">{wins} 胜 - {losses} 负</span>
+            <span className="history-score">{wins} W - {losses} L</span>
             <div className="history-battle-flow">
               {flowBattles.map((battle, battleIdx) => (
                 <span
                   key={`${record.match_id}-flow-${battleIdx}`}
                   className={`history-flow-dot ${battle.victory ? 'win' : 'loss'}`}
-                  title={`Day ${battle.day} ${battle.victory ? '胜利' : '失败'}`}
+                  title={`Day ${battle.day} ${battle.victory ? 'Win' : 'Loss'}`}
                 >
                   {battle.victory ? '✓' : '✗'}
                 </span>
@@ -725,7 +725,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
                 disabled={uploading || bulkUploading}
                 onClick={() => requestUploadAction({ type: 'single', record })}
               >
-                {uploading ? `上传中 ${uploadProgress?.done || 0}/${uploadProgress?.total || 0}` : '上传本局'}
+                {uploading ? `Uploading ${uploadProgress?.done || 0}/${uploadProgress?.total || 0}` : 'Upload this match'}
               </button>
             </div>
             {uploading && uploadProgress && (
@@ -734,11 +734,11 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
                   <div className="history-upload-progress-fill" style={{ width: `${uploadPercent}%` }} />
                 </div>
                 <div className="history-upload-progress-text">
-                  {uploadPercent}% · 成功 {uploadProgress.uploaded} / 跳过 {uploadProgress.skipped} / 失败 {uploadProgress.failed}
+                  {uploadPercent}% · {uploadProgress.uploaded} uploaded / {uploadProgress.skipped} skipped / {uploadProgress.failed} failed
                 </div>
               </div>
             )}
-            {sortedBattles.length === 0 && <div className="history-empty-row">无小局记录</div>}
+            {sortedBattles.length === 0 && <div className="history-empty-row">No rounds recorded</div>}
             {sortedBattles.map((battle, battleIdx) => {
               const battleKey = battleKeyOf(record, battle);
               const isCapturing = capturingBattles.has(battleKey);
@@ -748,7 +748,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
                 <div className="history-round-row">
                   <span className="history-round-day">DAY {battle.day}</span>
                   <span className={`history-round-result ${battle.victory ? 'win' : 'loss'}`}>
-                    {battle.victory ? '胜利' : '失败'}
+                    {battle.victory ? 'Win' : 'Loss'}
                   </span>
                   <span className="history-round-time">{formatTime(battle.start_time)}</span>
                   <span className="history-round-duration">
@@ -759,12 +759,12 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
                       <button
                         className="history-round-capture"
                         disabled={isCapturing}
-                        title="仅重新截取《The Bazaar》游戏窗口，不会截全屏"
+                        title="Retakes a screenshot of The Bazaar game window only, not the whole screen"
                         onClick={async (event) => {
                           event.stopPropagation();
                           if (isCapturing) return;
                           if (!record.start_time || !battle.start_time) {
-                            showToast('缺少对局时间信息，无法重新截图', 'warning');
+                            showToast('This match has no time info, so it cannot be re-captured', 'warning');
                             return;
                           }
 
@@ -788,11 +788,11 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
                               ...prev,
                               [battleKey]: (prev[battleKey] || 0) + 1,
                             }));
-                            showToast('已重新截图（仅游戏窗口）', 'success');
+                            showToast('Screenshot retaken (game window only)', 'success');
                             onReload();
                           } catch (error) {
-                            const message = typeof error === 'string' ? error : (error as any)?.toString?.() || '未知错误';
-                            showToast(`重新截图失败：${message}`, 'error');
+                            const message = typeof error === 'string' ? error : (error as any)?.toString?.() || 'Unknown error';
+                            showToast(`Could not retake the screenshot: ${message}`, 'error');
                           } finally {
                             setCapturingBattles((prev) => {
                               const next = new Set(prev);
@@ -802,7 +802,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
                           }
                         }}
                       >
-                        {isCapturing ? '截图中...' : '重新截图'}
+                        {isCapturing ? 'Capturing...' : 'Retake screenshot'}
                       </button>
                     ) : null}
                   </div>
@@ -811,7 +811,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
                   <div className="history-round-shot-row">
                     <button
                       className="history-round-shot"
-                      title="点击查看战斗截图"
+                      title="Click to view the fight screenshot"
                       onClick={(event) => {
                         event.stopPropagation();
                         setPreviewImage(screenshotSrcOf(battle.screenshot as string, battleKey));
@@ -825,7 +825,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
                   <>
                     {(battle.enemy_lineup_cards || []).length > 0 ? (
                       <div className="history-lineup-row">
-                        <span className="history-lineup-label">对方:</span>
+                        <span className="history-lineup-label">Opponent:</span>
                         <div className="history-lineup-cards">
                           {(battle.enemy_lineup_cards || []).map((card, cardIdx) => (
                             <div key={`${record.match_id}-${battleIdx}-enemy-${card.instance_id || card.template_id}-${cardIdx}`} className="history-lineup-item">
@@ -833,7 +833,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
                                 {lineupThumbs[`images/${card.template_id}.webp`] ? (
                                   <img
                                     src={lineupThumbs[`images/${card.template_id}.webp`]}
-                                    alt={card.name_cn || card.name_en || card.template_id}
+                                    alt={card.name_en || card.name_cn || card.template_id}
                                     loading="lazy"
                                   />
                                 ) : (
@@ -847,7 +847,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
                     ) : null}
 
                     <div className="history-lineup-row">
-                      <span className="history-lineup-label">我方:</span>
+                      <span className="history-lineup-label">You:</span>
                       <div className="history-lineup-cards">
                         {(battle.lineup_cards || []).map((card, cardIdx) => (
                           <div key={`${record.match_id}-${battleIdx}-self-${card.instance_id || card.template_id}-${cardIdx}`} className="history-lineup-item">
@@ -855,7 +855,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
                               {lineupThumbs[`images/${card.template_id}.webp`] ? (
                                 <img
                                   src={lineupThumbs[`images/${card.template_id}.webp`]}
-                                  alt={card.name_cn || card.name_en || card.template_id}
+                                  alt={card.name_en || card.name_cn || card.template_id}
                                   loading="lazy"
                                 />
                               ) : (
@@ -905,13 +905,13 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
       <div className="history-header">
         <div className="history-title-row">
           <div className="history-title-left">
-            <h2>历史战绩</h2>
+            <h2>Match History</h2>
             <div className="history-summary">
-              小局战绩: {overall.wins} 胜 {overall.losses} 负 ({overall.total} 场)
+              Rounds: {overall.wins} W {overall.losses} L ({overall.total} total)
             </div>
           </div>
-          <div className="history-delay-wrap" title="回合结束后延迟截图，避免战后动画遮挡">
-            <span className="history-delay-label">延迟截图 {((captureDelayMs || 0) / 1000).toFixed(1)}s</span>
+          <div className="history-delay-wrap" title="Waits after each fight before taking the screenshot, so end-of-fight animations do not cover it">
+            <span className="history-delay-label">Screenshot delay {((captureDelayMs || 0) / 1000).toFixed(1)}s</span>
             <input
               className="history-delay-slider"
               type="range"
@@ -937,21 +937,21 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
         <div className="history-toolbar">
           <div className="history-actions-group">
             <button className="bulk-btn secondary" onClick={() => setShowHelpModal(true)}>
-              使用帮助
+              Help
             </button>
             <button className="bulk-btn" onClick={() => setBattleSortDesc((prev) => !prev)}>
-              {battleSortDesc ? '排序: 新→旧' : '排序: 旧→新'}
+              {battleSortDesc ? 'Sort: newest first' : 'Sort: oldest first'}
             </button>
             <button className="bulk-btn" onClick={onReload}>
-              {isLoading ? '刷新中...' : '刷新'}
+              {isLoading ? 'Refreshing...' : 'Refresh'}
             </button>
           </div>
           <div className="history-actions-group">
             <button className="bulk-btn secondary" disabled={openingCommunity} onClick={() => void handleOpenCommunity()}>
-              {openingCommunity ? '打开中...' : '打开社区并登录'}
+              {openingCommunity ? 'Opening...' : 'Open site and sign in'}
             </button>
             <button className="bulk-btn primary" disabled={bulkUploading} onClick={() => requestUploadAction({ type: 'all' })}>
-              {bulkUploading ? `上传中 ${bulkProgress.done}/${bulkProgress.total}` : '一键上传全部'}
+              {bulkUploading ? `Uploading ${bulkProgress.done}/${bulkProgress.total}` : 'Upload all'}
             </button>
           </div>
         </div>
@@ -959,21 +959,21 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
 
       {records.length === 0 && !isLoading && (
         <div className="empty-tip" style={{ marginTop: 24 }}>
-          暂无历史战绩，请先进行游戏并生成日志
+          No match history yet. Play a game so the log has some matches.
         </div>
       )}
 
       <div className="history-list">
         {ongoingRecords.length > 0 && (
           <div className="history-section-divider">
-            <span>当前进行中</span>
+            <span>In progress</span>
           </div>
         )}
         {ongoingRecords.map((record, idx) => renderRecordCard(record, idx, ongoingRecords.length))}
 
         {ongoingRecords.length > 0 && finishedRecords.length > 0 && (
           <div className="history-section-divider muted">
-            <span>历史对局</span>
+            <span>Past matches</span>
           </div>
         )}
         {finishedRecords.map((record, idx) => renderRecordCard(record, idx, finishedRecords.length))}
@@ -994,18 +994,18 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
         <div className="history-dialog-overlay" onClick={() => setShowHelpModal(false)}>
           <div className="history-dialog" onClick={(event) => event.stopPropagation()}>
             <div className="history-dialog-head">
-              <h3>如何使用</h3>
+              <h3>How to use</h3>
               <button className="history-dialog-close" onClick={() => setShowHelpModal(false)}>×</button>
             </div>
             <div className="history-dialog-content">
               <ol className="history-dialog-list">
-                <li>上传对局后，会在 duang.work 以游戏 id 自动注册账号，并可在网站查看已上传战绩。</li>
-                <li>截图会在日志检测到对局结束时自动截取；如果速度过快可设置“延迟截图”，也可手动点“重新截图”。</li>
-                <li>免责声明：点击上传即表示同意作者可能对上传的数据与图片进行分析，并用于阵容推荐等后续功能。</li>
+                <li>When you upload a match, an account is created on duang.work using your game ID, and you can view your uploaded matches there.</li>
+                <li>A screenshot is taken automatically when the log shows a fight ended. If it is taken too early, set a "Screenshot delay" or click "Retake screenshot".</li>
+                <li>Disclaimer: by uploading, you agree that the developer may analyze the uploaded data and screenshots and use them for features such as build recommendations.</li>
               </ol>
             </div>
             <div className="history-dialog-actions">
-              <button className="bulk-btn primary" onClick={() => setShowHelpModal(false)}>我知道了</button>
+              <button className="bulk-btn primary" onClick={() => setShowHelpModal(false)}>Got it</button>
             </div>
           </div>
         </div>
@@ -1021,7 +1021,7 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
         >
           <div className="history-dialog" onClick={(event) => event.stopPropagation()}>
             <div className="history-dialog-head">
-              <h3>上传战绩须知</h3>
+              <h3>Before you upload</h3>
               <button
                 className="history-dialog-close"
                 onClick={() => {
@@ -1033,16 +1033,16 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
               </button>
             </div>
             <div className="history-dialog-content">
-              <p>上传后会在 duang.work 以游戏 id 自动注册账号，并可在网页查看战绩。</p>
-              <p>截图由日志触发自动截取；若回合结束动画遮挡，可通过“延迟截图”或“重新截图”修正。</p>
-              <p>点击上传即表示同意作者可能对上传数据和截图做分析，并用于阵容推荐等功能。</p>
+              <p>Uploading creates an account on duang.work using your game ID, where you can view your matches.</p>
+              <p>Screenshots are taken automatically from the game log. If an end-of-fight animation covers one, use "Screenshot delay" or "Retake screenshot".</p>
+              <p>By uploading, you agree that the developer may analyze the uploaded data and screenshots and use them for features such as build recommendations.</p>
               <label className="history-dialog-check">
                 <input
                   type="checkbox"
                   checked={uploadNoticeRemember}
                   onChange={(event) => setUploadNoticeRemember(event.target.checked)}
                 />
-                <span>以后不再提醒</span>
+                <span>Don't remind me again</span>
               </label>
             </div>
             <div className="history-dialog-actions">
@@ -1053,10 +1053,10 @@ export const HistoryView: React.FC<HistoryViewProps> = ({ records, isLoading, on
                   setPendingUploadAction(null);
                 }}
               >
-                取消
+                Cancel
               </button>
               <button className="bulk-btn primary" onClick={() => void handleConfirmUploadNotice()}>
-                同意并上传
+                Agree and upload
               </button>
             </div>
           </div>

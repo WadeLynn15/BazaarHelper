@@ -88,12 +88,12 @@ export const MonsterTabView: React.FC<MonsterTabViewProps> = ({
           onClick={async () => {
             try {
               const dayNum = selectedDay === 'Day 10+' ? 10 : parseInt(selectedDay.split(' ')[1]);
-              showToast(`正在识别 Day ${dayNum} 的野怪...`, 'info');
+              showToast(`Identifying Day ${dayNum} monsters...`, 'info');
               await handleAutoRecognition(dayNum);
-              showToast('一键识别完成', 'success');
+              showToast('Identification complete', 'success');
             } catch (err: any) {
               console.error('[Monster Recognition] Failed:', err);
-              showToast('识别失败: ' + err, 'error');
+              showToast('Identification failed: ' + err, 'error');
             }
           }}
           onMouseEnter={(e) => {
@@ -109,12 +109,12 @@ export const MonsterTabView: React.FC<MonsterTabViewProps> = ({
             e.currentTarget.style.boxShadow = '0 4px 12px rgba(255, 205, 25, 0.2)';
           }}
         >
-          {isRecognizing ? '⏳ 正在识别中...' : '🎯 一键识别当前野怪'}
+          {isRecognizing ? '⏳ Identifying...' : '🎯 Identify current monsters'}
         </button>
 
         {!templateLoading.is_complete && templateLoading.total > 0 && (
           <div className="loading-progress">
-            <div className="progress-text">加载怪物模板: {templateLoading.loaded}/{templateLoading.total}</div>
+            <div className="progress-text">Loading monster templates: {templateLoading.loaded}/{templateLoading.total}</div>
             <div className="progress-bar">
               <div
                 className="progress-fill"
@@ -154,7 +154,7 @@ export const MonsterTabView: React.FC<MonsterTabViewProps> = ({
                   </div>
                   <div className="monster-info-v2">
                     <div className="monster-name-zh">
-                      {m.name_zh}
+                      {m.name || m.name_zh}
                       {isIdentified && <span className="id-badge">MATCH</span>}
                     </div>
                     <div className="monster-health">❤️ {m.health?.toString() || m.health}</div>
@@ -168,11 +168,11 @@ export const MonsterTabView: React.FC<MonsterTabViewProps> = ({
                 {isExpanded && (
                   <div className="monster-assets-grid">
                     <div className="assets-section">
-                      <div className="section-title">技能 (Skills)</div>
+                      <div className="section-title">Skills</div>
                       {m.skills?.map((s, idx) => <div key={idx}>{renderTierInfo(s)}</div>)}
                     </div>
                     <div className="assets-section">
-                      <div className="section-title">物品 (Items)</div>
+                      <div className="section-title">Items</div>
                       {m.items?.map((it, idx) => <div key={idx}>{renderTierInfo(it)}</div>)}
                     </div>
                   </div>
@@ -180,7 +180,7 @@ export const MonsterTabView: React.FC<MonsterTabViewProps> = ({
               </div>
             );
           })}
-        {manualMonsters.length === 0 && <div className="empty-tip">该天数下暂无怪物数据</div>}
+        {manualMonsters.length === 0 && <div className="empty-tip">No monster data for this day</div>}
       </div>
     </>
   );

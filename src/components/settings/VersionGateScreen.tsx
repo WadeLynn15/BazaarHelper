@@ -51,7 +51,7 @@ export function VersionGateScreen({
           <div className="update-drag-region" data-tauri-drag-region onMouseDown={startDragging} />
           <button
             className="update-minimize-btn"
-            title="最小化"
+            title="Minimize"
             onClick={async () => {
               localStorage.setItem(MANUAL_MINIMIZE_KEY, '1');
               try {
@@ -65,7 +65,7 @@ export function VersionGateScreen({
           </button>
         </div>
 
-        <h1 className="bulletin-title" data-tauri-drag-region onMouseDown={startDragging}>集市小抄</h1>
+        <h1 className="bulletin-title" data-tauri-drag-region onMouseDown={startDragging}>Bazaar Cheat Sheet</h1>
 
         <div className="bulletin-body">
           {announcement ? (
@@ -75,18 +75,18 @@ export function VersionGateScreen({
               ))}
             </div>
           ) : (
-            <div className="bulletin-loading">正在获取最新公告...</div>
+            <div className="bulletin-loading">Loading the latest announcement...</div>
           )}
         </div>
 
         <div className="version-info-row">
-          <span className="current-v">当前版本: v{currentVersion}</span>
+          <span className="current-v">Current version: v{currentVersion}</span>
           <div className="update-status-tag">
-            {updateStatus === 'checking' && <span className="status-checking">检查更新中...</span>}
+            {updateStatus === 'checking' && <span className="status-checking">Checking for updates...</span>}
             {updateStatus === 'available' && (
-              <span className="status-available pulsate">新版本 v{updateAvailableVersion} 可用</span>
+              <span className="status-available pulsate">Version v{updateAvailableVersion} is available</span>
             )}
-            {updateStatus === 'none' && <span className="status-none">已是最新版</span>}
+            {updateStatus === 'none' && <span className="status-none">You're up to date</span>}
           </div>
         </div>
 
@@ -94,14 +94,14 @@ export function VersionGateScreen({
           {updateStatus === 'available' && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '100%' }}>
               <button className="update-now-btn" onClick={onStartUpdateDownload}>
-                立即更新
+                Update now
               </button>
               <button
                 className="enter-btn"
                 style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.2)', opacity: 0.8 }}
                 onClick={onEnterApp}
               >
-                直接进入插件
+                Skip and open the app
               </button>
             </div>
           )}
@@ -109,7 +109,7 @@ export function VersionGateScreen({
           {updateStatus === 'downloading' && (
             <div style={{ width: '100%', textAlign: 'center' }}>
               <div style={{ fontSize: '14px', color: '#58a6ff', marginBottom: '8px' }}>
-                正在下载更新... {downloadProgress}%
+                Downloading update... {downloadProgress}%
               </div>
               <div
                 style={{
@@ -134,13 +134,13 @@ export function VersionGateScreen({
 
           {updateStatus === 'ready' && (
             <button className="update-now-btn" onClick={onInstallReady}>
-              更新已就绪，点击安装
+              Update ready. Click to install
             </button>
           )}
 
           {(updateStatus === 'none' || updateStatus === 'checking') && (
             <button className="enter-btn" onClick={onEnterApp}>
-              进入插件
+              Open the app
             </button>
           )}
         </div>

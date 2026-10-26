@@ -117,13 +117,13 @@ export const useTierInfoRenderer = (itemSizes: Record<string, string>) => {
             <div className={`sub-item-img-wrap size-${sizeClassFallback}`} style={{ outline: `2px solid ${borderColor}` }}>
               <img src={item.displayImg} className="sub-item-img" />
             </div>
-            <span className="sub-item-name">{item.name}{hasSkills ? '' : ' (无描述)'}</span>
+            <span className="sub-item-name">{(item as any).name_en || item.name}{hasSkills ? '' : ' (no description)'}</span>
           </div>
           {hasSkills && (
             <div className="sub-item-desc">
               {(item as any).skills.map((skill: any, i: number) => (
                 <div key={i} className="desc-line">
-                  {formatDescription(skill.cn || skill.en || skill)}
+                  {formatDescription(skill.en || skill.cn || skill)}
                 </div>
               ))}
             </div>
@@ -154,7 +154,7 @@ export const useTierInfoRenderer = (itemSizes: Record<string, string>) => {
             <img src={item.displayImg} className="sub-item-img" />
           </div>
           <div className="sub-item-title-row">
-            <span className="sub-item-name">{item.name}</span>
+            <span className="sub-item-name">{(item as any).name_en || item.name}</span>
             {(() => {
               const tierSequence = ['bronze', 'silver', 'gold', 'diamond', 'legendary'];
               const activeTiers = tierSequence
@@ -176,7 +176,7 @@ export const useTierInfoRenderer = (itemSizes: Record<string, string>) => {
                         {i < activeTiers.length - 1 && <div className="cd-arrow">»</div>}
                       </Fragment>
                     ))}
-                    <div className="cd-unit">秒</div>
+                    <div className="cd-unit">sec</div>
                   </div>
                 );
               } else {
@@ -189,7 +189,7 @@ export const useTierInfoRenderer = (itemSizes: Record<string, string>) => {
           {(item as any).skills && (item as any).skills.length > 0 ? (
             (item as any).skills.map((skill: any, i: number) => (
               <div key={i} className="desc-line">
-                {isProgressionActive ? formatDescription(skill.cn || skill.en || skill) : formatDescription(skill.cn || skill.en || skill)}
+                {isProgressionActive ? formatDescription(skill.en || skill.cn || skill) : formatDescription(skill.en || skill.cn || skill)}
               </div>
             ))
           ) : (

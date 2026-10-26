@@ -129,24 +129,24 @@ function AppSettingsPanelImpl(props: AppSettingsPanelProps) {
   const panel = (
     <div className={`settings-panel ${inline ? 'inline' : ''}`} onClick={(e) => e.stopPropagation()}>
         <div className="settings-header">
-          <h3>设置</h3>
+          <h3>Settings</h3>
           {!inline ? <button className="close-panel-btn" onClick={onClose}>×</button> : null}
         </div>
 
         <div className="settings-content" data-no-drag>
           <SettingGroup
-            title="⚙️ 界面设置"
+            title="⚙️ Interface"
             expanded={settingsExpanded.ui}
             onToggle={() => setSettingsExpanded((prev) => ({ ...prev, ui: !prev.ui }))}
           >
             <div className="setting-item">
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <label>字体大小: {fontSize}px</label>
+                <label>Font size: {fontSize}px</label>
                 <button className="bulk-btn" style={{ padding: '2px 8px' }} onClick={() => {
                   setFontSize(16);
                   localStorage.setItem('user-font-size', '16');
-                  showToast('字体大小已重置', 'success');
-                }}>重置</button>
+                  showToast('Font size reset', 'success');
+                }}>Reset</button>
               </div>
               <input
                 type="range"
@@ -163,46 +163,46 @@ function AppSettingsPanelImpl(props: AppSettingsPanelProps) {
 
             <div className="setting-item">
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <label>窗口布局</label>
+                <label>Window layout</label>
                 <button className="bulk-btn" style={{ padding: '2px 8px' }} onClick={() => {
                   localStorage.removeItem('plugin-width');
                   localStorage.removeItem('plugin-height');
                   setExpandedWidth(400);
                   setExpandedHeight(700);
                   setHasCustomPosition(false);
-                  showToast('窗口布局已重置', 'success');
-                }}>重置宽高与位置</button>
+                  showToast('Window layout reset', 'success');
+                }}>Reset size and position</button>
               </div>
-              <div className="setting-tip">调整后将实时影响所有文字大小</div>
+              <div className="setting-tip">Changes apply to all text immediately</div>
             </div>
 
             <div className="setting-item">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <label>详情弹窗位置</label>
+                <label>Detail popup position</label>
                 <button className="bulk-btn" style={{ padding: '4px 12px' }} onClick={async () => {
                   try {
                     await invoke('reset_detail_popup_position');
-                    showToast('详情弹窗位置已重置', 'success');
+                    showToast('Detail popup position reset', 'success');
                   } catch (e) {
                     console.error('Failed to reset detail popup position:', e);
-                    showToast('重置失败', 'error');
+                    showToast('Reset failed', 'error');
                   }
-                }}>重置位置</button>
+                }}>Reset position</button>
               </div>
               <div style={{ fontSize: '11px', color: '#888', marginTop: '8px' }}>
-                重置详情弹窗到默认位置（鼠标所在屏幕的中心）
+                Moves the detail popup back to its default position (the center of the screen your mouse is on)
               </div>
             </div>
           </SettingGroup>
 
           <SettingGroup
-            title="🔍 YOLO设置"
+            title="🔍 YOLO (AI scanner)"
             expanded={settingsExpanded.yolo}
             onToggle={() => setSettingsExpanded((prev) => ({ ...prev, yolo: !prev.yolo }))}
           >
             <div className="setting-item">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <label>YOLO自动识别</label>
+                <label>YOLO auto-scan</label>
                 <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
                   {enableYoloAuto && (
                     <button
@@ -217,10 +217,10 @@ function AppSettingsPanelImpl(props: AppSettingsPanelProps) {
                         const newVal = !useGpuAcceleration;
                         setUseGpuAcceleration(newVal);
                         localStorage.setItem('use-gpu-acceleration', newVal.toString());
-                        showToast(`GPU加速已${newVal ? '开启' : '关闭'}`, 'info');
+                        showToast(`GPU acceleration ${newVal ? 'on' : 'off'}`, 'info');
                       }}
                     >
-                      GPU加速: {useGpuAcceleration ? '开' : '关'}
+                      GPU acceleration: {useGpuAcceleration ? 'On' : 'Off'}
                     </button>
                   )}
                   <button
@@ -235,21 +235,21 @@ function AppSettingsPanelImpl(props: AppSettingsPanelProps) {
                       const newVal = !enableYoloAuto;
                       setEnableYoloAuto(newVal);
                       localStorage.setItem('enable-yolo-auto', newVal.toString());
-                      showToast(`YOLO自动识别已${newVal ? '开启' : '关闭'}`, 'info');
+                      showToast(`YOLO auto-scan ${newVal ? 'on' : 'off'}`, 'info');
                     }}
                   >
-                    {enableYoloAuto ? '已开启' : '已关闭'}
+                    {enableYoloAuto ? 'On' : 'Off'}
                   </button>
                 </div>
               </div>
               <div style={{ fontSize: '11px', color: '#888', marginTop: '4px' }}>
-                启用后每隔固定时间自动触发YOLO识别卡牌（下方可调整频率）
+                When on, scans your screen for cards on a timer (set how often below)
               </div>
             </div>
 
             <div className="setting-item" style={{ opacity: enableYoloAuto ? 1 : 0.5 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <label>YOLO扫描频率</label>
+                <label>YOLO scan interval</label>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <input
                     type="range"
@@ -271,23 +271,23 @@ function AppSettingsPanelImpl(props: AppSettingsPanelProps) {
                 </div>
               </div>
               <div style={{ fontSize: '11px', color: '#888', marginTop: '4px' }}>
-                设置YOLO自动识别的时间间隔（0.5秒 - 2秒）
+                Time between automatic scans (0.5 to 2 seconds)
               </div>
             </div>
 
             <div className="setting-item">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <label>YOLO结果展示</label>
-                <span style={{ fontSize: '12px', color: '#ffcd19', fontWeight: 600 }}>灵动岛概览</span>
+                <label>YOLO results</label>
+                <span style={{ fontSize: '12px', color: '#ffcd19', fontWeight: 600 }}>Island overview</span>
               </div>
               <div style={{ fontSize: '11px', color: '#888', marginTop: '4px' }}>
-                YOLO监控独立窗口已停用。手动触发或自动扫描结果会显示在收起态灵动岛。
+                The separate YOLO monitor window has been retired. Results from manual and automatic scans show in the collapsed island bar.
               </div>
             </div>
 
             <div className="setting-item">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <label>图片缓存清理</label>
+                <label>Image cache</label>
                 <button
                   className="bulk-btn"
                   style={{ padding: '4px 12px' }}
@@ -300,33 +300,33 @@ function AppSettingsPanelImpl(props: AppSettingsPanelProps) {
                       }>('clear_generated_image_caches');
                       const mb = report.removed_bytes / (1024 * 1024);
                       showToast(
-                        `已清理 ${report.removed_files} 个文件（${mb.toFixed(2)} MB）`,
+                        `Removed ${report.removed_files} file(s) (${mb.toFixed(2)} MB)`,
                         'success',
                       );
                     } catch (e) {
                       console.error('Failed to clear generated image caches:', e);
-                      showToast('清理失败，请查看日志', 'error');
+                      showToast('Cleanup failed. Check the logs.', 'error');
                     }
                   }}
                 >
-                  清理缓存图片
+                  Clear cached images
                 </button>
               </div>
               <div style={{ fontSize: '11px', color: '#888', marginTop: '4px' }}>
-                清理搜索缩略图与调试截图缓存文件，避免长期堆积占用存储。
+                Deletes cached search thumbnails and debug screenshots so they do not pile up and use disk space.
               </div>
             </div>
 
             <div className="setting-item">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <label>YOLO手动触发快捷键</label>
+                <label>YOLO manual scan hotkey</label>
                 <button className="bulk-btn" style={{ padding: '2px 8px' }} onClick={(e) => { e.preventDefault(); setIsRecordingYoloHotkey(true); }}>
-                  {isRecordingYoloHotkey ? '请按键...' : (yoloHotkey ? getHotkeyLabel(yoloHotkey) : '未设置')}
+                  {isRecordingYoloHotkey ? 'Press a key...' : (yoloHotkey ? getHotkeyLabel(yoloHotkey) : 'Not set')}
                 </button>
               </div>
               <HotkeyCaptureOverlay
                 visible={isRecordingYoloHotkey}
-                description="支持: 键盘按键, 鼠标中键/侧键（不支持左右键）"
+                description="Supports: keyboard keys, middle/side mouse buttons (not left or right click)"
                 allowMouseButtons={[1, 3, 4]}
                 onCapture={(vk) => {
                   setYoloHotkey(vk);
@@ -336,20 +336,20 @@ function AppSettingsPanelImpl(props: AppSettingsPanelProps) {
                 onCancel={() => setIsRecordingYoloHotkey(false)}
               />
               <div style={{ fontSize: '11px', color: '#888', marginTop: '4px' }}>
-                按此键立即触发YOLO识别（默认: 未设置）
+                Press this key to run a YOLO scan right away (default: not set)
               </div>
             </div>
 
             <div className="setting-item">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <label>卡牌详情显示按键</label>
+                <label>Card details key</label>
                 <button className="bulk-btn" style={{ padding: '2px 8px' }} onClick={(e) => { e.preventDefault(); setIsRecordingDetailHotkey(true); }}>
-                  {isRecordingDetailHotkey ? '请按键...' : (detailDisplayHotkey ? getHotkeyLabel(detailDisplayHotkey) : '未设置')}
+                  {isRecordingDetailHotkey ? 'Press a key...' : (detailDisplayHotkey ? getHotkeyLabel(detailDisplayHotkey) : 'Not set')}
                 </button>
               </div>
               <HotkeyCaptureOverlay
                 visible={isRecordingDetailHotkey}
-                description="支持: 键盘按键, 鼠标左/中/右键/侧键"
+                description="Supports: keyboard keys, left/middle/right/side mouse buttons"
                 onCapture={(vk) => {
                   setDetailDisplayHotkey(vk);
                   invoke('set_detail_display_hotkey', { hotkey: vk });
@@ -358,26 +358,26 @@ function AppSettingsPanelImpl(props: AppSettingsPanelProps) {
                 onCancel={() => setIsRecordingDetailHotkey(false)}
               />
               <div style={{ fontSize: '11px', color: '#888', marginTop: '4px' }}>
-                按此键显示鼠标位置的卡牌/怪物/事件详情（默认: 未设置）
+                Press this key to show details for the card, monster or event under the mouse (default: not set)
               </div>
             </div>
           </SettingGroup>
 
           <SettingGroup
-            title="⌨️ 快捷键设置"
+            title="⌨️ Hotkeys"
             expanded={settingsExpanded.hotkeys}
             onToggle={() => setSettingsExpanded((prev) => ({ ...prev, hotkeys: !prev.hotkeys }))}
           >
             <div className="setting-item">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                <label>怪物识别按键</label>
+                <label>Monster scan key</label>
                 <button className="bulk-btn" style={{ padding: '2px 8px' }} onClick={(e) => { e.preventDefault(); setIsRecordingHotkey(true); }}>
-                  {isRecordingHotkey ? '请按键...' : (detectionHotkey ? getHotkeyLabel(detectionHotkey) : '未设置')}
+                  {isRecordingHotkey ? 'Press a key...' : (detectionHotkey ? getHotkeyLabel(detectionHotkey) : 'Not set')}
                 </button>
               </div>
               <HotkeyCaptureOverlay
                 visible={isRecordingHotkey}
-                description="支持: 键盘按键, 鼠标左/中/右键/侧键"
+                description="Supports: keyboard keys, left/middle/right/side mouse buttons"
                 onCapture={(vk) => {
                   setDetectionHotkey(vk);
                   invoke('set_detection_hotkey', { hotkey: vk });
@@ -385,19 +385,19 @@ function AppSettingsPanelImpl(props: AppSettingsPanelProps) {
                 }}
                 onCancel={() => setIsRecordingHotkey(false)}
               />
-              <div className="setting-tip">默认: 未设置</div>
+              <div className="setting-tip">Default: not set</div>
             </div>
 
             <div className="setting-item">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                <label>卡牌识别按键</label>
+                <label>Card scan key</label>
                 <button className="bulk-btn" style={{ padding: '2px 8px' }} onClick={(e) => { e.preventDefault(); setIsRecordingCardHotkey(true); }}>
-                  {isRecordingCardHotkey ? '请按键...' : (cardDetectionHotkey ? getHotkeyLabel(cardDetectionHotkey) : '未设置')}
+                  {isRecordingCardHotkey ? 'Press a key...' : (cardDetectionHotkey ? getHotkeyLabel(cardDetectionHotkey) : 'Not set')}
                 </button>
               </div>
               <HotkeyCaptureOverlay
                 visible={isRecordingCardHotkey}
-                description="支持: 键盘按键, 鼠标左/中/右键/侧键"
+                description="Supports: keyboard keys, left/middle/right/side mouse buttons"
                 onCapture={(vk) => {
                   setCardDetectionHotkey(vk);
                   invoke('set_card_detection_hotkey', { hotkey: vk });
@@ -405,19 +405,19 @@ function AppSettingsPanelImpl(props: AppSettingsPanelProps) {
                 }}
                 onCancel={() => setIsRecordingCardHotkey(false)}
               />
-              <div className="setting-tip">默认: 未设置</div>
+              <div className="setting-tip">Default: not set</div>
             </div>
 
             <div className="setting-item">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                <label>一键收起/展开插件</label>
+                <label>Collapse/expand app</label>
                 <button className="bulk-btn" style={{ padding: '2px 8px' }} onClick={(e) => { e.preventDefault(); setIsRecordingToggleHotkey(true); }}>
-                  {isRecordingToggleHotkey ? '请按键...' : (toggleCollapseHotkey ? getHotkeyLabel(toggleCollapseHotkey) : '未设置')}
+                  {isRecordingToggleHotkey ? 'Press a key...' : (toggleCollapseHotkey ? getHotkeyLabel(toggleCollapseHotkey) : 'Not set')}
                 </button>
               </div>
               <HotkeyCaptureOverlay
                 visible={isRecordingToggleHotkey}
-                description="支持: 键盘按键, 鼠标中键/侧键（不支持左右键）"
+                description="Supports: keyboard keys, middle/side mouse buttons (not left or right click)"
                 allowMouseButtons={[1, 3, 4]}
                 onCapture={(vk) => {
                   setToggleCollapseHotkey(vk);
@@ -426,20 +426,20 @@ function AppSettingsPanelImpl(props: AppSettingsPanelProps) {
                 }}
                 onCancel={() => setIsRecordingToggleHotkey(false)}
               />
-              <div className="setting-tip">默认: 未设置</div>
+              <div className="setting-tip">Default: not set</div>
             </div>
 
             <div className="setting-divider" style={{ borderTop: '1px solid rgba(255,255,255,0.1)', margin: '15px 0' }}></div>
 
             <div className="setting-item">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <label>快捷键管理</label>
+                <label>Hotkey management</label>
                 <button className="bulk-btn" style={{ padding: '4px 12px', background: 'rgba(255, 69, 58, 0.15)', borderColor: 'rgba(255, 69, 58, 0.4)' }} onClick={() => {
                   setShowResetHotkeysConfirm(true);
-                }}>重置所有快捷键</button>
+                }}>Reset all hotkeys</button>
               </div>
               <div style={{ fontSize: '11px', color: '#888', marginTop: '8px' }}>
-                将所有快捷键重置为"未设置"状态，禁用所有快捷键功能
+                Resets every hotkey to "Not set", which turns all hotkeys off
               </div>
             </div>
 
@@ -454,7 +454,7 @@ function AppSettingsPanelImpl(props: AppSettingsPanelProps) {
 
           <div className="setting-item">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-              <label>版本信息: v{currentVersion}</label>
+              <label>Version: v{currentVersion}</label>
               <button
                 className="bulk-btn"
                 style={{
@@ -465,29 +465,29 @@ function AppSettingsPanelImpl(props: AppSettingsPanelProps) {
                 disabled={updateStatus === 'checking' || updateStatus === 'downloading'}
                 onClick={() => void onManualCheckUpdate()}
               >
-                {updateStatus === 'checking' ? '检查中...' : '检查更新'}
+                {updateStatus === 'checking' ? 'Checking...' : 'Check for updates'}
               </button>
             </div>
 
-            {updateStatus === 'checking' && <div style={{ fontSize: 'calc(12px * var(--font-scale, 1))', color: '#999' }}>正在检查远端更新...</div>}
-            {updateStatus === 'none' && <div style={{ fontSize: 'calc(12px * var(--font-scale, 1))', color: '#238636' }}>当前已经是最新版本</div>}
+            {updateStatus === 'checking' && <div style={{ fontSize: 'calc(12px * var(--font-scale, 1))', color: '#999' }}>Checking for updates...</div>}
+            {updateStatus === 'none' && <div style={{ fontSize: 'calc(12px * var(--font-scale, 1))', color: '#238636' }}>You're on the latest version</div>}
 
             {(updateStatus === 'available' || updateStatus === 'downloading' || updateStatus === 'ready') && (
               <div style={{ background: 'rgba(56, 139, 253, 0.15)', border: '1px solid rgba(56, 139, 253, 0.4)', padding: '10px', borderRadius: '6px' }}>
                 <div style={{ fontSize: 'calc(13px * var(--font-scale, 1))', fontWeight: 'bold', marginBottom: '8px', color: '#58a6ff' }}>
-                  发现新版本: v{updateAvailableVersion}
+                  New version available: v{updateAvailableVersion}
                 </div>
 
                 {updateStatus === 'available' && (
                   <button className="bulk-btn" style={{ width: '100%', padding: '6px', background: '#238636', border: 'none' }} onClick={onStartUpdateDownload}>
-                    立即下载更新
+                    Download update now
                   </button>
                 )}
 
                 {updateStatus === 'downloading' && (
                   <div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', marginBottom: '4px' }}>
-                      <span>正在下载后台更新...</span>
+                      <span>Downloading update in the background...</span>
                       <span>{downloadProgress}%</span>
                     </div>
                     <div style={{ background: 'rgba(255,255,255,0.1)', height: '4px', borderRadius: '2px' }}>
@@ -498,7 +498,7 @@ function AppSettingsPanelImpl(props: AppSettingsPanelProps) {
 
                 {updateStatus === 'ready' && (
                   <button className="bulk-btn" style={{ width: '100%', padding: '6px', background: '#238636', border: 'none' }} onClick={onInstallReady}>
-                    下载完成，点击重启安装
+                    Download complete. Click to restart and install
                   </button>
                 )}
               </div>
@@ -507,7 +507,7 @@ function AppSettingsPanelImpl(props: AppSettingsPanelProps) {
 
           {announcement && (
             <div className="setting-item" style={{ marginTop: '20px' }}>
-              <label style={{ display: 'block', marginBottom: '8px', color: '#8b949e' }}>当前公告</label>
+              <label style={{ display: 'block', marginBottom: '8px', color: '#8b949e' }}>Announcement</label>
               <div className="settings-announcement-text">{announcement}</div>
             </div>
           )}
@@ -516,7 +516,7 @@ function AppSettingsPanelImpl(props: AppSettingsPanelProps) {
 
           <div className="setting-item">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '8px' }}>
-              <label>应用控制</label>
+              <label>App</label>
               <button
                 className="bulk-btn"
                 style={{
@@ -526,13 +526,13 @@ function AppSettingsPanelImpl(props: AppSettingsPanelProps) {
                   color: '#ff8a80',
                 }}
                 onClick={() => {
-                  showToast('正在关闭应用...', 'info');
+                  showToast('Closing the app...', 'info');
                   setTimeout(() => {
                     void invoke('request_app_exit');
                   }, 120);
                 }}
               >
-                关闭应用
+                Quit app
               </button>
             </div>
           </div>

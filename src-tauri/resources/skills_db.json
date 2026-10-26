@@ -191,7 +191,7 @@
     "id": "d6251362-7c11-4a7e-9d6d-97f445f2f828",
     "name_en": "Burn Containment",
     "name_cn": "灼烧遏制",
-    "description_en": "The first 4/8 times you Burn each fight, Charge a Shield item 1 second(s).",
+    "description_en": "The first 4/8 times you Burn each fight, Charge a Shield item 1 second.",
     "description_cn": "每场战斗前4/8次触发灼烧时，为一件护盾物品充能1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -205,7 +205,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 4/8 times you Burn each fight, Charge a Shield item 1 second(s).",
+        "en": "The first 4/8 times you Burn each fight, Charge a Shield item 1 second.",
         "cn": "每场战斗前4/8次触发灼烧时，为一件护盾物品充能1秒。"
       }
     ]
@@ -467,7 +467,7 @@
     "id": "2d9ee50a-e31b-4b43-b667-ca93ed1e248f",
     "name_en": "Quicken Weapons",
     "name_cn": "",
-    "description_en": "The Cooldowns of your Weapons with Cooldown greater than 10 seconds are reduced by 1000/2000 second(s).",
+    "description_en": "The Cooldowns of your Weapons with Cooldown greater than 10 seconds are reduced by 1/2 second(s).",
     "description_cn": "[未翻译]",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -481,7 +481,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The Cooldowns of your Weapons with Cooldown greater than 10 seconds are reduced by 1000/2000 second(s).",
+        "en": "The Cooldowns of your Weapons with Cooldown greater than 10 seconds are reduced by 1/2 second(s).",
         "cn": "[未翻译]"
       }
     ]
@@ -674,7 +674,7 @@
     "id": "a89060ce-17fa-4706-9c6c-79c0834eeb2c",
     "name_en": "Liquid Cooled",
     "name_cn": "水冷",
-    "description_en": "The first 5/10 times use a Core each fight, Freeze an item of equal or Smaller size for 1 second(s).",
+    "description_en": "The first 5/10 times use a Core each fight, Freeze an item of equal or Smaller size for 1 second.",
     "description_cn": "每场战斗前5/10次使用核心时，冻结一件尺寸相等或更小的物品1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -688,7 +688,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 5/10 times use a Core each fight, Freeze an item of equal or Smaller size for 1 second(s).",
+        "en": "The first 5/10 times use a Core each fight, Freeze an item of equal or Smaller size for 1 second.",
         "cn": "每场战斗前5/10次使用核心时，冻结一件尺寸相等或更小的物品1秒。"
       }
     ]
@@ -904,7 +904,7 @@
     "id": "3dd2dbac-97ee-4fc4-ac31-4d885d19e2ed",
     "name_en": "CPU Throttling",
     "name_cn": "CPU 降频",
-    "description_en": "The first 5/10 times you use a Core each fight, Slow an item for 2 second(s).",
+    "description_en": "The first 5/10 times you use a Core each fight, Slow an item for 2 seconds.",
     "description_cn": "每场战斗前5/10次使用核心时，减速一件物品2秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -918,7 +918,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 5/10 times you use a Core each fight, Slow an item for 2 second(s).",
+        "en": "The first 5/10 times you use a Core each fight, Slow an item for 2 seconds.",
         "cn": "每场战斗前5/10次使用核心时，减速一件物品2秒。"
       }
     ]
@@ -996,7 +996,7 @@
     "id": "d071e4de-f87f-41b5-b02d-d622e35c0b4d",
     "name_en": "Juggler",
     "name_cn": "杂耍",
-    "description_en": "When you use a Small item, Charge a Large item for 1 second(s).",
+    "description_en": "When you use a Small item, Charge a Large item for 1 second.",
     "description_cn": "使用小型物品时，为一件大型物品充能1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Diamond / 钻石",
@@ -1010,7 +1010,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "When you use a Small item, Charge a Large item for 1 second(s).",
+        "en": "When you use a Small item, Charge a Large item for 1 second.",
         "cn": "使用小型物品时，为一件大型物品充能1秒。"
       }
     ]
@@ -1161,7 +1161,7 @@
     "id": "2df5681c-8c5c-400a-baa0-ad73391cc085",
     "name_en": "Flash Freeze",
     "name_cn": "闪速冻结",
-    "description_en": "Your Chilled items' Cooldowns are reduced by 1000 second.",
+    "description_en": "Your Chilled items' Cooldowns are reduced by 1 second.",
     "description_cn": "霜冻物品的冷却时间缩短1000秒。",
     "size": "Medium / 中型",
     "starting_tier": "Diamond / 钻石",
@@ -1175,7 +1175,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "Your Chilled items' Cooldowns are reduced by 1000 second.",
+        "en": "Your Chilled items' Cooldowns are reduced by 1 second.",
         "cn": "霜冻物品的冷却时间缩短1000秒。"
       }
     ]
@@ -1441,7 +1441,7 @@
     "id": "a9e56561-95d9-46c4-83e3-499e6b159013",
     "name_en": "Alacrity",
     "name_cn": "灵动",
-    "description_en": "The first 5/10 times you Crit each fight, Charge an item 1 second(s).",
+    "description_en": "The first 5/10 times you Crit each fight, Charge an item 1 second.",
     "description_cn": "每场战斗前5/10次暴击时，为一件物品充能1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -1455,7 +1455,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 5/10 times you Crit each fight, Charge an item 1 second(s).",
+        "en": "The first 5/10 times you Crit each fight, Charge an item 1 second.",
         "cn": "每场战斗前5/10次暴击时，为一件物品充能1秒。"
       }
     ]
@@ -1579,7 +1579,7 @@
     "id": "eea71cd9-2688-4c4d-99e7-6eee44cf47a2",
     "name_en": "Panic",
     "name_cn": "恐慌",
-    "description_en": "The first time you fall below 50% Health each fight, Reload  item(s) and Charge  Ammo items 1 second.",
+    "description_en": "The first time you fall below 50% Health each fight, Reload item(s) and Charge Ammo items 1 second.",
     "description_cn": "每场战斗己方生命值首次降至50%时，装填件物品，并为件弹药物品充能1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Bronze / 青铜",
@@ -1593,7 +1593,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first time you fall below 50% Health each fight, Reload  item(s) and Charge  Ammo items 1 second.",
+        "en": "The first time you fall below 50% Health each fight, Reload item(s) and Charge Ammo items 1 second.",
         "cn": "每场战斗己方生命值首次降至50%时，装填件物品，并为件弹药物品充能1秒。"
       }
     ]
@@ -1855,7 +1855,7 @@
     "id": "1df8d85a-9095-4ab9-952a-c668a4d5d51c",
     "name_en": "Electrified Hull",
     "name_cn": "带电外壳",
-    "description_en": "The first 4/8 times you Shield each fight, Charge an item 1 second(s).",
+    "description_en": "The first 4/8 times you Shield each fight, Charge an item 1 second.",
     "description_cn": "每场战斗前4/8次触发护盾时，为一件物品充能1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -1869,7 +1869,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 4/8 times you Shield each fight, Charge an item 1 second(s).",
+        "en": "The first 4/8 times you Shield each fight, Charge an item 1 second.",
         "cn": "每场战斗前4/8次触发护盾时，为一件物品充能1秒。"
       }
     ]
@@ -2047,7 +2047,7 @@
     "id": "304d505a-d914-4264-9142-b6efb7aca1ff",
     "name_en": "Flurry of Blows",
     "name_cn": "连环打击",
-    "description_en": "The first 4/8 times you use a Weapon each fight, Charge an item 1 second(s).",
+    "description_en": "The first 4/8 times you use a Weapon each fight, Charge an item 1 second.",
     "description_cn": "每场战斗前4/8次使用武器时，为一件物品充能1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -2061,7 +2061,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 4/8 times you use a Weapon each fight, Charge an item 1 second(s).",
+        "en": "The first 4/8 times you use a Weapon each fight, Charge an item 1 second.",
         "cn": "每场战斗前4/8次使用武器时，为一件物品充能1秒。"
       }
     ]
@@ -2300,7 +2300,7 @@
     "id": "e41f6a66-9257-45c3-b249-9f9ef0f93f3e",
     "name_en": "Venomous Blade",
     "name_cn": "毒刃",
-    "description_en": "The first 4/8 times you use a Weapon each fight, Charge a Poison item 1 second(s).",
+    "description_en": "The first 4/8 times you use a Weapon each fight, Charge a Poison item 1 second.",
     "description_cn": "每场战斗前4/8次使用武器时，为一件剧毒物品充能1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -2314,7 +2314,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 4/8 times you use a Weapon each fight, Charge a Poison item 1 second(s).",
+        "en": "The first 4/8 times you use a Weapon each fight, Charge a Poison item 1 second.",
         "cn": "每场战斗前4/8次使用武器时，为一件剧毒物品充能1秒。"
       }
     ]
@@ -2369,7 +2369,7 @@
     "id": "b5160cb5-5d92-420b-8883-b67e701b5e5f",
     "name_en": "Righty Tighty",
     "name_cn": "右手紧握",
-    "description_en": "The first 3/6/9 times you use your rightmost item each fight, Charge a Slow item 1 second(s).",
+    "description_en": "The first 3/6/9 times you use your rightmost item each fight, Charge a Slow item 1 second.",
     "description_cn": "每场战斗前3/6/9次使用最右侧物品时，为一件减速物品充能1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Silver / 白银",
@@ -2383,7 +2383,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 3/6/9 times you use your rightmost item each fight, Charge a Slow item 1 second(s).",
+        "en": "The first 3/6/9 times you use your rightmost item each fight, Charge a Slow item 1 second.",
         "cn": "每场战斗前3/6/9次使用最右侧物品时，为一件减速物品充能1秒。"
       }
     ]
@@ -2461,7 +2461,7 @@
     "id": "ae686d2c-fce1-401a-8c65-f34fedcce740",
     "name_en": "Line Cook",
     "name_cn": "炉头厨师",
-    "description_en": "The first time you use a Tool each fight, Charge  Food for 1 second.",
+    "description_en": "The first time you use a Tool each fight, Charge Food for 1 second.",
     "description_cn": "每场战斗首次使用工具时，为件食物充能1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Silver / 白银",
@@ -2475,7 +2475,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first time you use a Tool each fight, Charge  Food for 1 second.",
+        "en": "The first time you use a Tool each fight, Charge Food for 1 second.",
         "cn": "每场战斗首次使用工具时，为件食物充能1秒。"
       }
     ]
@@ -2530,7 +2530,7 @@
     "id": "d92e6936-ec9e-4b5a-b5f7-d63d0d969503",
     "name_en": "Initial Rage",
     "name_cn": "初始怒火",
-    "description_en": "While you are Enraged, your leftmost item has its cooldown reduced by 1 second(s).",
+    "description_en": "While you are Enraged, your leftmost item has its cooldown reduced by 1 second.",
     "description_cn": "暴怒状态下，己方最左侧物品冷却时间缩短1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Diamond / 钻石",
@@ -2544,7 +2544,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "While you are Enraged, your leftmost item has its cooldown reduced by 1 second(s).",
+        "en": "While you are Enraged, your leftmost item has its cooldown reduced by 1 second.",
         "cn": "暴怒状态下，己方最左侧物品冷却时间缩短1秒。"
       }
     ]
@@ -2553,7 +2553,7 @@
     "id": "178d4272-35c7-4d10-9deb-58d074d2cbea",
     "name_en": "Jack of All Trades",
     "name_cn": "全能手",
-    "description_en": "The first 5/10 times you use an item each fight, Charge an item from another hero 1 second(s).",
+    "description_en": "The first 5/10 times you use an item each fight, Charge an item from another hero 1 second.",
     "description_cn": "每场战斗前5/10次使用物品时，为另一位英雄的一件物品充能1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -2567,7 +2567,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 5/10 times you use an item each fight, Charge an item from another hero 1 second(s).",
+        "en": "The first 5/10 times you use an item each fight, Charge an item from another hero 1 second.",
         "cn": "每场战斗前5/10次使用物品时，为另一位英雄的一件物品充能1秒。"
       }
     ]
@@ -2576,7 +2576,7 @@
     "id": "571b3909-e04c-454f-86ae-61cc46ea3066",
     "name_en": "Calming Heals",
     "name_cn": "抚慰疗愈",
-    "description_en": "The first 4/8 times you Slow each fight, Charge a Heal or Regen item 1 second(s).",
+    "description_en": "The first 4/8 times you Slow each fight, Charge a Heal or Regen item 1 second.",
     "description_cn": "每场战斗前4/8次触发减速时，为一件治疗或生命再生物品充能1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -2590,7 +2590,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 4/8 times you Slow each fight, Charge a Heal or Regen item 1 second(s).",
+        "en": "The first 4/8 times you Slow each fight, Charge a Heal or Regen item 1 second.",
         "cn": "每场战斗前4/8次触发减速时，为一件治疗或生命再生物品充能1秒。"
       }
     ]
@@ -2691,7 +2691,7 @@
     "id": "de35c728-b2e6-4cf8-82a2-2a1a41d782fe",
     "name_en": "Scramble Fighters",
     "name_cn": "紧急起飞",
-    "description_en": "The first time you use an item each fight,  item(s) start Flying. | Your Flying Weapons have +20/30/40 Damage.",
+    "description_en": "The first time you use an item each fight, item(s) start Flying. | Your Flying Weapons have +20/30/40 Damage.",
     "description_cn": "每场战斗首次使用物品时，件物品开始飞行。 | 飞行武器+20/30/40伤害。",
     "size": "Medium / 中型",
     "starting_tier": "Silver / 白银",
@@ -2705,7 +2705,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first time you use an item each fight,  item(s) start Flying.",
+        "en": "The first time you use an item each fight, item(s) start Flying.",
         "cn": "每场战斗首次使用物品时，件物品开始飞行。"
       },
       {
@@ -2879,7 +2879,7 @@
     "id": "18cd63c6-6235-45f5-b4e9-74f19fcf9edc",
     "name_en": "Tool Fight",
     "name_cn": "工具斗法",
-    "description_en": "The first time your enemy uses an item each fight,  of your Tools starts Flying.",
+    "description_en": "The first time your enemy uses an item each fight, of your Tools starts Flying.",
     "description_cn": "每场战斗中敌人首次使用物品时，令件己方工具开始飞行。",
     "size": "Medium / 中型",
     "starting_tier": "Silver / 白银",
@@ -2893,7 +2893,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first time your enemy uses an item each fight,  of your Tools starts Flying.",
+        "en": "The first time your enemy uses an item each fight, of your Tools starts Flying.",
         "cn": "每场战斗中敌人首次使用物品时，令件己方工具开始飞行。"
       }
     ]
@@ -3086,7 +3086,7 @@
     "id": "8509674b-3c4b-4250-9bb4-666ef7402654",
     "name_en": "Alchemical Precision",
     "name_cn": "化学精准",
-    "description_en": "Your Potions' Cooldowns are reduced by 1000 second.",
+    "description_en": "Your Potions' Cooldowns are reduced by 1 second.",
     "description_cn": "药水的冷却时间缩短1000秒。",
     "size": "Medium / 中型",
     "starting_tier": "Diamond / 钻石",
@@ -3100,7 +3100,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "Your Potions' Cooldowns are reduced by 1000 second.",
+        "en": "Your Potions' Cooldowns are reduced by 1 second.",
         "cn": "药水的冷却时间缩短1000秒。"
       }
     ]
@@ -3109,7 +3109,7 @@
     "id": "90341289-583b-431b-a044-36cad1047ff1",
     "name_en": "Frenzy Cache",
     "name_cn": "狂乱储备",
-    "description_en": "When you Enrage, Reload  item(s).",
+    "description_en": "When you Enrage, Reload item(s).",
     "description_cn": "当你进入暴怒状态时，装填件物品。",
     "size": "Medium / 中型",
     "starting_tier": "Bronze / 青铜",
@@ -3123,7 +3123,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "When you Enrage, Reload  item(s).",
+        "en": "When you Enrage, Reload item(s).",
         "cn": "当你进入暴怒状态时，装填件物品。"
       }
     ]
@@ -3270,7 +3270,7 @@
     "id": "4fda14aa-365f-478f-8a27-b9b53c97c56a",
     "name_en": "Mixed Message",
     "name_cn": "混乱讯息",
-    "description_en": "The first 3/6 times you use a non-Weapon item each fight, Charge a Weapon 1 second(s).",
+    "description_en": "The first 3/6 times you use a non-Weapon item each fight, Charge a Weapon 1 second.",
     "description_cn": "每场战斗前3/6次使用非武器物品时，为一件武器充能1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -3284,7 +3284,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 3/6 times you use a non-Weapon item each fight, Charge a Weapon 1 second(s).",
+        "en": "The first 3/6 times you use a non-Weapon item each fight, Charge a Weapon 1 second.",
         "cn": "每场战斗前3/6次使用非武器物品时，为一件武器充能1秒。"
       }
     ]
@@ -3385,7 +3385,7 @@
     "id": "69336595-1135-4e17-8192-247e0478d020",
     "name_en": "Lefty Loosey",
     "name_cn": "左侧连动",
-    "description_en": "The first 5/10 times you use your leftmost item each fight, Haste an item for 1 second(s).",
+    "description_en": "The first 5/10 times you use your leftmost item each fight, Haste an item for 1 second.",
     "description_cn": "每场战斗前5/10次使用最左侧物品时，加速一件物品1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -3399,7 +3399,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 5/10 times you use your leftmost item each fight, Haste an item for 1 second(s).",
+        "en": "The first 5/10 times you use your leftmost item each fight, Haste an item for 1 second.",
         "cn": "每场战斗前5/10次使用最左侧物品时，加速一件物品1秒。"
       }
     ]
@@ -3500,7 +3500,7 @@
     "id": "6c3d41e4-1ca7-4be5-b0e2-6cadbbd2bd27",
     "name_en": "Tools of the Trade",
     "name_cn": "专业行头",
-    "description_en": "The first 5/10 times you use a Tool each fight, Haste a Tool for 1 second(s).",
+    "description_en": "The first 5/10 times you use a Tool each fight, Haste a Tool for 1 second.",
     "description_cn": "每场战斗前5/10次使用工具时，加速一件工具1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -3514,7 +3514,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 5/10 times you use a Tool each fight, Haste a Tool for 1 second(s).",
+        "en": "The first 5/10 times you use a Tool each fight, Haste a Tool for 1 second.",
         "cn": "每场战斗前5/10次使用工具时，加速一件工具1秒。"
       }
     ]
@@ -3523,7 +3523,7 @@
     "id": "bf0d7a30-b5e0-4d55-841d-76c113eae2b2",
     "name_en": "Feeding Frenzy",
     "name_cn": "暴食狂潮",
-    "description_en": "When you use a Food, gain  Rage. | When you Enrage, Haste your Food 1/2/3 seconds.",
+    "description_en": "When you use a Food, gain Rage. | When you Enrage, Haste your Food 1/2/3 seconds.",
     "description_cn": "当你使用食物时，获得怒火。 | 当你进入暴怒状态时，加速己方食物1/2/3秒。",
     "size": "Medium / 中型",
     "starting_tier": "Silver / 白银",
@@ -3537,7 +3537,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "When you use a Food, gain  Rage.",
+        "en": "When you use a Food, gain Rage.",
         "cn": "当你使用食物时，获得怒火。"
       },
       {
@@ -3596,7 +3596,7 @@
     "id": "dd9d1ad7-8c28-46da-9f98-aaa2cc55cd00",
     "name_en": "Equivalent Exchange",
     "name_cn": "等价交换",
-    "description_en": "When you Heal or gain Regen, Charge a Poison item 1 second(s).",
+    "description_en": "When you Heal or gain Regen, Charge a Poison item 1 second.",
     "description_cn": "触发治疗或提高生命再生时，为一件剧毒物品充能1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Diamond / 钻石",
@@ -3610,7 +3610,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "When you Heal or gain Regen, Charge a Poison item 1 second(s).",
+        "en": "When you Heal or gain Regen, Charge a Poison item 1 second.",
         "cn": "触发治疗或提高生命再生时，为一件剧毒物品充能1秒。"
       }
     ]
@@ -4014,7 +4014,7 @@
     "id": "09f668a1-82f6-42d5-94fa-88af3568edd8",
     "name_en": "Hypnotic Drain",
     "name_cn": "催眠吸取",
-    "description_en": "When you use a Weapon with Lifesteal, Freeze a Smaller item for 2 second(s).",
+    "description_en": "When you use a Weapon with Lifesteal, Freeze a Smaller item for 2 seconds.",
     "description_cn": "使用带有吸血的武器时，冻结一件更小的物品2秒。",
     "size": "Medium / 中型",
     "starting_tier": "Diamond / 钻石",
@@ -4028,7 +4028,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "When you use a Weapon with Lifesteal, Freeze a Smaller item for 2 second(s).",
+        "en": "When you use a Weapon with Lifesteal, Freeze a Smaller item for 2 seconds.",
         "cn": "使用带有吸血的武器时，冻结一件更小的物品2秒。"
       }
     ]
@@ -4129,7 +4129,7 @@
     "id": "f1e354bd-d94c-48fa-b63e-5012f68129a9",
     "name_en": "Letting off Steam",
     "name_cn": "蒸汽宣泄",
-    "description_en": "The first 5/10 times you Burn each fight, Haste your Cores for 2 second(s).",
+    "description_en": "The first 5/10 times you Burn each fight, Haste your Cores for 2 seconds.",
     "description_cn": "每场战斗前5/10次触发灼烧时，加速核心2秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -4143,7 +4143,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 5/10 times you Burn each fight, Haste your Cores for 2 second(s).",
+        "en": "The first 5/10 times you Burn each fight, Haste your Cores for 2 seconds.",
         "cn": "每场战斗前5/10次触发灼烧时，加速核心2秒。"
       }
     ]
@@ -4331,7 +4331,7 @@
     "id": "f3abf6be-b28d-42f5-a239-7208c2dcde25",
     "name_en": "Outmaneuver",
     "name_cn": "战术超越",
-    "description_en": "The first 5/10 times you Slow each fight, Haste a Vehicle for 2 second(s).",
+    "description_en": "The first 5/10 times you Slow each fight, Haste a Vehicle for 2 seconds.",
     "description_cn": "每场战斗前5/10次触发减速时，加速一辆载具2秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -4345,7 +4345,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 5/10 times you Slow each fight, Haste a Vehicle for 2 second(s).",
+        "en": "The first 5/10 times you Slow each fight, Haste a Vehicle for 2 seconds.",
         "cn": "每场战斗前5/10次触发减速时，加速一辆载具2秒。"
       }
     ]
@@ -4423,7 +4423,7 @@
     "id": "3728b5fe-43aa-4f77-b7a8-b20c3b359295",
     "name_en": "Creeping Toxins",
     "name_cn": "蜗行毒素",
-    "description_en": "The first 4/8 times you Slow each fight, Charge a Poison item 1 second(s).",
+    "description_en": "The first 4/8 times you Slow each fight, Charge a Poison item 1 second.",
     "description_cn": "每场战斗前4/8次触发减速时，为一件剧毒物品充能1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -4437,7 +4437,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 4/8 times you Slow each fight, Charge a Poison item 1 second(s).",
+        "en": "The first 4/8 times you Slow each fight, Charge a Poison item 1 second.",
         "cn": "每场战斗前4/8次触发减速时，为一件剧毒物品充能1秒。"
       }
     ]
@@ -4469,7 +4469,7 @@
     "id": "94ea865d-07ca-4e54-a1cb-8cca3945c3c6",
     "name_en": "Street Food",
     "name_cn": "街头美食",
-    "description_en": "The first time you use an item each fight, Haste  Food item(s) for 2 second(s).",
+    "description_en": "The first time you use an item each fight, Haste Food item(s) for 2 seconds.",
     "description_cn": "每场战斗首次使用物品时，加速件食物2秒。",
     "size": "Medium / 中型",
     "starting_tier": "Silver / 白银",
@@ -4483,7 +4483,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first time you use an item each fight, Haste  Food item(s) for 2 second(s).",
+        "en": "The first time you use an item each fight, Haste Food item(s) for 2 seconds.",
         "cn": "每场战斗首次使用物品时，加速件食物2秒。"
       }
     ]
@@ -4795,7 +4795,7 @@
     "id": "8f33e0aa-7912-4c77-9a10-609e5ce0f4e7",
     "name_en": "Leverage Momentum",
     "name_cn": "顺势而动",
-    "description_en": "When an item is destroyed,  of your item(s) start Flying.",
+    "description_en": "When an item is destroyed, of your item(s) start Flying.",
     "description_cn": "有物品被摧毁时，令件己方物品开始飞行。",
     "size": "Medium / 中型",
     "starting_tier": "Silver / 白银",
@@ -4809,7 +4809,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "When an item is destroyed,  of your item(s) start Flying.",
+        "en": "When an item is destroyed, of your item(s) start Flying.",
         "cn": "有物品被摧毁时，令件己方物品开始飞行。"
       }
     ]
@@ -4960,7 +4960,7 @@
     "id": "f74f460e-6b49-43a9-9b9f-9b6fe36d28e9",
     "name_en": "Void Energy",
     "name_cn": "虚空能量",
-    "description_en": "When you Burn, Charge a Shield item 1 second(s).",
+    "description_en": "When you Burn, Charge a Shield item 1 second.",
     "description_cn": "触发灼烧时，为一件护盾物品充能1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Diamond / 钻石",
@@ -4974,7 +4974,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "When you Burn, Charge a Shield item 1 second(s).",
+        "en": "When you Burn, Charge a Shield item 1 second.",
         "cn": "触发灼烧时，为一件护盾物品充能1秒。"
       }
     ]
@@ -5075,7 +5075,7 @@
     "id": "42a673e6-f6cd-45ea-89e2-d37614271016",
     "name_en": "Crimson Dash",
     "name_cn": "绯红冲锋",
-    "description_en": "Your Lifesteal Weapons' Cooldowns are reduced by 1000 second.",
+    "description_en": "Your Lifesteal Weapons' Cooldowns are reduced by 1 second.",
     "description_cn": "吸血武器的冷却时间缩短1000秒。",
     "size": "Medium / 中型",
     "starting_tier": "Diamond / 钻石",
@@ -5089,7 +5089,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "Your Lifesteal Weapons' Cooldowns are reduced by 1000 second.",
+        "en": "Your Lifesteal Weapons' Cooldowns are reduced by 1 second.",
         "cn": "吸血武器的冷却时间缩短1000秒。"
       }
     ]
@@ -5282,7 +5282,7 @@
     "id": "d56a6e90-f664-4791-8b78-5c8bd3f45f80",
     "name_en": "Sick Burn",
     "name_cn": "毒性灼烧",
-    "description_en": "The first 4/8 times you Poison each fight, Charge a Burn item 1 second(s).",
+    "description_en": "The first 4/8 times you Poison each fight, Charge a Burn item 1 second.",
     "description_cn": "每场战斗前4/8次触发剧毒时，为一件灼烧物品充能1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -5296,7 +5296,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 4/8 times you Poison each fight, Charge a Burn item 1 second(s).",
+        "en": "The first 4/8 times you Poison each fight, Charge a Burn item 1 second.",
         "cn": "每场战斗前4/8次触发剧毒时，为一件灼烧物品充能1秒。"
       }
     ]
@@ -5443,7 +5443,7 @@
     "id": "50eaea1d-0159-4feb-b855-9965cd7eddc2",
     "name_en": "Heavy Machinery",
     "name_cn": "重型机械",
-    "description_en": "The first 5/10 times you use a Core each fight, Haste an item for 2 second(s).",
+    "description_en": "The first 5/10 times you use a Core each fight, Haste an item for 2 seconds.",
     "description_cn": "每场战斗前5/10次使用核心时，加速一件物品2秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -5457,7 +5457,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 5/10 times you use a Core each fight, Haste an item for 2 second(s).",
+        "en": "The first 5/10 times you use a Core each fight, Haste an item for 2 seconds.",
         "cn": "每场战斗前5/10次使用核心时，加速一件物品2秒。"
       }
     ]
@@ -5650,7 +5650,7 @@
     "id": "4589a64c-fdc8-4334-a2c7-05a3a8b2c5da",
     "name_en": "Rapid Thaw",
     "name_cn": "",
-    "description_en": "When your items are Frozen, reduce the duration by 2000/3000/4000 second(s).",
+    "description_en": "When your items are Frozen, reduce the duration by 2/3/4 second(s).",
     "description_cn": "[未翻译]",
     "size": "Medium / 中型",
     "starting_tier": "Silver / 白银",
@@ -5664,7 +5664,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "When your items are Frozen, reduce the duration by 2000/3000/4000 second(s).",
+        "en": "When your items are Frozen, reduce the duration by 2/3/4 second(s).",
         "cn": "[未翻译]"
       }
     ]
@@ -5880,7 +5880,7 @@
     "id": "7b6a982f-7196-4d3e-8674-825fddba80d2",
     "name_en": "Shored Up",
     "name_cn": "防线强化",
-    "description_en": "When you Heal or gain Regen, Charge a Shield item 1 second(s).",
+    "description_en": "When you Heal or gain Regen, Charge a Shield item 1 second.",
     "description_cn": "触发治疗或提高生命再生时，为一件护盾物品充能1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Diamond / 钻石",
@@ -5894,7 +5894,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "When you Heal or gain Regen, Charge a Shield item 1 second(s).",
+        "en": "When you Heal or gain Regen, Charge a Shield item 1 second.",
         "cn": "触发治疗或提高生命再生时，为一件护盾物品充能1秒。"
       }
     ]
@@ -5972,7 +5972,7 @@
     "id": "6a2b0ffc-bb7b-4ad3-a20c-8b46f9684a12",
     "name_en": "Quick Ignition",
     "name_cn": "急速引燃",
-    "description_en": "The first time you use an item each fight, Haste  Burn item(s) for 2 second(s).",
+    "description_en": "The first time you use an item each fight, Haste Burn item(s) for 2 seconds.",
     "description_cn": "每场战斗首次使用物品时，加速件灼烧物品2秒。",
     "size": "Medium / 中型",
     "starting_tier": "Silver / 白银",
@@ -5986,7 +5986,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first time you use an item each fight, Haste  Burn item(s) for 2 second(s).",
+        "en": "The first time you use an item each fight, Haste Burn item(s) for 2 seconds.",
         "cn": "每场战斗首次使用物品时，加速件灼烧物品2秒。"
       }
     ]
@@ -6674,7 +6674,7 @@
     "id": "d08258b5-be49-410e-a650-4dfa01b35662",
     "name_en": "Invigorating Cold",
     "name_cn": "提神寒气",
-    "description_en": "The first time you Freeze each fight, Haste  item(s) for 2 second(s).",
+    "description_en": "The first time you Freeze each fight, Haste item(s) for 2 seconds.",
     "description_cn": "每场战斗首次触发冻结时，加速件物品2秒。",
     "size": "Medium / 中型",
     "starting_tier": "Silver / 白银",
@@ -6688,7 +6688,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first time you Freeze each fight, Haste  item(s) for 2 second(s).",
+        "en": "The first time you Freeze each fight, Haste item(s) for 2 seconds.",
         "cn": "每场战斗首次触发冻结时，加速件物品2秒。"
       }
     ]
@@ -6939,7 +6939,7 @@
     "id": "81881146-f3ba-4092-9041-9f68cc30b732",
     "name_en": "Lethargy",
     "name_cn": "倦怠",
-    "description_en": "All item Cooldowns are increased by 1000/2000/3000 second(s).",
+    "description_en": "All item Cooldowns are increased by 1/2/3 second(s).",
     "description_cn": "所有物品的冷却时间延长1000/2000/3000秒。",
     "size": "Medium / 中型",
     "starting_tier": "Silver / 白银",
@@ -6953,7 +6953,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "All item Cooldowns are increased by 1000/2000/3000 second(s).",
+        "en": "All item Cooldowns are increased by 1/2/3 second(s).",
         "cn": "所有物品的冷却时间延长1000/2000/3000秒。"
       }
     ]
@@ -6962,7 +6962,7 @@
     "id": "03533207-fccd-4363-a873-d324c91cabf1",
     "name_en": "Final Rage",
     "name_cn": "终极怒火",
-    "description_en": "While you are Enraged, your rightmost item has its cooldown reduced by 1 second(s).",
+    "description_en": "While you are Enraged, your rightmost item has its cooldown reduced by 1 second.",
     "description_cn": "暴怒期间，己方最右侧物品冷却时间缩短1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Diamond / 钻石",
@@ -6976,7 +6976,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "While you are Enraged, your rightmost item has its cooldown reduced by 1 second(s).",
+        "en": "While you are Enraged, your rightmost item has its cooldown reduced by 1 second.",
         "cn": "暴怒期间，己方最右侧物品冷却时间缩短1秒。"
       }
     ]
@@ -7054,7 +7054,7 @@
     "id": "6e95c90d-e4b4-42c3-b5e9-3c390d762c92",
     "name_en": "Shield Bash",
     "name_cn": "盾击",
-    "description_en": "The first 4/8 times an enemy uses a non-Weapon item each fight, Charge a Weapon 1 second(s).",
+    "description_en": "The first 4/8 times an enemy uses a non-Weapon item each fight, Charge a Weapon 1 second.",
     "description_cn": "每场战斗中敌人前4/8次使用非武器物品时，为一件武器充能1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -7068,7 +7068,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 4/8 times an enemy uses a non-Weapon item each fight, Charge a Weapon 1 second(s).",
+        "en": "The first 4/8 times an enemy uses a non-Weapon item each fight, Charge a Weapon 1 second.",
         "cn": "每场战斗中敌人前4/8次使用非武器物品时，为一件武器充能1秒。"
       }
     ]
@@ -7077,7 +7077,7 @@
     "id": "42ca6153-fe5b-44b4-a043-f14870659472",
     "name_en": "Oceanic Rush",
     "name_cn": "海洋冲锋",
-    "description_en": "The first time you use an item each fight, Haste  Aquatic item(s) for 2 second(s).",
+    "description_en": "The first time you use an item each fight, Haste Aquatic item(s) for 2 seconds.",
     "description_cn": "每场战斗首次使用物品时，加速件水系物品2秒。",
     "size": "Medium / 中型",
     "starting_tier": "Silver / 白银",
@@ -7091,7 +7091,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first time you use an item each fight, Haste  Aquatic item(s) for 2 second(s).",
+        "en": "The first time you use an item each fight, Haste Aquatic item(s) for 2 seconds.",
         "cn": "每场战斗首次使用物品时，加速件水系物品2秒。"
       }
     ]
@@ -7100,7 +7100,7 @@
     "id": "5780e3ce-316c-4871-bfb8-45261b686fc2",
     "name_en": "Captain's Charge",
     "name_cn": "船长的号令",
-    "description_en": "The first time you use a Large item each fight, Haste  items for 3 second(s).",
+    "description_en": "The first time you use a Large item each fight, Haste items for 3 seconds.",
     "description_cn": "每场战斗首次使用大型物品时，加速件物品3秒。",
     "size": "Medium / 中型",
     "starting_tier": "Silver / 白银",
@@ -7114,7 +7114,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first time you use a Large item each fight, Haste  items for 3 second(s).",
+        "en": "The first time you use a Large item each fight, Haste items for 3 seconds.",
         "cn": "每场战斗首次使用大型物品时，加速件物品3秒。"
       }
     ]
@@ -7146,7 +7146,7 @@
     "id": "1e63e9bd-603a-4965-a6e8-4e180377c0ff",
     "name_en": "Temporal Strike",
     "name_cn": "时空打击",
-    "description_en": "The first 4/8 times you Slow each fight, Charge a Weapon 1 second(s).",
+    "description_en": "The first 4/8 times you Slow each fight, Charge a Weapon 1 second.",
     "description_cn": "每场战斗前4/8次触发减速时，为一件武器充能1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -7160,7 +7160,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 4/8 times you Slow each fight, Charge a Weapon 1 second(s).",
+        "en": "The first 4/8 times you Slow each fight, Charge a Weapon 1 second.",
         "cn": "每场战斗前4/8次触发减速时，为一件武器充能1秒。"
       }
     ]
@@ -7261,7 +7261,7 @@
     "id": "56cf21ff-db2c-4f49-af5f-cf9a01508e6f",
     "name_en": "Burst of Rage",
     "name_cn": "怒火爆发",
-    "description_en": "The first time you fall below half health each fight, gain  Rage.",
+    "description_en": "The first time you fall below half health each fight, gain Rage.",
     "description_cn": "每场战斗中首次生命值降至一半以下时，获得怒火。",
     "size": "Medium / 中型",
     "starting_tier": "Diamond / 钻石",
@@ -7275,7 +7275,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first time you fall below half health each fight, gain  Rage.",
+        "en": "The first time you fall below half health each fight, gain Rage.",
         "cn": "每场战斗中首次生命值降至一半以下时，获得怒火。"
       }
     ]
@@ -7491,7 +7491,7 @@
     "id": "2d0e4193-304d-4cf8-8232-6386abdf7230",
     "name_en": "Quick Study",
     "name_cn": "快速学习",
-    "description_en": "The first time you use an item each fight, Haste  Relic item(s) for 2 second(s).",
+    "description_en": "The first time you use an item each fight, Haste Relic item(s) for 2 seconds.",
     "description_cn": "每场战斗首次使用物品时，加速件遗物2秒。",
     "size": "Medium / 中型",
     "starting_tier": "Silver / 白银",
@@ -7505,7 +7505,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first time you use an item each fight, Haste  Relic item(s) for 2 second(s).",
+        "en": "The first time you use an item each fight, Haste Relic item(s) for 2 seconds.",
         "cn": "每场战斗首次使用物品时，加速件遗物2秒。"
       }
     ]
@@ -7836,7 +7836,7 @@
     "id": "d2f910bc-3490-456f-8ab0-aedda752bc5c",
     "name_en": "Crashing Waves",
     "name_cn": "浪涛激荡",
-    "description_en": "The first 5/10 times you use an Aquatic item each fight, Haste a Weapon for 1 second(s).",
+    "description_en": "The first 5/10 times you use an Aquatic item each fight, Haste a Weapon for 1 second.",
     "description_cn": "每场战斗前5/10次使用水系物品时，加速一件武器1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -7850,7 +7850,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 5/10 times you use an Aquatic item each fight, Haste a Weapon for 1 second(s).",
+        "en": "The first 5/10 times you use an Aquatic item each fight, Haste a Weapon for 1 second.",
         "cn": "每场战斗前5/10次使用水系物品时，加速一件武器1秒。"
       }
     ]
@@ -7882,7 +7882,7 @@
     "id": "dbd50f7c-4261-4afd-93da-2f4d9e33509e",
     "name_en": "Explosive Potions",
     "name_cn": "爆燃药水",
-    "description_en": "The first 4/8 times you use a Potion each fight, Charge a Weapon or Burn item 1 second(s).",
+    "description_en": "The first 4/8 times you use a Potion each fight, Charge a Weapon or Burn item 1 second.",
     "description_cn": "每场战斗前4/8次使用药水时，为一件武器或灼烧物品充能1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -7896,7 +7896,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 4/8 times you use a Potion each fight, Charge a Weapon or Burn item 1 second(s).",
+        "en": "The first 4/8 times you use a Potion each fight, Charge a Weapon or Burn item 1 second.",
         "cn": "每场战斗前4/8次使用药水时，为一件武器或灼烧物品充能1秒。"
       }
     ]
@@ -7905,7 +7905,7 @@
     "id": "fdeee7b2-7c1f-48e0-8fe1-e5a43e7a6726",
     "name_en": "Dirty Dishes",
     "name_cn": "脏盘子",
-    "description_en": "The first 5/10 times you use a Food each fight, Slow an item for 1 second(s).",
+    "description_en": "The first 5/10 times you use a Food each fight, Slow an item for 1 second.",
     "description_cn": "每场战斗前5/10次使用食物时，减速一件物品1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -7919,7 +7919,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 5/10 times you use a Food each fight, Slow an item for 1 second(s).",
+        "en": "The first 5/10 times you use a Food each fight, Slow an item for 1 second.",
         "cn": "每场战斗前5/10次使用食物时，减速一件物品1秒。"
       }
     ]
@@ -7951,7 +7951,7 @@
     "id": "c751b1b8-7128-4e06-8974-de5abca47634",
     "name_en": "Castle Doctrine",
     "name_cn": "城堡准则",
-    "description_en": "The first time any item is used each fight, for each Property you have, gain  Rage.",
+    "description_en": "The first time any item is used each fight, for each Property you have, gain Rage.",
     "description_cn": "每场战斗中首次使用任意物品时，你拥有的每件地产使你获得怒火。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -7965,7 +7965,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first time any item is used each fight, for each Property you have, gain  Rage.",
+        "en": "The first time any item is used each fight, for each Property you have, gain Rage.",
         "cn": "每场战斗中首次使用任意物品时，你拥有的每件地产使你获得怒火。"
       }
     ]
@@ -8281,7 +8281,7 @@
     "id": "7518cb66-252b-4b9c-9d4d-269aaad8daf3",
     "name_en": "Hot Air",
     "name_cn": "热空气",
-    "description_en": "The first time you Burn each fight,  of your items starts Flying.",
+    "description_en": "The first time you Burn each fight, of your items starts Flying.",
     "description_cn": "每场战斗首次触发灼烧时，件己方物品开始飞行。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -8295,7 +8295,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first time you Burn each fight,  of your items starts Flying.",
+        "en": "The first time you Burn each fight, of your items starts Flying.",
         "cn": "每场战斗首次触发灼烧时，件己方物品开始飞行。"
       }
     ]
@@ -8396,7 +8396,7 @@
     "id": "e5602f0a-0f7f-4832-97cc-59bc7b605804",
     "name_en": "Frozen Synapse",
     "name_cn": "冻结突触",
-    "description_en": "The first 5/10 times you Freeze each fight, Haste Your Core for 2 second(s).",
+    "description_en": "The first 5/10 times you Freeze each fight, Haste Your Core for 2 seconds.",
     "description_cn": "每场战斗前5/10次触发冻结时，加速核心2秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -8410,7 +8410,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 5/10 times you Freeze each fight, Haste Your Core for 2 second(s).",
+        "en": "The first 5/10 times you Freeze each fight, Haste Your Core for 2 seconds.",
         "cn": "每场战斗前5/10次触发冻结时，加速核心2秒。"
       }
     ]
@@ -8649,7 +8649,7 @@
     "id": "1252064a-3bf4-478e-9326-946677ecc8b3",
     "name_en": "Frozen Secrets",
     "name_cn": "冻结秘密",
-    "description_en": "The first 5/10 times you use a Relic each fight, Freeze an item for 500 seconds.",
+    "description_en": "The first 5/10 times you use a Relic each fight, Freeze an item for 0.5 seconds.",
     "description_cn": "每场战斗前5/10次使用遗物时，冻结一件物品500秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -8663,7 +8663,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 5/10 times you use a Relic each fight, Freeze an item for 500 seconds.",
+        "en": "The first 5/10 times you use a Relic each fight, Freeze an item for 0.5 seconds.",
         "cn": "每场战斗前5/10次使用遗物时，冻结一件物品500秒。"
       }
     ]
@@ -8695,7 +8695,7 @@
     "id": "42c33f6c-a233-4ad1-8f04-b1cadac3a15f",
     "name_en": "Toxin Injector",
     "name_cn": "毒素注射器",
-    "description_en": "The first time you use an item each fight, Haste  Poison item(s) for 2 second(s).",
+    "description_en": "The first time you use an item each fight, Haste Poison item(s) for 2 seconds.",
     "description_cn": "每场战斗首次使用物品时，加速件剧毒物品2秒。",
     "size": "Medium / 中型",
     "starting_tier": "Silver / 白银",
@@ -8709,7 +8709,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first time you use an item each fight, Haste  Poison item(s) for 2 second(s).",
+        "en": "The first time you use an item each fight, Haste Poison item(s) for 2 seconds.",
         "cn": "每场战斗首次使用物品时，加速件剧毒物品2秒。"
       }
     ]
@@ -8948,7 +8948,7 @@
     "id": "cdf1d8f2-851b-43a8-bc8b-6d3ce2d4bca9",
     "name_en": "Tall Buildings",
     "name_cn": "高楼大厦",
-    "description_en": "The first 5/10 times you use a Property each fight, Haste items adjacent to it 1 second(s).",
+    "description_en": "The first 5/10 times you use a Property each fight, Haste items adjacent to it 1 second.",
     "description_cn": "每场战斗前5/10次使用地产时，加速与之相邻的物品1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -8962,7 +8962,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 5/10 times you use a Property each fight, Haste items adjacent to it 1 second(s).",
+        "en": "The first 5/10 times you use a Property each fight, Haste items adjacent to it 1 second.",
         "cn": "每场战斗前5/10次使用地产时，加速与之相邻的物品1秒。"
       }
     ]
@@ -9178,7 +9178,7 @@
     "id": "549263e2-4ab4-4fe8-a552-e94486b3e91b",
     "name_en": "Invigorating Blade",
     "name_cn": "振能刃",
-    "description_en": "The first 4/8 times you use a Weapon each fight, Charge a Heal item 1 second(s).",
+    "description_en": "The first 4/8 times you use a Weapon each fight, Charge a Heal item 1 second.",
     "description_cn": "每场战斗前4/8次使用武器时，为一件治疗物品充能1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -9192,7 +9192,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 4/8 times you use a Weapon each fight, Charge a Heal item 1 second(s).",
+        "en": "The first 4/8 times you use a Weapon each fight, Charge a Heal item 1 second.",
         "cn": "每场战斗前4/8次使用武器时，为一件治疗物品充能1秒。"
       }
     ]
@@ -9201,7 +9201,7 @@
     "id": "9a707fa9-38b6-42dc-a4fb-737982f47745",
     "name_en": "Morning Rush",
     "name_cn": "早起冲劲",
-    "description_en": "The first 5/10 times you use a Food each fight, Haste an item for 1 second(s).",
+    "description_en": "The first 5/10 times you use a Food each fight, Haste an item for 1 second.",
     "description_cn": "每场战斗前5/10次使用食物时，加速一件物品1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -9215,7 +9215,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 5/10 times you use a Food each fight, Haste an item for 1 second(s).",
+        "en": "The first 5/10 times you use a Food each fight, Haste an item for 1 second.",
         "cn": "每场战斗前5/10次使用食物时，加速一件物品1秒。"
       }
     ]
@@ -9692,7 +9692,7 @@
     "id": "fd3f0e7b-27ac-4bde-87f8-5ec61b19c4f7",
     "name_en": "Sabotage",
     "name_cn": "破坏行动",
-    "description_en": "The first 5/10 times you use a Tool each fight, Slow an item for 1 second(s).",
+    "description_en": "The first 5/10 times you use a Tool each fight, Slow an item for 1 second.",
     "description_cn": "每场战斗前5/10次使用工具时，减速一件物品1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -9706,7 +9706,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 5/10 times you use a Tool each fight, Slow an item for 1 second(s).",
+        "en": "The first 5/10 times you use a Tool each fight, Slow an item for 1 second.",
         "cn": "每场战斗前5/10次使用工具时，减速一件物品1秒。"
       }
     ]
@@ -9807,7 +9807,7 @@
     "id": "9b8912ec-1219-4cdf-acd5-cf9b73438280",
     "name_en": "Net Launcher",
     "name_cn": "捕网发射器",
-    "description_en": "The first time you use a Large item each fight, Slow  item(s) for 3 second(s).",
+    "description_en": "The first time you use a Large item each fight, Slow item(s) for 3 seconds.",
     "description_cn": "每场战斗首次使用大型物品时，减速件物品3秒。",
     "size": "Medium / 中型",
     "starting_tier": "Silver / 白银",
@@ -9821,7 +9821,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first time you use a Large item each fight, Slow  item(s) for 3 second(s).",
+        "en": "The first time you use a Large item each fight, Slow item(s) for 3 seconds.",
         "cn": "每场战斗首次使用大型物品时，减速件物品3秒。"
       }
     ]
@@ -10248,7 +10248,7 @@
     "id": "63c3c74e-8a01-44cf-a629-2b12aa842264",
     "name_en": "Quick Fix",
     "name_cn": "",
-    "description_en": "The Cooldowns of your non-Weapon items with Cooldowns greater than 10 seconds are reduced by 1000/2000 second(s).",
+    "description_en": "The Cooldowns of your non-Weapon items with Cooldowns greater than 10 seconds are reduced by 1/2 second(s).",
     "description_cn": "[未翻译]",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -10262,7 +10262,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The Cooldowns of your non-Weapon items with Cooldowns greater than 10 seconds are reduced by 1000/2000 second(s).",
+        "en": "The Cooldowns of your non-Weapon items with Cooldowns greater than 10 seconds are reduced by 1/2 second(s).",
         "cn": "[未翻译]"
       }
     ]
@@ -10524,7 +10524,7 @@
     "id": "4160a158-6809-410d-9b7a-21a27fb12f93",
     "name_en": "Haunting Flight",
     "name_cn": "鬼魅飘飞",
-    "description_en": "The first time you use an item each fight,  Small item(s) start Flying.",
+    "description_en": "The first time you use an item each fight, Small item(s) start Flying.",
     "description_cn": "每场战斗首次使用物品时，件小型物品开始飞行。",
     "size": "Medium / 中型",
     "starting_tier": "Silver / 白银",
@@ -10538,7 +10538,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first time you use an item each fight,  Small item(s) start Flying.",
+        "en": "The first time you use an item each fight, Small item(s) start Flying.",
         "cn": "每场战斗首次使用物品时，件小型物品开始飞行。"
       }
     ]
@@ -10593,7 +10593,7 @@
     "id": "cd6ac6ef-dafb-4001-a338-52e791bec4c3",
     "name_en": "Slow Burn",
     "name_cn": "慢性灼烧",
-    "description_en": "The first 4/8 times you Slow each fight, Charge a Burn item 1 second(s).",
+    "description_en": "The first 4/8 times you Slow each fight, Charge a Burn item 1 second.",
     "description_cn": "每场战斗前4/8次触发减速时，为一件灼烧物品充能1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -10607,7 +10607,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 4/8 times you Slow each fight, Charge a Burn item 1 second(s).",
+        "en": "The first 4/8 times you Slow each fight, Charge a Burn item 1 second.",
         "cn": "每场战斗前4/8次触发减速时，为一件灼烧物品充能1秒。"
       }
     ]
@@ -10662,7 +10662,7 @@
     "id": "3b4c3700-6c77-4954-a3e1-dfeaeab08c4a",
     "name_en": "Hardly Workin'",
     "name_cn": "假装努力",
-    "description_en": "The first 4/8 times you Slow each fight, Charge a Regen item 1 second(s).",
+    "description_en": "The first 4/8 times you Slow each fight, Charge a Regen item 1 second.",
     "description_cn": "每场战斗前4/8次触发减速时，为一件生命再生物品充能1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -10676,7 +10676,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 4/8 times you Slow each fight, Charge a Regen item 1 second(s).",
+        "en": "The first 4/8 times you Slow each fight, Charge a Regen item 1 second.",
         "cn": "每场战斗前4/8次触发减速时，为一件生命再生物品充能1秒。"
       }
     ]
@@ -10708,7 +10708,7 @@
     "id": "dec273b3-155e-4fbd-9629-5dbd2900e032",
     "name_en": "Coolant Leak",
     "name_cn": "冷却剂泄露",
-    "description_en": "The first 4/8 times you use your rightmost item each fight, Charge a Freeze item 1 second(s).",
+    "description_en": "The first 4/8 times you use your rightmost item each fight, Charge a Freeze item 1 second.",
     "description_cn": "每场战斗前4/8次使用最右侧物品时，为一件冻结物品充能1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -10722,7 +10722,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 4/8 times you use your rightmost item each fight, Charge a Freeze item 1 second(s).",
+        "en": "The first 4/8 times you use your rightmost item each fight, Charge a Freeze item 1 second.",
         "cn": "每场战斗前4/8次使用最右侧物品时，为一件冻结物品充能1秒。"
       }
     ]
@@ -10777,7 +10777,7 @@
     "id": "ee9a5e52-4fe9-4999-9329-6aafe24a129e",
     "name_en": "Death from Above",
     "name_cn": "死从天降",
-    "description_en": "When you Enrage,  of your items start Flying, then Charge your Flying items 1 second.",
+    "description_en": "When you Enrage, of your items start Flying, then Charge your Flying items 1 second.",
     "description_cn": "当你进入暴怒状态时，件己方物品开始飞行，然后为己方飞行物品充能1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Bronze / 青铜",
@@ -10791,7 +10791,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "When you Enrage,  of your items start Flying, then Charge your Flying items 1 second.",
+        "en": "When you Enrage, of your items start Flying, then Charge your Flying items 1 second.",
         "cn": "当你进入暴怒状态时，件己方物品开始飞行，然后为己方飞行物品充能1秒。"
       }
     ]
@@ -10846,7 +10846,7 @@
     "id": "daec4b27-bd32-434e-85ef-4bd4629e7d11",
     "name_en": "Bold Under Pressure",
     "name_cn": "逆境无惧",
-    "description_en": "The first time you fall below half Health each fight, Haste  items for 2 second(s).",
+    "description_en": "The first time you fall below half Health each fight, Haste items for 2 seconds.",
     "description_cn": "每场战斗己方生命值首次降至一半时，加速件物品2秒。",
     "size": "Medium / 中型",
     "starting_tier": "Silver / 白银",
@@ -10860,7 +10860,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first time you fall below half Health each fight, Haste  items for 2 second(s).",
+        "en": "The first time you fall below half Health each fight, Haste items for 2 seconds.",
         "cn": "每场战斗己方生命值首次降至一半时，加速件物品2秒。"
       }
     ]
@@ -11007,7 +11007,7 @@
     "id": "e7488436-6835-4e5e-971c-ba0a60f58529",
     "name_en": "Bullet Time",
     "name_cn": "时间凝滞",
-    "description_en": "The first 4/8 times you use an Ammo item each fight, Slow an item for 1 second(s).",
+    "description_en": "The first 4/8 times you use an Ammo item each fight, Slow an item for 1 second.",
     "description_cn": "每场战斗前4/8次使用弹药物品时，减速一件物品1秒。",
     "size": "Medium / 中型",
     "starting_tier": "Gold / 黄金",
@@ -11021,7 +11021,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "The first 4/8 times you use an Ammo item each fight, Slow an item for 1 second(s).",
+        "en": "The first 4/8 times you use an Ammo item each fight, Slow an item for 1 second.",
         "cn": "每场战斗前4/8次使用弹药物品时，减速一件物品1秒。"
       }
     ]
@@ -11053,7 +11053,7 @@
     "id": "e8770458-220a-45bd-bfef-d6045b152d29",
     "name_en": "Bonk",
     "name_cn": "迎头痛击",
-    "description_en": "Enemy Cooldowns are increased by 1000 second(s).",
+    "description_en": "Enemy Cooldowns are increased by 1 second.",
     "description_cn": "敌方物品的冷却时间延长1000秒。",
     "size": "Medium / 中型",
     "starting_tier": "Diamond / 钻石",
@@ -11067,7 +11067,7 @@
     "multicast": 0,
     "descriptions": [
       {
-        "en": "Enemy Cooldowns are increased by 1000 second(s).",
+        "en": "Enemy Cooldowns are increased by 1 second.",
         "cn": "敌方物品的冷却时间延长1000秒。"
       }
     ]

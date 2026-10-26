@@ -391,7 +391,7 @@ pub fn spawn_mouse_hotkey_monitor(handle_monitor: tauri::AppHandle) {
                     let _ = handle_clone.emit(
                         "island-status",
                         serde_json::json!({
-                            "message": "正在识别详情...",
+                            "message": "Identifying details...",
                             "type": "info"
                         }),
                     );
@@ -408,23 +408,23 @@ pub fn spawn_mouse_hotkey_monitor(handle_monitor: tauri::AppHandle) {
                             let island_payload = match result_type.as_str() {
                                 "item" => {
                                     let item_name = data
-                                        .get("name_cn")
+                                        .get("name")
                                         .and_then(|v| v.as_str())
-                                        .or_else(|| data.get("name").and_then(|v| v.as_str()))
-                                        .unwrap_or("未知卡牌");
+                                        .or_else(|| data.get("name_cn").and_then(|v| v.as_str()))
+                                        .unwrap_or("Unknown card");
                                     serde_json::json!({
-                                        "message": format!("卡牌详情: {} ({}ms)", item_name, started.elapsed().as_millis()),
+                                        "message": format!("Card: {} ({}ms)", item_name, started.elapsed().as_millis()),
                                         "type": "success"
                                     })
                                 }
                                 "monster" => {
                                     let monster_name = data
-                                        .get("name_zh")
+                                        .get("name")
                                         .and_then(|v| v.as_str())
-                                        .or_else(|| data.get("name").and_then(|v| v.as_str()))
-                                        .unwrap_or("未知野怪");
+                                        .or_else(|| data.get("name_zh").and_then(|v| v.as_str()))
+                                        .unwrap_or("Unknown monster");
                                     serde_json::json!({
-                                        "message": format!("识别目标: {} ({}ms)", monster_name, started.elapsed().as_millis()),
+                                        "message": format!("Monster: {} ({}ms)", monster_name, started.elapsed().as_millis()),
                                         "type": "info"
                                     })
                                 }
@@ -433,14 +433,14 @@ pub fn spawn_mouse_hotkey_monitor(handle_monitor: tauri::AppHandle) {
                                         .get("Name")
                                         .and_then(|v| v.as_str())
                                         .or_else(|| data.get("Id").and_then(|v| v.as_str()))
-                                        .unwrap_or("未知事件");
+                                        .unwrap_or("Unknown event");
                                     serde_json::json!({
-                                        "message": format!("识别事件: {} ({}ms)", event_name, started.elapsed().as_millis()),
+                                        "message": format!("Event: {} ({}ms)", event_name, started.elapsed().as_millis()),
                                         "type": "info"
                                     })
                                 }
                                 _ => serde_json::json!({
-                                    "message": format!("详情识别完成 ({}ms)", started.elapsed().as_millis()),
+                                    "message": format!("Details identified ({}ms)", started.elapsed().as_millis()),
                                     "type": "info"
                                 }),
                             };
@@ -459,7 +459,7 @@ pub fn spawn_mouse_hotkey_monitor(handle_monitor: tauri::AppHandle) {
                                 let _ = handle_clone.emit(
                                     "island-status",
                                     serde_json::json!({
-                                        "message": "详情弹窗显示失败",
+                                        "message": "Could not show the detail popup",
                                         "type": "error"
                                     }),
                                 );
@@ -469,7 +469,7 @@ pub fn spawn_mouse_hotkey_monitor(handle_monitor: tauri::AppHandle) {
                             let _ = handle_clone.emit(
                                 "island-status",
                                 serde_json::json!({
-                                    "message": format!("未识别到详情目标 ({}ms)", started.elapsed().as_millis()),
+                                    "message": format!("No target found for details ({}ms)", started.elapsed().as_millis()),
                                     "type": "warning"
                                 }),
                             );
@@ -481,10 +481,10 @@ pub fn spawn_mouse_hotkey_monitor(handle_monitor: tauri::AppHandle) {
                                 || e.contains("拒绝访问")
                                 || e.contains("鎷掔粷璁块棶");
                             let message = if denied {
-                                "详情识别失败：截图权限被拒绝，请用相同权限运行游戏和插件（都管理员或都普通）"
+                                "Detail recognition failed: screenshot permission denied. Run the game and this app with the same permissions (both as administrator, or both normally)."
                                     .to_string()
                             } else {
-                                format!("详情识别失败: {} ({}ms)", e, started.elapsed().as_millis())
+                                format!("Detail recognition failed: {} ({}ms)", e, started.elapsed().as_millis())
                             };
                             let _ = handle_clone.emit(
                                 "island-status",

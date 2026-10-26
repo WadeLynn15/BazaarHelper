@@ -13,9 +13,9 @@ export interface SidebarNavItem {
 }
 
 export const SIDEBAR_NAV_ITEMS: SidebarNavItem[] = [
-  { id: 'history', label: '历史战绩', icon: iconHistory },
-  { id: 'monster', label: '野怪一览', icon: iconBattle },
-  { id: 'card', label: '卡牌识别', icon: iconScanner },
-  { id: 'items', label: '手头物品', icon: iconChest },
-  { id: 'search', label: '百科搜索', icon: iconSearch },
+  { id: 'history', label: 'Match History', icon: iconHistory },
+  { id: 'monster', label: 'Monsters', icon: iconBattle },
+  { id: 'card', label: 'Card Scanner', icon: iconScanner },
+  { id: 'items', label: 'My Items', icon: iconChest },
+  { id: 'search', label: 'Wiki Search', icon: iconSearch },
 ];

@@ -53,7 +53,7 @@ export function ResetHotkeysConfirmModal({
           }}
         >
           <span style={{ fontSize: '24px' }}>⚠️</span>
-          <span>重置确认</span>
+          <span>Confirm reset</span>
         </div>
 
         <div
@@ -69,17 +69,17 @@ export function ResetHotkeysConfirmModal({
           }}
         >
           <p style={{ margin: '0 0 12px 0' }}>
-            此操作将<span style={{ color: '#ff6b6b', fontWeight: 'bold' }}>重置所有快捷键设置</span>，包括：
+            This will <span style={{ color: '#ff6b6b', fontWeight: 'bold' }}>reset all hotkey settings</span>, including:
           </p>
           <ul style={{ margin: '8px 0', paddingLeft: '24px', color: '#aaa' }}>
-            <li>怪物识别热键</li>
-            <li>卡牌识别热键</li>
-            <li>YOLO 扫描热键</li>
-            <li>详情显示热键</li>
-            <li>折叠/展开热键</li>
+            <li>Monster scan hotkey</li>
+            <li>Card scan hotkey</li>
+            <li>YOLO scan hotkey</li>
+            <li>Card details hotkey</li>
+            <li>Collapse/expand hotkey</li>
           </ul>
           <p style={{ margin: '12px 0 0 0', color: '#888', fontSize: '13px' }}>
-            重置后，所有快捷键功能将被禁用，您需要重新设置才能使用。
+            After the reset, all hotkeys are turned off until you set them again.
           </p>
         </div>
 
@@ -112,7 +112,7 @@ export function ResetHotkeysConfirmModal({
               e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
             }}
           >
-            取消
+            Cancel
           </button>
           <button
             style={{
@@ -139,7 +139,7 @@ export function ResetHotkeysConfirmModal({
               e.currentTarget.style.boxShadow = '0 4px 12px rgba(255, 69, 58, 0.3)';
             }}
           >
-            确认重置
+            Reset
           </button>
         </div>
       </div>

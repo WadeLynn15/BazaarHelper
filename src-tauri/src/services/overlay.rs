@@ -61,10 +61,10 @@ pub async fn handle_overlay_right_click(
     let window_y = if meta.logical_height > 0 { meta.origin_y } else { fallback_y };
 
     if img_opt.is_none() {
-        return Err("暂无YOLO截图，请先触发一次YOLO扫描".to_string());
+        return Err("No YOLO screenshot yet. Run a YOLO scan first.".to_string());
     }
     if detections.is_empty() {
-        return Err("YOLO结果为空，请先触发YOLO并确认识别到目标".to_string());
+        return Err("No YOLO results. Run a YOLO scan and make sure it finds targets.".to_string());
     }
     let img = img_opt.unwrap();
     let (img_w, img_h) = img.dimensions();

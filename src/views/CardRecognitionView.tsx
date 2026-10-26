@@ -53,7 +53,7 @@ export const CardRecognitionView: React.FC<CardRecognitionViewProps> = ({
              };
              setHotkeyLabel(getLabel(code));
           } else {
-             setHotkeyLabel("未设置");
+             setHotkeyLabel("Not set");
           }
       });
   }, []);
@@ -69,12 +69,12 @@ export const CardRecognitionView: React.FC<CardRecognitionViewProps> = ({
           marginBottom: '16px'
       }}>
         <div style={{ fontSize: '15px', marginBottom: '12px', color: '#e6edf3', fontWeight: 500 }}>
-            🃏 卡牌识别
+            🃏 Card Scanner
         </div>
         <div style={{ fontSize: '13px', lineHeight: '1.6', textAlign: 'left', display: 'inline-block' }}>
-            1. 在游戏中<strong>右键点击</strong>卡牌查看大图<br/>
-            2. 将鼠标悬停在卡牌中心位置<br/>
-            3. 按下 <span style={{ 
+            1. In the game, <strong>right-click</strong> a card to open its large view<br/>
+            2. Hover the mouse over the center of the card<br/>
+            3. Press <span style={{ 
                 background: 'rgba(56, 139, 253, 0.15)', 
                 border: '1px solid rgba(56, 139, 253, 0.4)',
                 padding: '2px 8px', 
@@ -82,7 +82,7 @@ export const CardRecognitionView: React.FC<CardRecognitionViewProps> = ({
                 color: '#58a6ff',
                 fontFamily: 'monospace',
                 fontWeight: 'bold'
-            }}>{hotkeyLabel}</span> 进行识别
+            }}>{hotkeyLabel}</span> to scan it
         </div>
         <div style={{ marginTop: '14px' }}>
           <button
@@ -91,13 +91,13 @@ export const CardRecognitionView: React.FC<CardRecognitionViewProps> = ({
             disabled={isRecognizing}
             style={{ minWidth: '140px' }}
           >
-            {isRecognizing ? '识别中...' : '手动识别一次'}
+            {isRecognizing ? 'Scanning...' : 'Scan once now'}
           </button>
         </div>
         {isRecognizing && (
             <div style={{ marginTop: '16px', color: '#58a6ff', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
                 <span className="loader-spinner" style={{width: 16, height: 16, border: '2px solid #58a6ff', borderBottomColor: 'transparent', borderRadius: '50%', display: 'inline-block', animation: 'spin 1s linear infinite'}}></span>
-                <span>正在分析画面...</span>
+                <span>Analyzing the screen...</span>
             </div>
         )}
       </div>
@@ -114,7 +114,7 @@ export const CardRecognitionView: React.FC<CardRecognitionViewProps> = ({
               gap: '12px'
           }}>
             <div style={{ fontSize: '24px', opacity: 0.5 }}>🔍</div>
-            <div>等待识别结果...</div>
+            <div>Waiting for results...</div>
           </div>
         ) : (
           <div className="fade-in">
@@ -125,7 +125,7 @@ export const CardRecognitionView: React.FC<CardRecognitionViewProps> = ({
                   paddingLeft: '4px',
                   borderLeft: '2px solid #58a6ff'
               }}>
-                  识别结果 (按置信度排序)
+                  Results (sorted by confidence)
               </div>
               <div className="cards-grid" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {recognizedCards.map((card, index) => (
@@ -162,7 +162,7 @@ export const CardRecognitionView: React.FC<CardRecognitionViewProps> = ({
                             style={{ padding: '4px 10px', fontSize: '12px' }}
                             onClick={() => onToggleExpand(card.instance_id || card.uuid)}
                           >
-                            {expandedItems.has(card.instance_id || card.uuid) ? '收起详情' : '展开详情'}
+                            {expandedItems.has(card.instance_id || card.uuid) ? 'Hide details' : 'Show details'}
                           </button>
                         </div>
                     </div>

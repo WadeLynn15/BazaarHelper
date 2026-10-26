@@ -108,9 +108,9 @@ export const useMonsterTabLogic = ({
                 mergedSkill = {
                   ...s,
                   skills: fullSkillInfo.descriptions || s.skills || [],
-                  name: fullSkillInfo.name_cn || s.name,
+                  name: fullSkillInfo.name || (s as any).name_en || fullSkillInfo.name_cn || s.name,
                   name_cn: fullSkillInfo.name_cn,
-                  name_en: fullSkillInfo.name_en,
+                  name_en: fullSkillInfo.name || (s as any).name_en,
                 };
               }
 

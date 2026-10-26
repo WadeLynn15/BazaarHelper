@@ -21,9 +21,9 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
   return (
     <aside className="sidebar-nav">
       <div className="sidebar-nav-surface">
-        <div className="sidebar-brand" title="集市小抄" data-tauri-drag-region>
-          <span className="sidebar-brand-short">集</span>
-          <span className="sidebar-brand-full">集市小抄</span>
+        <div className="sidebar-brand" title="Bazaar Cheat Sheet" data-tauri-drag-region>
+          <span className="sidebar-brand-short">B</span>
+          <span className="sidebar-brand-full">Bazaar Cheat Sheet</span>
         </div>
 
         <div className="sidebar-nav-list">
@@ -42,14 +42,14 @@ export const SidebarNav: React.FC<SidebarNavProps> = ({
 
         <div className="sidebar-bottom-actions">
           {onOpenProfile ? (
-            <button className="sidebar-profile-btn" onClick={onOpenProfile} title="个人页面">
+            <button className="sidebar-profile-btn" onClick={onOpenProfile} title="Profile">
               <img src={iconUser} alt="" className="sidebar-nav-icon" />
-              <span className="sidebar-nav-label">个人页面</span>
+              <span className="sidebar-nav-label">Profile</span>
             </button>
           ) : null}
-          <button className="sidebar-settings-btn" onClick={onOpenSettings} title="系统设置">
+          <button className="sidebar-settings-btn" onClick={onOpenSettings} title="Settings">
             <img src={iconSetting} alt="" className="sidebar-nav-icon" />
-            <span className="sidebar-nav-label">系统设置</span>
+            <span className="sidebar-nav-label">Settings</span>
           </button>
         </div>
       </div>

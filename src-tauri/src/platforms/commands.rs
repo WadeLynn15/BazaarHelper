@@ -422,7 +422,7 @@ pub async fn open_calibration_window(app: tauri::AppHandle) -> Result<(), String
         "monster-calibration",
         WebviewUrl::App("index.html".into()),
     )
-    .title("野怪识别校准")
+    .title("Monster Recognition Calibration")
     .inner_size(logical_width, logical_height)
     .position(logical_x, logical_y)
     .resizable(false)
@@ -659,22 +659,22 @@ pub async fn show_detail_popup_at(
 
     let display_name = match data_type.as_str() {
         "item" => data
-            .get("name_cn")
+            .get("name")
             .and_then(|v| v.as_str())
-            .or_else(|| data.get("name").and_then(|v| v.as_str()))
-            .unwrap_or("未知卡牌")
+            .or_else(|| data.get("name_cn").and_then(|v| v.as_str()))
+            .unwrap_or("Unknown card")
             .to_string(),
         "monster" => data
-            .get("name_zh")
+            .get("name")
             .and_then(|v| v.as_str())
-            .or_else(|| data.get("name").and_then(|v| v.as_str()))
-            .unwrap_or("未知野怪")
+            .or_else(|| data.get("name_zh").and_then(|v| v.as_str()))
+            .unwrap_or("Unknown monster")
             .to_string(),
         "event" => data
             .get("Name")
             .and_then(|v| v.as_str())
             .or_else(|| data.get("Id").and_then(|v| v.as_str()))
-            .unwrap_or("未知事件")
+            .unwrap_or("Unknown event")
             .to_string(),
         _ => String::new(),
     };

@@ -173,7 +173,7 @@ const MonsterCalibration: React.FC = () => {
       await handleClose();
     } catch (err) {
       console.error('[Monster Calibration] Failed to save:', err);
-      alert('保存失败: ' + err);
+      alert('Save failed: ' + err);
     }
   };
 
@@ -205,13 +205,13 @@ const MonsterCalibration: React.FC = () => {
         boxShadow: '0 8px 24px rgba(0, 0, 0, 0.8)',
       }}>
         <div style={{ fontSize: '20px', fontWeight: 'bold', color: '#ffcd19', marginBottom: '12px' }}>
-          野怪识别校准
+          Monster Recognition Calibration
         </div>
         <div style={{ fontSize: '14px', color: '#ddd', marginBottom: '8px' }}>
-          拖动并调整三个方框的大小，使其覆盖三个野怪区域
+          Drag and resize the three boxes so they cover the three monster areas
         </div>
         <div style={{ fontSize: '12px', color: '#aaa' }}>
-          提示：按 ESC 键取消，点击确认按钮保存
+          Tip: press ESC to cancel, or click Save to confirm
         </div>
       </div>
 
@@ -228,7 +228,7 @@ const MonsterCalibration: React.FC = () => {
           padding: '20px 40px',
           borderRadius: '8px',
         }}>
-          正在初始化校准区域...
+          Setting up calibration areas...
         </div>
       )}
       {regions.map((region, index) => (
@@ -260,7 +260,7 @@ const MonsterCalibration: React.FC = () => {
             fontWeight: 'bold',
             pointerEvents: 'none',
           }}>
-            区域 {index + 1}
+            Area {index + 1}
           </div>
 
           {/* 调整大小的手柄 */}
@@ -315,7 +315,7 @@ const MonsterCalibration: React.FC = () => {
             e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
           }}
         >
-          取消 (ESC)
+          Cancel (ESC)
         </button>
         <button
           onClick={handleSave}
@@ -340,7 +340,7 @@ const MonsterCalibration: React.FC = () => {
             e.currentTarget.style.boxShadow = '0 4px 12px rgba(255, 205, 25, 0.4)';
           }}
         >
-          确认保存
+          Save
         </button>
       </div>
     </div>

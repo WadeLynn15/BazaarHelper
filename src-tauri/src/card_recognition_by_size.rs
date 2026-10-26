@@ -48,7 +48,7 @@ pub async fn preload_card_templates_by_size_async(resources_dir: PathBuf, cache_
     }
     
     let json_content = std::fs::read_to_string(&db_path)
-        .map_err(|e| format!("读取 items_db.json 失败: {}", e))?;
+        .map_err(|e| format!("Failed to read items_db.json: {}", e))?;
     
     #[derive(Deserialize)]
     struct RawItemWithSize {
@@ -58,7 +58,7 @@ pub async fn preload_card_templates_by_size_async(resources_dir: PathBuf, cache_
     }
     
     let items: Vec<RawItemWithSize> = serde_json::from_str(&json_content)
-        .map_err(|e| format!("解析 items_db.json 失败: {}", e))?;
+        .map_err(|e| format!("Failed to parse items_db.json: {}", e))?;
     
     // 按size分类
     let mut small_tasks = Vec::new();

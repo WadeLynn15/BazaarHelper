@@ -85,10 +85,10 @@ fn setup_system_tray(app: &mut tauri::App) -> Result<(), Box<dyn std::error::Err
     use tauri::menu::{Menu, MenuItem};
     use tauri::tray::{MouseButton, MouseButtonState, TrayIconBuilder, TrayIconEvent};
 
-    let quit_i = MenuItem::with_id(app, "quit", "退出程序", true, None::<&str>)?;
-    let show_i = MenuItem::with_id(app, "show", "显示主窗口", true, None::<&str>)?;
-    let hide_i = MenuItem::with_id(app, "hide", "最小化到任务栏", true, None::<&str>)?;
-    let reset_i = MenuItem::with_id(app, "reset", "窗口复位", true, None::<&str>)?;
+    let quit_i = MenuItem::with_id(app, "quit", "Quit", true, None::<&str>)?;
+    let show_i = MenuItem::with_id(app, "show", "Show window", true, None::<&str>)?;
+    let hide_i = MenuItem::with_id(app, "hide", "Minimize to taskbar", true, None::<&str>)?;
+    let reset_i = MenuItem::with_id(app, "reset", "Reset window position", true, None::<&str>)?;
     let menu = Menu::with_items(
         app,
         &[

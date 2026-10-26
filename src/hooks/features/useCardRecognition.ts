@@ -24,7 +24,7 @@ export const useCardRecognition = ({
   useEffect(() => {
     const unlisten = listen<string>('scan-error', (event) => {
       console.error('[Backend Error]', event.payload);
-      setErrorMessage(`识别错误: ${event.payload}`);
+      setErrorMessage(`Recognition error: ${event.payload}`);
       setTimeout(() => setErrorMessage(null), 5000);
     });
     return () => {
@@ -107,17 +107,17 @@ export const useCardRecognition = ({
             fullInfos.forEach((info) => next.add(info.uuid));
             return next;
           });
-          showToast(`识别成功: 找到 ${fullInfos.length} 个匹配项 (第1个为最佳匹配)`, 'success');
+          showToast(`Found ${fullInfos.length} match(es) (the first is the best match)`, 'success');
         } else {
           console.warn('[Card Recognition] No valid items found in database');
-          setErrorMessage('识别到了卡牌，但没能在数据库中找到对应信息');
+          setErrorMessage('A card was recognized, but it was not found in the database');
         }
       } else {
-        setErrorMessage('未能识别到鼠标下的卡牌。请确保鼠标指向卡牌中心。');
+        setErrorMessage('No card was recognized under the mouse. Make sure the mouse is over the center of the card.');
       }
     } catch (e: any) {
       console.error(e);
-      setErrorMessage(`卡牌识别执行出错: ${e}`);
+      setErrorMessage(`Card recognition error: ${e}`);
     } finally {
       setIsRecognizingCard(false);
       setTimeout(() => setErrorMessage(null), 3000);

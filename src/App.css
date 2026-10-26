@@ -162,7 +162,7 @@
 html, body, #root {
   background: transparent !important;
   height: 100%; width: 100%; overflow: hidden;
-  font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+  font-family: "Segoe UI", "Microsoft YaHei", "微软雅黑", sans-serif;
   margin: 0 !important;
   padding: 0 !important;
   border: none !important;
@@ -1955,7 +1955,7 @@ html, body, #root {
   display: flex !important;
   align-items: center;
   justify-content: center;
-  font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+  font-family: "Segoe UI", "Microsoft YaHei", "微软雅黑", sans-serif;
   box-sizing: border-box;
   overflow: hidden;
   /* 确保不产生任何边框或外层阴影 */

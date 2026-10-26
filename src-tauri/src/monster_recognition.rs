@@ -96,13 +96,13 @@ fn build_yolo_session(
     }
 
     let builder = Session::builder()
-        .map_err(|e| format!("创建Session Builder失败: {}", e))?;
+        .map_err(|e| format!("Failed to create the ONNX session builder: {}", e))?;
 
     #[cfg(target_os = "windows")]
     let builder = if use_gpu {
         builder
             .with_execution_providers([DirectMLExecutionProvider::default().build()])
-            .map_err(|e| format!("DirectML执行提供者加载失败: {}. 请确保已安装GPU驱动和DirectML.dll在程序目录中。", e))?
+            .map_err(|e| format!("Failed to load the DirectML execution provider: {}. Make sure your GPU drivers are installed and DirectML.dll is in the program folder.", e))?
     } else {
         builder
     };
@@ -112,11 +112,11 @@ fn build_yolo_session(
 
     let session = builder
         .with_optimization_level(GraphOptimizationLevel::Level3)
-        .map_err(|e| format!("设置优化级别失败: {}", e))?
+        .map_err(|e| format!("Failed to set the optimization level: {}", e))?
         .with_intra_threads(4)
-        .map_err(|e| format!("设置线程数失败: {}", e))?
+        .map_err(|e| format!("Failed to set the thread count: {}", e))?
         .commit_from_file(model_path)
-        .map_err(|e| format!("加载ONNX模型失败: {}. 模型路径: {:?}", e, model_path))?;
+        .map_err(|e| format!("Failed to load the ONNX model: {}. Model path: {:?}", e, model_path))?;
 
     if use_gpu {
         log_to_file("[YOLO] Session initialized successfully with DirectML");
@@ -632,7 +632,7 @@ pub fn extract_features_from_dynamic_image(img: &DynamicImage, n_features: i32) 
     let mut bytes = Vec::new();
     use image::ImageFormat;
     img.write_to(&mut std::io::Cursor::new(&mut bytes), ImageFormat::Png)
-        .map_err(|e| opencv::Error::new(opencv::core::StsError, format!("图像转换失败: {}", e)))?;
+        .map_err(|e| opencv::Error::new(opencv::core::StsError, format!("Image conversion failed: {}", e)))?;
     
     // 使用 OpenCV 解码
     use opencv::imgcodecs::imdecode;
@@ -906,10 +906,10 @@ pub async fn preload_templates_async(resources_dir: PathBuf, cache_dir: PathBuf)
     }
 
     let json_content = std::fs::read_to_string(&db_path)
-        .map_err(|e| format!("读取 monsters_db.json 失败: {}", e))?;
+        .map_err(|e| format!("Failed to read monsters_db.json: {}", e))?;
 
     let monsters: HashMap<String, MonsterEntry> = serde_json::from_str(&json_content)
-        .map_err(|e| format!("解析 monsters_db.json 失败: {}", e))?;
+        .map_err(|e| format!("Failed to parse monsters_db.json: {}", e))?;
 
     // 预处理：建立一个“中文名 -> 图片路径”的映射，用于补全那些没有图片的词条
     let mut name_to_path: HashMap<String, PathBuf> = HashMap::new();
@@ -1169,7 +1169,7 @@ pub fn scan_and_identify_monster_at_mouse() -> Result<Option<String>, String> {
     if crop_w < 50 || crop_h < 50 {
         log_to_file(&format!("Error: Crop area too small ({}x{}). Mouse: ({},{}), Win: ({},{}), Rel: ({},{}), Img: {}x{}", 
             crop_w, crop_h, mouse_x, mouse_y, win_x, win_y, rel_x, rel_y, img_w, img_h));
-        return Err("裁剪区域太小或鼠标已移出窗口范围".into());
+        return Err("The capture area is too small, or the mouse is outside the game window".into());
     }
 
     let cropped_img = img.crop_imm(crop_x, crop_y, crop_w, crop_h);
@@ -1530,7 +1530,7 @@ pub async fn preload_card_templates_async(resources_dir: PathBuf, cache_dir: Pat
     }
 
     let json_content = std::fs::read_to_string(&db_path)
-        .map_err(|e| format!("读取 items_db.json 失败: {}", e))?;
+        .map_err(|e| format!("Failed to read items_db.json: {}", e))?;
 
     // 我们只需要简单的结构
     #[derive(Deserialize)]
@@ -1540,7 +1540,7 @@ pub async fn preload_card_templates_async(resources_dir: PathBuf, cache_dir: Pat
     }
     
     let items: Vec<RawItemSimple> = serde_json::from_str(&json_content)
-        .map_err(|e| format!("解析 items_db.json 失败: {}", e))?;
+        .map_err(|e| format!("Failed to parse items_db.json: {}", e))?;
 
     let mut tasks = Vec::new();
     for item in items {
@@ -2081,7 +2081,7 @@ pub async fn recognize_event_at_mouse() -> Result<Option<serde_json::Value>, Str
     let crop_h = if crop_y + crop_size as u32 > img_h { img_h.saturating_sub(crop_y) } else { crop_size as u32 };
 
     if crop_w < 50 || crop_h < 50 {
-        return Err("裁剪区域太小或鼠标已移出窗口范围".into());
+        return Err("The capture area is too small, or the mouse is outside the game window".into());
     }
 
     let cropped_img = img.crop_imm(crop_x, crop_y, crop_w, crop_h);
@@ -2174,7 +2174,7 @@ pub async fn preload_card_templates_by_size_async(resources_dir: PathBuf, cache_
     }
     
     let json_content = std::fs::read_to_string(&db_path)
-        .map_err(|e| format!("读取 items_db.json 失败: {}", e))?;
+        .map_err(|e| format!("Failed to read items_db.json: {}", e))?;
     
     #[derive(Deserialize)]
     struct RawItemWithSize {
@@ -2184,7 +2184,7 @@ pub async fn preload_card_templates_by_size_async(resources_dir: PathBuf, cache_
     }
     
     let items: Vec<RawItemWithSize> = serde_json::from_str(&json_content)
-        .map_err(|e| format!("解析 items_db.json 失败: {}", e))?;
+        .map_err(|e| format!("Failed to parse items_db.json: {}", e))?;
     
     // 按size分类
     let mut small_tasks = Vec::new();

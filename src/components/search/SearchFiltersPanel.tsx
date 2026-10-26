@@ -150,7 +150,7 @@ const SearchFiltersPanelImpl: React.FC<SearchFiltersPanelProps> = ({
       }} className="custom-scrollbar">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-            <div style={{ fontSize: '12px', color: '#ffcd19', fontWeight: 'bold' }}>搜索过滤器</div>
+            <div style={{ fontSize: '12px', color: '#ffcd19', fontWeight: 'bold' }}>Search filters</div>
             <div style={{ display: 'flex', gap: '4px' }}>
               <button
                 onClick={() => setMatchMode('all')}
@@ -164,9 +164,9 @@ const SearchFiltersPanelImpl: React.FC<SearchFiltersPanelProps> = ({
                   border: '1px solid #ffcd19',
                   cursor: 'pointer',
                 }}
-                title="所有筛选项必须同时满足"
+                title="Every selected filter must match"
               >
-                匹配所有
+                Match all
               </button>
               <button
                 onClick={() => setMatchMode('any')}
@@ -180,9 +180,9 @@ const SearchFiltersPanelImpl: React.FC<SearchFiltersPanelProps> = ({
                   border: '1px solid #ffcd19',
                   cursor: 'pointer',
                 }}
-                title="满足任意一个筛选项即可"
+                title="Any selected filter can match"
               >
-                匹配任一
+                Match any
               </button>
             </div>
           </div>
@@ -198,7 +198,7 @@ const SearchFiltersPanelImpl: React.FC<SearchFiltersPanelProps> = ({
               fontSize: '11px',
             }}
           >
-            {isSearchFilterCollapsed ? '展开 ▼' : '收起 ▲'}
+            {isSearchFilterCollapsed ? 'Expand ▼' : 'Collapse ▲'}
           </button>
         </div>
 
@@ -207,7 +207,7 @@ const SearchFiltersPanelImpl: React.FC<SearchFiltersPanelProps> = ({
             <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
               <input
                 className="search-input"
-                placeholder="搜索名称 / 描述..."
+                placeholder="Search name / description..."
                 value={searchQuery.keyword}
                 onChange={(e) => setSearchQuery({ ...searchQuery, keyword: e.target.value })}
                 onInput={() => {
@@ -281,8 +281,8 @@ const SearchFiltersPanelImpl: React.FC<SearchFiltersPanelProps> = ({
             <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
               <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
                 {[
-                  { val: 'item', label: '物品' },
-                  { val: 'skill', label: '技能' },
+                  { val: 'item', label: 'Item' },
+                  { val: 'skill', label: 'Skill' },
                 ].map((opt) => (
                   <button
                     key={opt.val}
@@ -308,9 +308,9 @@ const SearchFiltersPanelImpl: React.FC<SearchFiltersPanelProps> = ({
               {searchQuery.item_type !== 'skill' && (
                 <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
                   {[
-                    { val: 'small', label: '小' },
-                    { val: 'medium', label: '中' },
-                    { val: 'large', label: '大' },
+                    { val: 'small', label: 'Small' },
+                    { val: 'medium', label: 'Medium' },
+                    { val: 'large', label: 'Large' },
                   ].map((opt) => (
                     <button
                       key={opt.val}
@@ -328,11 +328,11 @@ const SearchFiltersPanelImpl: React.FC<SearchFiltersPanelProps> = ({
             <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
               <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
                 {[
-                  { val: 'bronze', label: '青铜', color: '#cd7f32' },
-                  { val: 'silver', label: '白银', color: '#c0c0c0' },
-                  { val: 'gold', label: '黄金', color: '#ffd700' },
-                  { val: 'diamond', label: '钻石', color: '#b9f2ff' },
-                  { val: 'legendary', label: '传说', color: '#ff4500' },
+                  { val: 'bronze', label: 'Bronze', color: '#cd7f32' },
+                  { val: 'silver', label: 'Silver', color: '#c0c0c0' },
+                  { val: 'gold', label: 'Gold', color: '#ffd700' },
+                  { val: 'diamond', label: 'Diamond', color: '#b9f2ff' },
+                  { val: 'legendary', label: 'Legendary', color: '#ff4500' },
                 ].map((opt) => (
                   <button
                     key={opt.val}
@@ -347,13 +347,13 @@ const SearchFiltersPanelImpl: React.FC<SearchFiltersPanelProps> = ({
 
               <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
                 {[
-                  { val: 'Common', label: '通用', avatar: '' },
-                  { val: 'Pygmalien', label: '猪', avatar: '/images/heroes/pygmalien.webp' },
-                  { val: 'Jules', label: '朱尔斯', avatar: '/images/heroes/jules.webp' },
-                  { val: 'Vanessa', label: '瓦内莎', avatar: '/images/heroes/vanessa.webp' },
-                  { val: 'Mak', label: '马克', avatar: '/images/heroes/mak.webp' },
-                  { val: 'Dooley', label: '多利', avatar: '/images/heroes/dooley.webp' },
-                  { val: 'Stelle', label: '斯黛尔', avatar: '/images/heroes/stelle.webp' },
+                  { val: 'Common', label: 'Neutral', avatar: '' },
+                  { val: 'Pygmalien', label: 'Pygmalien', avatar: '/images/heroes/pygmalien.webp' },
+                  { val: 'Jules', label: 'Jules', avatar: '/images/heroes/jules.webp' },
+                  { val: 'Vanessa', label: 'Vanessa', avatar: '/images/heroes/vanessa.webp' },
+                  { val: 'Mak', label: 'Mak', avatar: '/images/heroes/mak.webp' },
+                  { val: 'Dooley', label: 'Dooley', avatar: '/images/heroes/dooley.webp' },
+                  { val: 'Stelle', label: 'Stelle', avatar: '/images/heroes/stelle.webp' },
                   { val: 'Karnok', label: 'K', avatar: '' },
                 ].map((opt) => (
                   <button
@@ -369,28 +369,28 @@ const SearchFiltersPanelImpl: React.FC<SearchFiltersPanelProps> = ({
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <div style={{ fontSize: '11px', color: '#888' }}>标签 (可多选)</div>
+              <div style={{ fontSize: '11px', color: '#888' }}>Tags (multi-select)</div>
               <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
                 {[
-                  ['Drone', '无人机'],
-                  ['Property', '地产'],
-                  ['Ray', '射线'],
-                  ['Tool', '工具'],
-                  ['Dinosaur', '恐龙'],
-                  ['Loot', '战利品'],
-                  ['Apparel', '服饰'],
-                  ['Core', '核心'],
-                  ['Weapon', '武器'],
-                  ['Aquatic', '水系'],
-                  ['Toy', '玩具'],
-                  ['Tech', '科技'],
-                  ['Potion', '药水'],
-                  ['Reagent', '原料'],
-                  ['Vehicle', '载具'],
-                  ['Relic', '遗物'],
-                  ['Food', '食物'],
-                  ['Dragon', '龙'],
-                  ['Friend', '伙伴'],
+                  ['Drone', 'Drone'],
+                  ['Property', 'Property'],
+                  ['Ray', 'Ray'],
+                  ['Tool', 'Tool'],
+                  ['Dinosaur', 'Dinosaur'],
+                  ['Loot', 'Loot'],
+                  ['Apparel', 'Apparel'],
+                  ['Core', 'Core'],
+                  ['Weapon', 'Weapon'],
+                  ['Aquatic', 'Aquatic'],
+                  ['Toy', 'Toy'],
+                  ['Tech', 'Tech'],
+                  ['Potion', 'Potion'],
+                  ['Reagent', 'Reagent'],
+                  ['Vehicle', 'Vehicle'],
+                  ['Relic', 'Relic'],
+                  ['Food', 'Food'],
+                  ['Dragon', 'Dragon'],
+                  ['Friend', 'Friend'],
                 ].sort((a, b) => a[1].localeCompare(b[1], 'zh-CN')).map(([val, label]) => (
                   <button
                     key={val}
@@ -411,28 +411,28 @@ const SearchFiltersPanelImpl: React.FC<SearchFiltersPanelProps> = ({
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <div style={{ fontSize: '11px', color: '#888' }}>隐藏标签 (可多选)</div>
+              <div style={{ fontSize: '11px', color: '#888' }}>Hidden tags (multi-select)</div>
               <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
                 {(() => {
                   const tagGroups = [
-                    { tags: [['Ammo', '弹药'], ['AmmoRef', '弹药相关']], icon: 'Ammo', color: 'var(--c-ammo)' },
-                    { tags: [['Burn', '灼烧'], ['BurnRef', '灼烧相关']], icon: 'Burn', color: 'var(--c-burn)' },
-                    { tags: [['Charge', '充能']], icon: 'Charge', color: 'var(--c-charge)' },
-                    { tags: [['Cooldown', '冷却'], ['CooldownReference', '冷却相关']], icon: 'Cooldown', color: 'var(--c-cooldown)' },
-                    { tags: [['Crit', '暴击'], ['CritRef', '暴击相关']], icon: 'CritChance', color: 'var(--c-crit)' },
-                    { tags: [['Damage', '伤害'], ['DamageRef', '伤害相关']], icon: 'Damage', color: 'var(--c-damage)' },
-                    { tags: [['EconomyRef', '经济相关'], ['Gold', '金币']], icon: 'Income', color: 'var(--c-golden)' },
-                    { tags: [['Flying', '飞行'], ['FlyingRef', '飞行相关']], icon: 'Flying', color: 'var(--c-fly)' },
-                    { tags: [['Freeze', '冻结'], ['FreezeRef', '冻结相关']], icon: 'Freeze', color: 'var(--c-freeze)' },
-                    { tags: [['Haste', '加速'], ['HasteRef', '加速相关']], icon: 'Haste', color: 'var(--c-haste)' },
-                    { tags: [['Heal', '治疗'], ['HealRef', '治疗相关']], icon: 'Health', color: 'var(--c-heal)' },
-                    { tags: [['Health', '生命值'], ['HealthRef', '生命值相关']], icon: 'MaxHPHeart', color: 'var(--c-heal)' },
-                    { tags: [['Lifesteal', '生命偷取']], icon: 'Lifesteal', color: 'var(--c-lifesteal)' },
-                    { tags: [['Poison', '剧毒'], ['PoisonRef', '剧毒相关']], icon: 'Poison', color: 'var(--c-poison)' },
-                    { tags: [['Quest', '任务']], icon: null, color: '#9098fe' },
-                    { tags: [['Regen', '再生'], ['RegenRef', '再生相关']], icon: 'Regen', color: 'var(--c-regen)' },
-                    { tags: [['Shield', '护盾'], ['ShieldRef', '护盾相关']], icon: 'Shield', color: 'var(--c-shield)' },
-                    { tags: [['Slow', '减速'], ['SlowRef', '减速相关']], icon: 'Slowness', color: 'var(--c-slow)' },
+                    { tags: [['Ammo', 'Ammo'], ['AmmoRef', 'Ammo-related']], icon: 'Ammo', color: 'var(--c-ammo)' },
+                    { tags: [['Burn', 'Burn'], ['BurnRef', 'Burn-related']], icon: 'Burn', color: 'var(--c-burn)' },
+                    { tags: [['Charge', 'Charge']], icon: 'Charge', color: 'var(--c-charge)' },
+                    { tags: [['Cooldown', 'Cooldown'], ['CooldownReference', 'Cooldown-related']], icon: 'Cooldown', color: 'var(--c-cooldown)' },
+                    { tags: [['Crit', 'Crit'], ['CritRef', 'Crit-related']], icon: 'CritChance', color: 'var(--c-crit)' },
+                    { tags: [['Damage', 'Damage'], ['DamageRef', 'Damage-related']], icon: 'Damage', color: 'var(--c-damage)' },
+                    { tags: [['EconomyRef', 'Economy-related'], ['Gold', 'Gold']], icon: 'Income', color: 'var(--c-golden)' },
+                    { tags: [['Flying', 'Flying'], ['FlyingRef', 'Flying-related']], icon: 'Flying', color: 'var(--c-fly)' },
+                    { tags: [['Freeze', 'Freeze'], ['FreezeRef', 'Freeze-related']], icon: 'Freeze', color: 'var(--c-freeze)' },
+                    { tags: [['Haste', 'Haste'], ['HasteRef', 'Haste-related']], icon: 'Haste', color: 'var(--c-haste)' },
+                    { tags: [['Heal', 'Heal'], ['HealRef', 'Heal-related']], icon: 'Health', color: 'var(--c-heal)' },
+                    { tags: [['Health', 'Health'], ['HealthRef', 'Health-related']], icon: 'MaxHPHeart', color: 'var(--c-heal)' },
+                    { tags: [['Lifesteal', 'Lifesteal']], icon: 'Lifesteal', color: 'var(--c-lifesteal)' },
+                    { tags: [['Poison', 'Poison'], ['PoisonRef', 'Poison-related']], icon: 'Poison', color: 'var(--c-poison)' },
+                    { tags: [['Quest', 'Quest']], icon: null, color: '#9098fe' },
+                    { tags: [['Regen', 'Regen'], ['RegenRef', 'Regen-related']], icon: 'Regen', color: 'var(--c-regen)' },
+                    { tags: [['Shield', 'Shield'], ['ShieldRef', 'Shield-related']], icon: 'Shield', color: 'var(--c-shield)' },
+                    { tags: [['Slow', 'Slow'], ['SlowRef', 'Slow-related']], icon: 'Slowness', color: 'var(--c-slow)' },
                   ];
 
                   return tagGroups.map((group, groupIndex) => (
@@ -487,9 +487,9 @@ const SearchFiltersPanelImpl: React.FC<SearchFiltersPanelProps> = ({
       }}>
         <div style={{ fontSize: '13px', color: '#a0937d' }}>
           {isSearching ? (
-            <><span style={{ color: '#d4af37' }}>🔍</span> 搜索中...</>
+            <><span style={{ color: '#d4af37' }}>🔍</span> Searching...</>
           ) : (
-            <>找到 <span style={{ color: '#ffcc00', fontWeight: 'bold' }}>{searchResultsCount}</span> 个结果</>
+            <>Found <span style={{ color: '#ffcc00', fontWeight: 'bold' }}>{searchResultsCount}</span> result(s)</>
           )}
         </div>
         <button
@@ -501,7 +501,7 @@ const SearchFiltersPanelImpl: React.FC<SearchFiltersPanelProps> = ({
             setSelectedHiddenTags([]);
           }}
         >
-          重置
+          Reset
         </button>
       </div>
 
