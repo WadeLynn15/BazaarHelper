@@ -289,10 +289,35 @@ def fix_event_choices(events):
     return n
 
 
+# Event choice text was scraped from HTML where keywords/tags were separate
+# elements, so spaces around them were lost ("YourWeaponsgain", "Shieldand").
+EVENT_KEYWORDS = sorted([
+    'Burn', 'Poison', 'Shield', 'Heal', 'Regen', 'Haste', 'Slow', 'Freeze', 'Charge',
+    'Crit Chance', 'Damage', 'Max Health', 'Health', 'Gold', 'Value', 'XP', 'Ammo',
+    'Max Ammo', 'Income', 'Prestige', 'Multicast', 'Lifesteal', 'Flying',
+    'Tool', 'Tools', 'Weapon', 'Weapons', 'Friend', 'Friends', 'Food', 'Toy', 'Toys',
+    'Drone', 'Drones', 'Apparel', 'Potion', 'Potions', 'Vehicle', 'Vehicles', 'Relic',
+    'Relics', 'Aquatic', 'Core', 'Tech', 'Ray', 'Property', 'Properties', 'Dinosaur',
+    'Dinosaurs', 'Dragon', 'Dragons', 'Reagent', 'Reagents', 'Loot', 'Heated', 'Chilled',
+], key=len, reverse=True)
+GLUE_WORDS = r'(?:items?|types?|and|or|from|for|to|in|on|gains?|with|that|this)'
+
+
 def fix_event_spacing(text):
+    # "Gain4Gold." -> "Gain 4 Gold."
     text = re.sub(r'(?<=[a-z])(?=\d)', ' ', text)
     text = re.sub(r'(?<=\d)(?=[A-Z])', ' ', text)
-    return text
+    # "leftmostBurn", "YourWeapons", "MaxAmmo" -> spaced
+    text = re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', text)
+    # "items+10" -> "items +10" ; "+25%Crit" -> "+25% Crit"
+    text = re.sub(r'(?<=[a-z])(?=\+)', ' ', text)
+    text = re.sub(r'(?<=%)(?=[A-Za-z])', ' ', text)
+    # "+10value", "2on" -> "+10 value", "2 on" (keep ordinals like 2nd/3rd)
+    text = re.sub(r'(?<=\d)(?!(?:st|nd|rd|th)\b)(?=[a-z]{2,})', ' ', text)
+    # keyword glued to a following word: "Shieldand", "Weaponsgain", "Burnitem"
+    kw = '|'.join(re.escape(k) for k in EVENT_KEYWORDS)
+    text = re.sub(rf'\b({kw})(?={GLUE_WORDS}\b)', r'\1 ', text)
+    return re.sub(r' {2,}', ' ', text)
 
 
 def load(path):
