@@ -83,6 +83,8 @@
 .sidebar-brand-full {
   opacity: 0;
   max-width: 0;
+  font-size: 13px;
+  letter-spacing: 0.1px;
   transition: opacity 0.12s ease, max-width 0.2s ease;
 }
 
@@ -97,7 +99,7 @@
 
 .sidebar-nav:hover .sidebar-brand-full {
   opacity: 1;
-  max-width: 120px;
+  max-width: 150px;
 }
 
 .sidebar-nav-list {
