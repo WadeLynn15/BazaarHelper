@@ -317,7 +317,7 @@
  "此物品暴击提高+#% (限本场战斗)。": "This gains +#% Crit Chance for the fight.",
  "此物品暴击率提高+#% (限本场战斗)": "This gains +#% Crit Chance for the fight",
  "此物品暴击率降低#% (限本场战斗)": "This loses #% Crit Chance for the fight",
- "此物品每拥有#价值，其冷却时间就缩短#%。": "This item's cooldown is reduced by #% for every # Value it has.",
+ "此物品每拥有#价值，其冷却时间就缩短#%。": "For every # Value this has, its cooldown is reduced by #%.",
  "此物品每拥有一个类型，就造成#灼烧": "Burn # for each type this has",
  "此物品每拥有一种类型，就造成#剧毒": "Poison # for each type this has",
  "此物品的伤害加成翻倍。": "This item's Damage bonus is doubled.",

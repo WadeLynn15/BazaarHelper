@@ -45531,7 +45531,7 @@
             ],
             "extra_description": [
               "When you Shield or Heal, your items gain +1 Value for the fight.",
-              "This item's cooldown is reduced by 1% for every 1 Value it has."
+              "For every 1 Value this has, its cooldown is reduced by 1%."
             ],
             "cd": "7.0",
             "description_zh": [
@@ -45548,7 +45548,7 @@
             ],
             "extra_description": [
               "When you Shield or Heal, your items gain +2 Value for the fight.",
-              "This item's cooldown is reduced by 1% for every 1 Value it has."
+              "For every 1 Value this has, its cooldown is reduced by 1%."
             ],
             "cd": "7.0",
             "description_zh": [
